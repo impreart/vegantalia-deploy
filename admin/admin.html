@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeganTalia Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>VeganTalia Rezept-Admin</h1>
+  <p>Hier kannst du neue Rezepte hinzufügen oder bestehende bearbeiten</p>
+</header>
+
+<main>
+  <section id="form-section">
+    <h2>Neues Rezept hinzufügen</h2>
+    <form id="recipe-form">
+      <input type="text" id="title" placeholder="Titel" required>
+      <input type="text" id="subtitle" placeholder="Untertitel">
+      <input type="file" id="image" accept="image/*">
+      <select id="category">
+        <option>Hauptgerichte</option>
+        <option>Salate</option>
+        <option>Dessert</option>
+        <option>Vorspeise</option>
+        <option>Schnelle Rezepte</option>
+      </select>
+      <input type="text" id="preparation-time" placeholder="Vorbereitung">
+      <input type="text" id="cook-time" placeholder="Kochzeit">
+      <input type="number" id="portion" placeholder="Portionen" value="2">
+      <select id="difficulty">
+        <option>Einfach</option>
+        <option>Mittel</option>
+        <option>Schwer</option>
+      </select>
+
+      <h3>Zutaten</h3>
+      <div id="ingredients-container"></div>
+      <button type="button" id="add-ingredient-group">Obergruppe hinzufügen</button>
+
+      <h3>Zubereitung</h3>
+      <div id="steps-container"></div>
+      <button type="button" id="add-step">Neuen Schritt hinzufügen</button>
+
+      <h3>Tipps & Variationen</h3>
+      <textarea id="tips"></textarea>
+
+      <h3>Nährwerte</h3>
+      <input type="number" id="kcal" placeholder="kcal">
+      <input type="number" id="protein" placeholder="Eiweiß">
+      <input type="number" id="carbs" placeholder="KH">
+      <input type="number" id="fat" placeholder="Fett">
+      <input type="number" id="fiber" placeholder="Ballaststoffe">
+
+      <button type="submit">Rezept speichern</button>
+    </form>
+  </section>
+
+  <section id="list-section">
+    <h2>Gespeicherte Rezepte</h2>
+    <ul id="recipe-list"></ul>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

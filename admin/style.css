@@ -1,0 +1,121 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f0fff4, #e8f5e9);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  color: #256c2b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+form {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  background-color: #256c2b;
+  transform: translateY(-1px);
+}
+.ingredient-group, .step {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.ingredient-row, .needed-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.delete-ingredient {
+  background-color: #e53935;
+}
+.delete-ingredient:hover {
+  background-color: #c62828;
+}
+.add-ingredient, .add-ingredient-group, .add-needed-ingredient, .add-substep, #add-step {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.add-substep {
+  background-color: #039be5;
+}
+.add-substep:hover {
+  background-color: #0288d1;
+}
+.add-needed-ingredient {
+  background-color: #f9a825;
+}
+.add-needed-ingredient:hover {
+  background-color: #f57f17;
+}
+.substep, textarea.substep {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  background: rgba(255,255,255,0.7);
+}
+#recipe-list {
+  margin-top: 30px;
+  padding: 0;
+  list-style: none;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#recipe-list li {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#recipe-list button {
+  background: #e53935;
+}
+#recipe-list button:hover {
+  background: #c62828;
+}
