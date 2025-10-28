@@ -11,6 +11,7 @@ import time
 import requests
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, Any, Optional
 
 # Zielsprachen (wie bei Rezepten)
 TARGET_LANGUAGES = {
@@ -22,7 +23,7 @@ TARGET_LANGUAGES = {
     'ar': 'AR'
 }
 
-def load_env():
+def load_env() -> None:
     """Lädt .env File"""
     env_file = Path(__file__).parent / '.env'
     if not env_file.exists():
@@ -36,12 +37,29 @@ def load_env():
                 key, value = line.split('=', 1)
                 os.environ[key] = value
 
-def translate_with_deepl(text, target_lang, source_lang="DE"):
-    """Übersetzt Text mit DeepL API"""
+def translate_with_deepl(text: str, target_lang: str, source_lang: str = "DE") -> str:
+    """
+    Übersetzt Text mit DeepL API
+    
+    Args:
+        text: Zu übersetzender Text
+        target_lang: Zielsprache (z.B. "EN", "ES", "FR")
+        source_lang: Quellsprache (Standard: "DE")
+    
+    Returns:
+        Übersetzter Text oder Originaltext bei Fehler
+    
+    Raises:
+        ValueError: Wenn text leer oder kein String
+        Exception: Wenn DeepL Quota erreicht
+    """
+    # Input-Validierung
+    if not text or not isinstance(text, str) or not text.strip():
+        return text
+    
     api_key = os.getenv('DEEPL_API_KEY')
     if not api_key:
-        print("❌ DEEPL_API_KEY nicht in .env gefunden!")
-        return text
+        raise ValueError("DEEPL_API_KEY nicht in .env gefunden!")
     
     # Free API hat :fx suffix
     base_url = 'https://api-free.deepl.com/v2/translate' if api_key.endswith(':fx') else 'https://api.deepl.com/v2/translate'
@@ -65,21 +83,26 @@ def translate_with_deepl(text, target_lang, source_lang="DE"):
             if result.get('translations'):
                 return result['translations'][0]['text']
         elif response.status_code == 456:
-            print(f"❌ DeepL Quota erreicht!")
-            sys.exit(1)
+            raise Exception("DeepL Quota erreicht!")
         else:
             print(f"⚠️ DeepL Fehler {response.status_code}: {response.text}")
     except Exception as e:
+        if "Quota erreicht" in str(e):
+            raise  # Re-raise um Script zu stoppen
         print(f"⚠️ Übersetzung fehlgeschlagen: {e}")
     
     return text  # Fallback: Original zurückgeben
 
-# Globale Zähler für Progress
-_translation_count = 0
-_total_translations = 0
-
-def count_strings(obj):
-    """Zählt alle zu übersetzenden Strings"""
+def count_strings(obj: Any) -> int:
+    """
+    Zählt alle zu übersetzenden Strings
+    
+    Args:
+        obj: Dictionary oder beliebiger Wert
+    
+    Returns:
+        Anzahl der nicht-leeren Strings
+    """
     count = 0
     if isinstance(obj, dict):
         for value in obj.values():
@@ -88,29 +111,74 @@ def count_strings(obj):
         count += 1
     return count
 
-def translate_dict(obj, target_lang, path=""):
+class TranslationProgress:
+    """Verwaltet den Übersetzungsfortschritt thread-safe"""
+    def __init__(self, total: int):
+        """
+        Initialisiert Progress Tracker
+        
+        Args:
+            total: Gesamtanzahl der zu übersetzenden Strings
+        """
+        self.count = 0
+        self.total = total
+    
+    def increment(self) -> int:
+        """
+        Erhöht den Zähler und gibt den aktuellen Wert zurück
+        
+        Returns:
+            Aktueller Zählerstand
+        """
+        self.count += 1
+        return self.count
+    
+    def get_percentage(self) -> float:
+        """Berechnet den Fortschritt in Prozent"""
+        if self.total == 0:
+            return 0.0
+        return (self.count / self.total) * 100
+    
+    def show_progress(self, label: str = "") -> None:
+        """
+        Zeigt den Fortschrittsbalken an
+        
+        Args:
+            label: Optionales Label für die aktuelle Übersetzung
+        """
+        percentage = self.get_percentage()
+        bar_length = 30
+        filled = int(bar_length * self.count / self.total) if self.total > 0 else 0
+        bar = '█' * filled + '░' * (bar_length - filled)
+        
+        # Progress Bar
+        label_truncated = label[:40] if label else ""
+        print(f"\r  [{bar}] {percentage:.0f}% | {self.count}/{self.total} | {label_truncated:<40}", end='', flush=True)
+
+def translate_dict(obj: Any, target_lang: str, progress: TranslationProgress, path: str = "") -> Any:
     """
     Rekursiv alle String-Werte in einem dict übersetzen
-    """
-    global _translation_count, _total_translations
     
+    Args:
+        obj: Dictionary oder String zum Übersetzen
+        target_lang: Zielsprache (z.B. "EN-US", "ES", "FR")
+        progress: TranslationProgress Instanz für Fortschrittsanzeige
+        path: Aktueller Pfad im Dictionary (für Debug-Ausgabe)
+    
+    Returns:
+        Übersetztes Dictionary oder String
+    """
     if isinstance(obj, dict):
         translated = {}
         for key, value in obj.items():
             new_path = f"{path}.{key}" if path else key
-            translated[key] = translate_dict(value, target_lang, new_path)
+            translated[key] = translate_dict(value, target_lang, progress, new_path)
         return translated
     elif isinstance(obj, str):
         # Übersetze nur wenn Text vorhanden
         if obj.strip():
-            _translation_count += 1
-            percentage = (_translation_count / _total_translations * 100) if _total_translations > 0 else 0
-            bar_length = 30
-            filled = int(bar_length * _translation_count / _total_translations) if _total_translations > 0 else 0
-            bar = '█' * filled + '░' * (bar_length - filled)
-            
-            # Progress Bar
-            print(f"\r  [{bar}] {percentage:.0f}% | {_translation_count}/{_total_translations} | {path[:40]:<40}", end='', flush=True)
+            progress.increment()
+            progress.show_progress(path)
             translated = translate_with_deepl(obj, target_lang)
             time.sleep(0.25)  # Rate limiting
             return translated
@@ -118,9 +186,12 @@ def translate_dict(obj, target_lang, path=""):
     else:
         return obj
 
-def check_deepl_quota():
+def check_deepl_quota() -> Optional[int]:
     """
     Prüft DeepL API Quota BEVOR Übersetzung startet
+    
+    Returns:
+        Verfügbare Zeichen oder None bei Fehler
     """
     api_key = os.getenv('DEEPL_API_KEY')
     if not api_key:
@@ -158,8 +229,16 @@ def check_deepl_quota():
     except:
         return None
 
-def load_existing_translations(lang_code):
-    """Lädt existierende UI-Übersetzungen"""
+def load_existing_translations(lang_code: str) -> Dict[str, Any]:
+    """
+    Lädt existierende UI-Übersetzungen
+    
+    Args:
+        lang_code: Sprachcode (z.B. "en", "es", "fr")
+    
+    Returns:
+        Dictionary mit Übersetzungen oder leeres Dict
+    """
     ui_file = Path(__file__).parent.parent / "src" / "lib" / f"ui-translations-{lang_code}.json"
     
     if ui_file.exists():
@@ -172,10 +251,17 @@ def load_existing_translations(lang_code):
     
     return {}
 
-def find_missing_keys(source_dict, translated_dict, path=""):
+def find_missing_keys(source_dict: Dict[str, Any], translated_dict: Dict[str, Any], path: str = "") -> Dict[str, Any]:
     """
     Findet fehlende Keys rekursiv.
-    Returniert dict mit nur den fehlenden/neuen Einträgen.
+    
+    Args:
+        source_dict: Quell-Dictionary (deutsch)
+        translated_dict: Übersetztes Dictionary
+        path: Aktueller Pfad im Dictionary (für Debug)
+    
+    Returns:
+        Dictionary mit nur den fehlenden/neuen Einträgen
     """
     missing = {}
     
@@ -190,14 +276,23 @@ def find_missing_keys(source_dict, translated_dict, path=""):
             nested_missing = find_missing_keys(value, translated_dict[key], current_path)
             if nested_missing:
                 missing[key] = nested_missing
-        elif value != translated_dict[key] and isinstance(value, str):
-            # String wurde geändert (deutscher Text aktualisiert)
-            missing[key] = value
+        # WICHTIG: String-Änderungen NICHT als fehlend markieren!
+        # Übersetzungen sind IMMER unterschiedlich zum deutschen Original
+        # Nur komplett fehlende Keys werden übersetzt
     
     return missing
 
-def merge_dicts(base_dict, new_dict):
-    """Merged zwei dicts rekursiv"""
+def merge_dicts(base_dict: Dict[str, Any], new_dict: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Merged zwei dicts rekursiv
+    
+    Args:
+        base_dict: Basis-Dictionary
+        new_dict: Dictionary mit neuen/überschreibenden Werten
+    
+    Returns:
+        Gemergtes Dictionary
+    """
     result = base_dict.copy()
     
     for key, value in new_dict.items():
@@ -208,7 +303,8 @@ def merge_dicts(base_dict, new_dict):
     
     return result
 
-def main():
+def main() -> None:
+    """Hauptfunktion - Übersetzt UI-Strings in alle Zielsprachen"""
     print("🌍 UI Translation Script für vegantalia.de")
     print("=" * 50)
     
@@ -239,8 +335,6 @@ def main():
     print()
     
     # Übersetze in alle Sprachen
-    global _translation_count, _total_translations
-    
     for lang_code, deepl_code in TARGET_LANGUAGES.items():
         print(f"🌐 Übersetze UI nach {lang_code.upper()} ({deepl_code})...")
         
@@ -263,13 +357,11 @@ def main():
         print(f"  📊 Status: {existing_count}/{total_count} bereits übersetzt")
         print(f"  🆕 {missing_count} neue/geänderte Strings zu übersetzen")
         
-        # Zähle Strings für Progress
-        global _translation_count, _total_translations
-        _total_translations = missing_count
-        _translation_count = 0
+        # Erstelle Progress Tracker
+        progress = TranslationProgress(missing_count)
         
         # Übersetze nur die fehlenden Strings
-        newly_translated = translate_dict(missing_strings, deepl_code)
+        newly_translated = translate_dict(missing_strings, deepl_code, progress)
         print()  # Neue Zeile nach Progress Bar
         
         # Merge mit existierenden Übersetzungen

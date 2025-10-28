@@ -11,6 +11,16 @@ import time
 import requests
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, Any, Optional, Tuple, List
+
+# Konstanten
+API_TIMEOUT = 30  # Sekunden
+MAX_RETRIES = 3
+RETRY_DELAY = 2  # Sekunden
+RATE_LIMIT_SLEEP = 0.5  # Sekunden zwischen Requests
+TITLE_SIMILARITY_THRESHOLD = 0.8  # 80% Ähnlichkeit für Fuzzy Matching
+QUOTA_WARNING_THRESHOLD = 80  # Warnung bei 80% Verbrauch
+QUOTA_CRITICAL_THRESHOLD = 95  # Kritisch bei 95% Verbrauch
 
 # Unterstützte Sprachen (außer DE - das ist das Original)
 TARGET_LANGUAGES = {
@@ -22,21 +32,38 @@ TARGET_LANGUAGES = {
     'ar': 'AR'
 }
 
-def load_env():
-    """Lädt .env Datei"""
+def load_env() -> None:
+    """
+    Lädt .env Datei
+    
+    Parst .env File und setzt Umgebungsvariablen.
+    Ignoriert Kommentare und ungültige Zeilen.
+    """
     env_path = Path(__file__).parent / ".env"
     if env_path.exists():
         with open(env_path, 'r', encoding='utf-8') as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith('#') and '=' in line:
-                    key, value = line.split('=', 1)
-                    os.environ[key] = value
+                    try:
+                        key, value = line.split('=', 1)
+                        key = key.strip()
+                        value = value.strip()
+                        if key and value:  # Validierung
+                            os.environ[key] = value
+                    except ValueError:
+                        print(f"⚠️ Ungültige Zeile in .env: {line}")
+                        continue
 
-def check_deepl_quota():
+def check_deepl_quota() -> Optional[int]:
     """
     Prüft DeepL API Quota BEVOR Übersetzung startet
-    Gibt verfügbare Zeichen zurück oder beendet bei Fehler
+    
+    Returns:
+        Verfügbare Zeichen oder None bei Fehler
+    
+    Raises:
+        SystemExit: Bei kritischer Quota-Überschreitung und User-Abbruch
     """
     api_key = os.getenv('DEEPL_API_KEY')
     if not api_key:
@@ -67,14 +94,14 @@ def check_deepl_quota():
             print(f"   Verbraucht: {used:,} / {limit:,} Zeichen ({percentage:.1f}%)")
             print(f"   Verfügbar: {available:,} Zeichen")
             
-            if percentage >= 95:
-                print("⚠️ WARNUNG: Quota fast aufgebraucht (>95%)!")
+            if percentage >= QUOTA_CRITICAL_THRESHOLD:
+                print(f"⚠️ WARNUNG: Quota fast aufgebraucht (>{QUOTA_CRITICAL_THRESHOLD}%)!")
                 response = input("Trotzdem fortfahren? (y/n): ")
                 if response.lower() != 'y':
                     print("❌ Abgebrochen.")
                     sys.exit(0)
-            elif percentage >= 80:
-                print("⚠️ Achtung: Quota zu 80% verbraucht")
+            elif percentage >= QUOTA_WARNING_THRESHOLD:
+                print(f"⚠️ Achtung: Quota zu {QUOTA_WARNING_THRESHOLD}% verbraucht")
             
             return available
         else:
@@ -98,7 +125,7 @@ def translate_with_deepl(text: str, target_lang: str, source_lang: str = "DE") -
     else:
         base_url = "https://api.deepl.com/v2/translate"
     
-    max_retries = 3
+    max_retries = MAX_RETRIES
     retry_count = 0
     
     while retry_count < max_retries:
@@ -114,7 +141,7 @@ def translate_with_deepl(text: str, target_lang: str, source_lang: str = "DE") -
                 "source_lang": source_lang.upper()
             }
             
-            response = requests.post(base_url, headers=headers, json=data, timeout=30)
+            response = requests.post(base_url, headers=headers, json=data, timeout=API_TIMEOUT)
             
             if response.status_code == 200:
                 result = response.json()
@@ -126,31 +153,42 @@ def translate_with_deepl(text: str, target_lang: str, source_lang: str = "DE") -
             elif response.status_code == 429:
                 # Rate limit - warte länger
                 retry_count += 1
-                wait_time = retry_count * 2
+                wait_time = retry_count * RETRY_DELAY
                 print(f"⚠️ Rate limit erreicht, warte {wait_time}s...")
                 time.sleep(wait_time)
                 continue
             
             print(f"⚠️ DeepL Fehler: {response.status_code}")
-            return text  # Fallback: Original-Text
+            break  # Verlasse Retry-Schleife bei anderem Fehler
             
         except requests.exceptions.Timeout:
             retry_count += 1
             print(f"⚠️ Timeout (Versuch {retry_count}/{max_retries}), wiederhole...")
-            time.sleep(2)
+            time.sleep(RETRY_DELAY)
             continue
             
         except Exception as e:
             retry_count += 1
             print(f"⚠️ Fehler: {e} (Versuch {retry_count}/{max_retries})")
             if retry_count < max_retries:
-                time.sleep(2)
+                time.sleep(RETRY_DELAY)
                 continue
             break
-        return text  # Fallback
+    
+    # Falls alle Retries fehlschlagen
+    return text  # Fallback
 
 def translate_recipe(recipe: dict, target_lang: str) -> dict:
-    """Übersetzt ein einzelnes Rezept"""
+    """
+    Übersetzt ein einzelnes Rezept
+    
+    Args:
+        recipe: Rezept-Dictionary mit deutschen Texten
+        target_lang: Zielsprache (z.B. "EN", "ES", "FR")
+    
+    Returns:
+        Übersetztes Rezept mit Metadaten
+    """
     translated = recipe.copy()
     
     # Speichere Original-Titel für Vergleich
@@ -181,13 +219,13 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
     # Titel
     show_progress("Titel")
     translated['title'] = translate_with_deepl(original_title, target_lang)
-    time.sleep(0.5)
+    time.sleep(RATE_LIMIT_SLEEP)
     
     # Untertitel
     if recipe.get('subtitle'):
         show_progress("Untertitel")
         translated['subtitle'] = translate_with_deepl(recipe['subtitle'], target_lang)
-        time.sleep(0.5)
+        time.sleep(RATE_LIMIT_SLEEP)
     
     # Zutaten
     if recipe.get('ingredients'):
@@ -196,14 +234,14 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
             new_group = group.copy()
             show_progress(f"Zutatengruppe {idx}/{len(recipe['ingredients'])}")
             new_group['group'] = translate_with_deepl(group.get('group', ''), target_lang)
-            time.sleep(0.4)
+            time.sleep(RATE_LIMIT_SLEEP)
             
             new_items = []
             for item_idx, item in enumerate(group.get('items', []), 1):
                 new_item = item.copy()
                 show_progress(f"Zutat {item_idx} (Gruppe {idx})")
                 new_item['name'] = translate_with_deepl(item.get('name', ''), target_lang)
-                time.sleep(0.4)
+                time.sleep(RATE_LIMIT_SLEEP)
                 new_items.append(new_item)
             
             new_group['items'] = new_items
@@ -223,7 +261,7 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
                 current_substep += 1
                 show_progress(f"Schritt {current_substep}/{step_count}")
                 translated_substep = translate_with_deepl(substep, target_lang)
-                time.sleep(0.4)
+                time.sleep(RATE_LIMIT_SLEEP)
                 new_substeps.append(translated_substep)
             
             new_step['substeps'] = new_substeps
@@ -235,7 +273,7 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
         for tip_idx, tip in enumerate(recipe['tips'], 1):
             show_progress(f"Tipp {tip_idx}/{len(recipe['tips'])}")
             translated_tip = translate_with_deepl(tip, target_lang)
-            time.sleep(0.4)
+            time.sleep(RATE_LIMIT_SLEEP)
             translated['tips'].append(translated_tip)
     
     print()  # Neue Zeile nach Fortschrittsbalken
@@ -248,10 +286,15 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
     
     return translated
 
-def load_existing_translations(lang_code):
+def load_existing_translations(lang_code: str) -> Tuple[Dict[str, Any], Dict[int, Any]]:
     """
     Lädt existierende Übersetzungen (falls vorhanden)
-    Returniert tuple: (dict_by_title, dict_by_index)
+    
+    Args:
+        lang_code: Sprachcode (z.B. "en", "es", "fr")
+    
+    Returns:
+        Tuple mit (dict_by_title, dict_by_index)
     """
     output_file = Path(__file__).parent / f"recipes_{lang_code}.json"
     if not output_file.exists():
@@ -279,8 +322,8 @@ def load_existing_translations(lang_code):
         print(f"⚠️ Fehler beim Laden existierender Übersetzungen: {e}")
         return {}, {}
 
-def main():
-    """Hauptfunktion"""
+def main() -> None:
+    """Hauptfunktion - Übersetzt alle Rezepte in alle Zielsprachen"""
     print("🌍 Incremental Translation Script für vegantalia.de")
     print("=" * 50)
     
@@ -353,8 +396,8 @@ def main():
                 if len(all_chars) > 0:
                     similarity = len(common_chars) / len(all_chars)
                     
-                    # Wenn >80% ähnlich ODER nur wenige Zeichen unterschiedlich
-                    if similarity > 0.8 or abs(len(title_normalized) - len(old_title)) < 3:
+                    # Wenn >TITLE_SIMILARITY_THRESHOLD ähnlich ODER nur wenige Zeichen unterschiedlich
+                    if similarity > TITLE_SIMILARITY_THRESHOLD or abs(len(title_normalized) - len(old_title)) < 3:
                         existing_translation = existing_recipe
                         status_icon = "♻️"
             
