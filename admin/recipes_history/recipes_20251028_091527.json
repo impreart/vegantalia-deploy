@@ -531,19 +531,6 @@
         ]
       },
       {
-        "time": "5 Min",
-        "needed": [
-          {
-            "amount": "2",
-            "unit": "Liter",
-            "name": "Salzwasser"
-          }
-        ],
-        "substeps": [
-          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
-        ]
-      },
-      {
         "time": "30 Min",
         "needed": [
           {
@@ -591,6 +578,19 @@
           "Für die Mojo Rojo die rote Spitzpaprika entkernen und im Backofen , der Heißluftfritteuse, Grill oder Pfanne kurz angrillen.",
           "Nun müssen alle Zutaten mehrere Minuten im Mixer zu einem zerkleinert werden. Sollte die Sauce zu fest sein, muss noch etwas Wasser rein. Ist es zu dünnflüssig, dann etwas mehr Paprika.",
           "Je länger die  Mojo Rojo zieht um so besser"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "Liter",
+            "name": "Salzwasser"
+          }
+        ],
+        "substeps": [
+          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
         ]
       },
       {
