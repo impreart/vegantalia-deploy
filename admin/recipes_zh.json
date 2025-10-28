@@ -344,7 +344,7 @@
           "菠菜、奶酪酱（可选韭菜和熏豆腐）交替层叠",
           "最后淋上奶酪酱（也可选择韭菜和熏豆腐）。",
           "在碗中的奶酪酱中加入少许油，使其变得酥脆。",
-          "将奶酪和油的混合物涂抹在烤盘表面",
+          "将奶酪和油的混合物铺在烤盘表面",
           "将烤盘放入烤箱约 20 分钟。",
           "最后撒上香菜即可食用"
         ]
@@ -362,8 +362,9 @@
     "featuredWeek": true,
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce ",
     "language": "zh",
-    "translation_source": "Käsespätzle",
-    "translated_at": "2025-10-28T17:55:56.680671"
+    "original_title": "Käsespätzle",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:39:30.768674"
   },
   {
     "title": "黑椒和红椒卷心菜",
@@ -396,7 +397,7 @@
         ]
       },
       {
-        "group": "制作绿酱",
+        "group": null,
         "items": [
           {
             "amount": "1",
@@ -672,8 +673,9 @@
     "featuredWeek": false,
     "published": true,
     "language": "zh",
-    "translation_source": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
-    "translated_at": "2025-10-28T17:56:44.153853"
+    "original_title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:40:36.400202"
   },
   {
     "title": "素食薯条酱",
@@ -1005,7 +1007,7 @@
         "time": "5 Min",
         "needed": [],
         "substeps": [
-          "盖上酱汁，在冰箱里浸泡至少 30 分钟（最好更长），让味道慢慢形成。这样可以大大改善风味。"
+          "盖上酱料盖，在冰箱里浸泡至少 30 分钟（最好更长），让味道慢慢形成。这样可以大大改善风味。"
         ]
       }
     ],
@@ -1114,7 +1116,8 @@
       }
     },
     "language": "zh",
-    "translation_source": "Vegane Joppiesauce mit Pommes",
-    "translated_at": "2025-10-28T17:57:27.250591"
+    "original_title": "Vegane Joppiesauce mit Pommes",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:41:19.457963"
   }
 ]

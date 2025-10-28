@@ -225,7 +225,7 @@
         ],
         "substeps": [
           "Faire chauffer une cuillère à soupe d'huile d'olive dans une poêle.",
-          "Ajouter le poireau avec une cuillère à soupe d'eau.",
+          "Ajouter le poireau et une cuillère à soupe d'eau.",
           "Faire suer pendant environ cinq minutes",
           "Assaisonner de sel et de poivre",
           "Faire chauffer l'huile dans une poêle séparée",
@@ -362,8 +362,9 @@
     "featuredWeek": true,
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce ",
     "language": "fr",
-    "translation_source": "Käsespätzle",
-    "translated_at": "2025-10-28T17:53:03.543290"
+    "original_title": "Käsespätzle",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:36:24.172051"
   },
   {
     "title": "Papas arrugadas au mojo verda & mojo rojo",
@@ -672,8 +673,9 @@
     "featuredWeek": false,
     "published": true,
     "language": "fr",
-    "translation_source": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
-    "translated_at": "2025-10-28T17:53:48.160021"
+    "original_title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:37:12.106152"
   },
   {
     "title": "Sauce joppie végétalienne avec frites",
@@ -1114,7 +1116,8 @@
       }
     },
     "language": "fr",
-    "translation_source": "Vegane Joppiesauce mit Pommes",
-    "translated_at": "2025-10-28T17:54:27.598352"
+    "original_title": "Vegane Joppiesauce mit Pommes",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:37:53.837630"
   }
 ]

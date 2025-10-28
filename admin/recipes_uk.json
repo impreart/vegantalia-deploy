@@ -344,7 +344,7 @@
           "Чергуйте шари шпецле, сирний соус (і за бажанням цибулю-порей і копчений тофу)",
           "На завершення полийте сирним соусом (або, за бажанням, цибулею-пореєм та копченим тофу).",
           "Додайте трохи олії до сиру, викладеного в миску, щоб він став хрустким.",
-          "Розподілити сирно-масляну суміш по верхній частині форми для випікання",
+          "Розподілити сирно-масляну суміш по верхній частині форми для запікання",
           "Поставте форму для випікання в духовку приблизно на 20 хвилин. Коли вона стане золотисто-коричневого кольору, вона готова",
           "В кінці посипати петрушкою і подавати до столу"
         ]
@@ -362,8 +362,9 @@
     "featuredWeek": true,
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce ",
     "language": "uk",
-    "translation_source": "Käsespätzle",
-    "translated_at": "2025-10-28T17:58:52.572056"
+    "original_title": "Käsespätzle",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:42:27.117007"
   },
   {
     "title": "Папас арругадас з мохо верда та мохо рохо",
@@ -672,8 +673,9 @@
     "featuredWeek": false,
     "published": true,
     "language": "uk",
-    "translation_source": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
-    "translated_at": "2025-10-28T17:59:40.052215"
+    "original_title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:43:06.222616"
   },
   {
     "title": "Веганський соус Джоппі з чіпсами",
@@ -1114,7 +1116,8 @@
       }
     },
     "language": "uk",
-    "translation_source": "Vegane Joppiesauce mit Pommes",
-    "translated_at": "2025-10-28T18:00:23.871632"
+    "original_title": "Vegane Joppiesauce mit Pommes",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:43:39.204342"
   }
 ]

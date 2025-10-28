@@ -362,8 +362,9 @@
     "featuredWeek": true,
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce ",
     "language": "ar",
-    "translation_source": "Käsespätzle",
-    "translated_at": "2025-10-28T18:01:49.061567"
+    "original_title": "Käsespätzle",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:44:47.840847"
   },
   {
     "title": "باباس أروغاداس مع موجو فيردا وموجو روخو",
@@ -461,7 +462,7 @@
           {
             "amount": "50",
             "unit": "ml",
-            "name": "زيت الزيتون البكر الممتاز"
+            "name": null
           },
           {
             "amount": "30",
@@ -672,8 +673,9 @@
     "featuredWeek": false,
     "published": true,
     "language": "ar",
-    "translation_source": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
-    "translated_at": "2025-10-28T18:02:39.054816"
+    "original_title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:45:44.567172"
   },
   {
     "title": "صلصة الجوبي النباتية مع رقائق البطاطس المقلية",
@@ -1114,7 +1116,8 @@
       }
     },
     "language": "ar",
-    "translation_source": "Vegane Joppiesauce mit Pommes",
-    "translated_at": "2025-10-28T18:03:19.699536"
+    "original_title": "Vegane Joppiesauce mit Pommes",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:46:24.662092"
   }
 ]

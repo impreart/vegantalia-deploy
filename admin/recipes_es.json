@@ -362,8 +362,9 @@
     "featuredWeek": true,
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce ",
     "language": "es",
-    "translation_source": "Käsespätzle",
-    "translated_at": "2025-10-28T17:50:15.843648"
+    "original_title": "Käsespätzle",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:33:31.318471"
   },
   {
     "title": "Papas arrugadas con mojo verde y mojo rojo",
@@ -672,8 +673,9 @@
     "featuredWeek": false,
     "published": true,
     "language": "es",
-    "translation_source": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
-    "translated_at": "2025-10-28T17:51:03.677280"
+    "original_title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:34:20.438803"
   },
   {
     "title": "Salsa joppie vegana con patatas fritas",
@@ -1114,7 +1116,8 @@
       }
     },
     "language": "es",
-    "translation_source": "Vegane Joppiesauce mit Pommes",
-    "translated_at": "2025-10-28T17:51:45.301926"
+    "original_title": "Vegane Joppiesauce mit Pommes",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-28T18:35:01.526243"
   }
 ]

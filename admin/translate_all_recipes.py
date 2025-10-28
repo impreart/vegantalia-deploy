@@ -156,26 +156,52 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
     # Speichere Original-Titel für Vergleich
     original_title = recipe.get('title', '')
     
+    # Zähle Gesamt-Tasks für Progress
+    total_tasks = 1  # Titel
+    if recipe.get('subtitle'): total_tasks += 1
+    if recipe.get('ingredients'):
+        for group in recipe['ingredients']:
+            total_tasks += 1 + len(group.get('items', []))
+    if recipe.get('steps'):
+        for step in recipe['steps']:
+            total_tasks += len(step.get('substeps', []))
+    if recipe.get('tips'): total_tasks += 1
+    
+    current_task = 0
+    
+    def show_progress(label):
+        nonlocal current_task
+        current_task += 1
+        percentage = (current_task / total_tasks * 100) if total_tasks > 0 else 0
+        bar_length = 20
+        filled = int(bar_length * current_task / total_tasks) if total_tasks > 0 else 0
+        bar = '█' * filled + '░' * (bar_length - filled)
+        print(f"\r    [{bar}] {percentage:.0f}% | {label:<40}", end='', flush=True)
+    
     # Titel
+    show_progress("Titel")
     translated['title'] = translate_with_deepl(original_title, target_lang)
-    time.sleep(0.5)  # Rate limiting erhöht
+    time.sleep(0.5)
     
     # Untertitel
     if recipe.get('subtitle'):
+        show_progress("Untertitel")
         translated['subtitle'] = translate_with_deepl(recipe['subtitle'], target_lang)
         time.sleep(0.5)
     
     # Zutaten
     if recipe.get('ingredients'):
         translated['ingredients'] = []
-        for group in recipe['ingredients']:
+        for idx, group in enumerate(recipe['ingredients'], 1):
             new_group = group.copy()
+            show_progress(f"Zutatengruppe {idx}/{len(recipe['ingredients'])}")
             new_group['group'] = translate_with_deepl(group.get('group', ''), target_lang)
             time.sleep(0.4)
             
             new_items = []
-            for item in group.get('items', []):
+            for item_idx, item in enumerate(group.get('items', []), 1):
                 new_item = item.copy()
+                show_progress(f"Zutat {item_idx} (Gruppe {idx})")
                 new_item['name'] = translate_with_deepl(item.get('name', ''), target_lang)
                 time.sleep(0.4)
                 new_items.append(new_item)
@@ -186,11 +212,16 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
     # Zubereitungsschritte
     if recipe.get('steps'):
         translated['steps'] = []
+        step_count = sum(len(s.get('substeps', [])) for s in recipe['steps'])
+        current_substep = 0
+        
         for step in recipe['steps']:
             new_step = step.copy()
             new_substeps = []
             
             for substep in step.get('substeps', []):
+                current_substep += 1
+                show_progress(f"Schritt {current_substep}/{step_count}")
                 translated_substep = translate_with_deepl(substep, target_lang)
                 time.sleep(0.4)
                 new_substeps.append(translated_substep)
@@ -200,8 +231,14 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
     
     # Tipps
     if recipe.get('tips'):
-        translated['tips'] = translate_with_deepl(recipe['tips'], target_lang)
-        time.sleep(0.3)
+        translated['tips'] = []
+        for tip_idx, tip in enumerate(recipe['tips'], 1):
+            show_progress(f"Tipp {tip_idx}/{len(recipe['tips'])}")
+            translated_tip = translate_with_deepl(tip, target_lang)
+            time.sleep(0.4)
+            translated['tips'].append(translated_tip)
+    
+    print()  # Neue Zeile nach Fortschrittsbalken
     
     # Metadaten (WICHTIG: original_title für Vergleich speichern!)
     translated['language'] = target_lang.lower()
