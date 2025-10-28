@@ -267,8 +267,26 @@ from datetime import datetime
 # ====== Datei-Konstanten ======
 RECIPES_FILE = "recipes.json"  # Jetzt im gleichen Ordner (admin/)
 CONFIG_FILE = os.path.join("..", "config", ".env")  # Eine Ebene höher
+PLACEHOLDER_IMAGE = os.path.join("..", "src", "assets", "foto-folgt.png")  # Fallback-Bild
 
 # ====== Hilfsfunktionen ======
+def get_image_display(recipe_dict, width=200):
+    """
+    Gibt den Pfad für st.image() zurück.
+    Falls kein Bild vorhanden, wird Placeholder verwendet.
+    """
+    if recipe_dict.get("image"):
+        # Base64-kodiertes Bild
+        return "data:image/png;base64," + recipe_dict["image"]
+    else:
+        # Fallback auf foto-folgt.png
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        placeholder_path = os.path.join(script_dir, "..", "src", "assets", "foto-folgt.png")
+        if os.path.exists(placeholder_path):
+            return placeholder_path
+        else:
+            return None  # Kein Bild verfügbar
+
 def load_api_key():
     """Lädt den API-Key aus der Konfigurationsdatei oder Umgebungsvariable."""
     # Zuerst aus Umgebungsvariable
@@ -3209,7 +3227,9 @@ if mode == "Rezept bearbeiten":
                 if r.get("image"):
                     try:
                         st.markdown("**Aktuelles Bild:**")
-                        st.image("data:image/png;base64," + r["image"], width=200)
+                        img_src = get_image_display(r, width=200)
+                        if img_src:
+                            st.image(img_src, width=200)
                     except Exception:
                         st.error("Fehler beim Laden des aktuellen Bildes")
                 else:
@@ -3786,11 +3806,11 @@ if mode == "Alle Rezepte ansehen":
             with st.expander(header):
                 cols = st.columns([1,4])
                 with cols[0]:
-                    if r.get("image"):
+                    img_src = get_image_display(r, width=140)
+                    if img_src:
                         try:
-                            st.image("data:image/png;base64," + r["image"], width=140)
+                            st.image(img_src, width=140)
                         except Exception:
-                            # ignore image decoding errors
                             pass
                 with cols[1]:
                     md = f"**{title}**"
@@ -3889,9 +3909,10 @@ if mode == "🏠 Startseiten-Rezepte":
                 
                 col1, col2 = st.columns([1, 2])
                 with col1:
-                    if current.get("image"):
+                    img_src = get_image_display(current, width=200)
+                    if img_src:
                         try:
-                            st.image("data:image/png;base64," + current["image"], width=200)
+                            st.image(img_src, width=200)
                         except:
                             pass
                 
@@ -3930,9 +3951,10 @@ if mode == "🏠 Startseiten-Rezepte":
                     # Vorschau
                     col1, col2 = st.columns([1, 2])
                     with col1:
-                        if recipe.get("image"):
+                        img_src = get_image_display(recipe, width=150)
+                        if img_src:
                             try:
-                                st.image("data:image/png;base64," + recipe["image"], width=150)
+                                st.image(img_src, width=150)
                             except:
                                 pass
                     with col2:
@@ -3977,9 +3999,10 @@ if mode == "🏠 Startseiten-Rezepte":
                 
                 col1, col2 = st.columns([1, 2])
                 with col1:
-                    if current.get("image"):
+                    img_src = get_image_display(current, width=200)
+                    if img_src:
                         try:
-                            st.image("data:image/png;base64," + current["image"], width=200)
+                            st.image(img_src, width=200)
                         except:
                             pass
                 
@@ -4018,9 +4041,10 @@ if mode == "🏠 Startseiten-Rezepte":
                     # Vorschau
                     col1, col2 = st.columns([1, 2])
                     with col1:
-                        if recipe.get("image"):
+                        img_src = get_image_display(recipe, width=150)
+                        if img_src:
                             try:
-                                st.image("data:image/png;base64," + recipe["image"], width=150)
+                                st.image(img_src, width=150)
                             except:
                                 pass
                     with col2:
@@ -4065,9 +4089,10 @@ if mode == "🏠 Startseiten-Rezepte":
                 
                 col1, col2 = st.columns([1, 2])
                 with col1:
-                    if current.get("image"):
+                    img_src = get_image_display(current, width=200)
+                    if img_src:
                         try:
-                            st.image("data:image/png;base64," + current["image"], width=200)
+                            st.image(img_src, width=200)
                         except:
                             pass
                 
@@ -4106,9 +4131,10 @@ if mode == "🏠 Startseiten-Rezepte":
                     # Vorschau
                     col1, col2 = st.columns([1, 2])
                     with col1:
-                        if recipe.get("image"):
+                        img_src = get_image_display(recipe, width=150)
+                        if img_src:
                             try:
-                                st.image("data:image/png;base64," + recipe["image"], width=150)
+                                st.image(img_src, width=150)
                             except:
                                 pass
                     with col2:
