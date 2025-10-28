@@ -275,9 +275,10 @@ def get_image_display(recipe_dict, width=200):
     Gibt den Pfad für st.image() zurück.
     Falls kein Bild vorhanden, wird Placeholder verwendet.
     """
-    if recipe_dict.get("image"):
+    image_data = recipe_dict.get("image", "")
+    if image_data and image_data.strip():  # Prüfe auf nicht-leeren String
         # Base64-kodiertes Bild
-        return "data:image/png;base64," + recipe_dict["image"]
+        return "data:image/png;base64," + image_data
     else:
         # Fallback auf foto-folgt.png
         script_dir = os.path.dirname(os.path.abspath(__file__))
