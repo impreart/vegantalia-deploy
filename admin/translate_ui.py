@@ -323,10 +323,8 @@ def main() -> None:
         sys.exit(1)
     
     with open(ui_file, 'r', encoding='utf-8') as f:
-        ui_texts = json.load(f)
+        de_texts = json.load(f)
     
-    # Hole deutsche Texte
-    de_texts = ui_texts.get('de', {})
     if not de_texts:
         print("❌ Keine deutschen Texte gefunden!")
         sys.exit(1)
