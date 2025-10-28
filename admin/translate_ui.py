@@ -165,11 +165,48 @@ def load_existing_translations(lang_code):
     if ui_file.exists():
         try:
             with open(ui_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+                return data.get(lang_code, {})
         except:
             pass
     
-    return None
+    return {}
+
+def find_missing_keys(source_dict, translated_dict, path=""):
+    """
+    Findet fehlende Keys rekursiv.
+    Returniert dict mit nur den fehlenden/neuen Einträgen.
+    """
+    missing = {}
+    
+    for key, value in source_dict.items():
+        current_path = f"{path}.{key}" if path else key
+        
+        if key not in translated_dict:
+            # Komplett fehlend
+            missing[key] = value
+        elif isinstance(value, dict) and isinstance(translated_dict[key], dict):
+            # Rekursiv prüfen
+            nested_missing = find_missing_keys(value, translated_dict[key], current_path)
+            if nested_missing:
+                missing[key] = nested_missing
+        elif value != translated_dict[key] and isinstance(value, str):
+            # String wurde geändert (deutscher Text aktualisiert)
+            missing[key] = value
+    
+    return missing
+
+def merge_dicts(base_dict, new_dict):
+    """Merged zwei dicts rekursiv"""
+    result = base_dict.copy()
+    
+    for key, value in new_dict.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = merge_dicts(result[key], value)
+        else:
+            result[key] = value
+    
+    return result
 
 def main():
     print("🌍 UI Translation Script für vegantalia.de")
@@ -207,35 +244,47 @@ def main():
     for lang_code, deepl_code in TARGET_LANGUAGES.items():
         print(f"🌐 Übersetze UI nach {lang_code.upper()} ({deepl_code})...")
         
-        # Prüfe ob bereits existiert
-        existing = load_existing_translations(lang_code)
+        # Lade existierende Übersetzungen
+        existing_translations = load_existing_translations(lang_code)
         
-        if existing and existing.get(lang_code):
-            print(f"  ♻️ Übersetzung existiert bereits - überspringe")
+        # Finde fehlende/neue Strings
+        missing_strings = find_missing_keys(de_texts, existing_translations)
+        
+        if not missing_strings:
+            print(f"  ♻️ Alle Strings bereits übersetzt - nichts zu tun")
             print()
             continue
         
-        print(f"  🆕 Neue Übersetzung erstellen...")
+        # Zähle wie viele Strings fehlen
+        missing_count = count_strings(missing_strings)
+        existing_count = count_strings(existing_translations)
+        total_count = count_strings(de_texts)
+        
+        print(f"  📊 Status: {existing_count}/{total_count} bereits übersetzt")
+        print(f"  🆕 {missing_count} neue/geänderte Strings zu übersetzen")
         
         # Zähle Strings für Progress
-        _total_translations = count_strings(de_texts)
+        global _translation_count, _total_translations
+        _total_translations = missing_count
         _translation_count = 0
-        print(f"  📝 {_total_translations} Texte zu übersetzen")
         
-        # Übersetze rekursiv
-        translated_texts = translate_dict(de_texts, deepl_code)
+        # Übersetze nur die fehlenden Strings
+        newly_translated = translate_dict(missing_strings, deepl_code)
         print()  # Neue Zeile nach Progress Bar
+        
+        # Merge mit existierenden Übersetzungen
+        complete_translations = merge_dicts(existing_translations, newly_translated)
         
         # Erstelle vollständiges JSON
         full_json = ui_texts.copy()
-        full_json[lang_code] = translated_texts
+        full_json[lang_code] = complete_translations
         
         # Speichere
         output_file = Path(__file__).parent.parent / "src" / "lib" / f"ui-translations-{lang_code}.json"
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(full_json, f, ensure_ascii=False, indent=2)
         
-        print(f"✅ Gespeichert: {output_file.name}")
+        print(f"✅ Gespeichert: {output_file.name} ({existing_count} wiederverwendet + {missing_count} neu)")
         print()
     
     print("=" * 50)

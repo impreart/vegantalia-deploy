@@ -251,27 +251,33 @@ def translate_recipe(recipe: dict, target_lang: str) -> dict:
 def load_existing_translations(lang_code):
     """
     Lädt existierende Übersetzungen (falls vorhanden)
-    Returniert dict: {original_title: translated_recipe}
+    Returniert tuple: (dict_by_title, dict_by_index)
     """
     output_file = Path(__file__).parent / f"recipes_{lang_code}.json"
     if not output_file.exists():
-        return {}
+        return {}, {}
     
     try:
         with open(output_file, 'r', encoding='utf-8') as f:
             existing = json.load(f)
         
-        # Index nach ORIGINAL-Titel (nicht übersetzter Titel!)
-        existing_by_original = {}
-        for recipe in existing:
-            # Nutze original_title falls vorhanden, sonst title
-            original = recipe.get('original_title', recipe.get('title', ''))
-            existing_by_original[original] = recipe
+        # Zwei Indices: nach Titel UND nach Position
+        by_title = {}
+        by_index = {}
         
-        return existing_by_original
+        for idx, recipe in enumerate(existing):
+            # Index nach Titel (normalisiert)
+            original = recipe.get('original_title', recipe.get('title', ''))
+            original_normalized = original.strip()
+            by_title[original_normalized] = recipe
+            
+            # Index nach Position (Fallback falls Titel geändert wurde)
+            by_index[idx] = recipe
+        
+        return by_title, by_index
     except Exception as e:
         print(f"⚠️ Fehler beim Laden existierender Übersetzungen: {e}")
-        return {}
+        return {}, {}
 
 def main():
     """Hauptfunktion"""
@@ -304,9 +310,9 @@ def main():
     for lang_idx, (lang_code, deepl_code) in enumerate(TARGET_LANGUAGES.items(), 1):
         print(f"🌐 Übersetze nach {lang_code.upper()} ({deepl_code})... [{lang_idx}/{total_languages}]")
         
-        # Lade existierende Übersetzungen
-        existing_translations = load_existing_translations(lang_code)
-        print(f"  📦 {len(existing_translations)} existierende Übersetzungen gefunden")
+        # Lade existierende Übersetzungen (zwei Indices)
+        existing_by_title, existing_by_index = load_existing_translations(lang_code)
+        print(f"  📦 {len(existing_by_title)} existierende Übersetzungen gefunden")
         
         translated_recipes = []
         new_count = 0
@@ -316,6 +322,7 @@ def main():
         
         for idx, recipe in enumerate(recipes, 1):
             title = recipe.get('title', 'Unbekannt')
+            title_normalized = title.strip()
             
             # Progress Bar
             percentage = (idx / total_recipes) * 100
@@ -323,15 +330,40 @@ def main():
             filled = int(bar_length * idx / total_recipes)
             bar = '█' * filled + '░' * (bar_length - filled)
             
-            # Prüfe ob bereits übersetzt (via Original-Titel)
-            if title in existing_translations:
+            # Matching-Strategie: Erst nach Titel, dann nach Index (idx-1 weil 0-basiert)
+            existing_translation = None
+            status_icon = "🆕"  # Default
+            
+            if title_normalized in existing_by_title:
+                # Perfektes Match: Titel stimmt überein
+                existing_translation = existing_by_title[title_normalized]
                 status_icon = "♻️"
-                status_text = "bereits übersetzt"
-                translated_recipes.append(existing_translations[title])
+            elif (idx - 1) in existing_by_index:
+                # Fallback: Rezept an gleicher Position (wahrscheinlich dasselbe, Titel nur leicht geändert)
+                # Akzeptiere es, wenn mindestens 80% der Zeichen übereinstimmen
+                existing_recipe = existing_by_index[idx - 1]
+                old_title = existing_recipe.get('original_title', '').strip()
+                
+                # Einfacher Ähnlichkeitscheck: Wie viele Zeichen sind gleich?
+                title_chars = set(title_normalized.lower())
+                old_chars = set(old_title.lower())
+                common_chars = title_chars & old_chars
+                all_chars = title_chars | old_chars
+                
+                if len(all_chars) > 0:
+                    similarity = len(common_chars) / len(all_chars)
+                    
+                    # Wenn >80% ähnlich ODER nur wenige Zeichen unterschiedlich
+                    if similarity > 0.8 or abs(len(title_normalized) - len(old_title)) < 3:
+                        existing_translation = existing_recipe
+                        status_icon = "♻️"
+            
+            if existing_translation:
+                # Update original_title falls es sich geändert hat
+                existing_translation['original_title'] = title
+                translated_recipes.append(existing_translation)
                 reused_count += 1
             else:
-                status_icon = "🆕"
-                status_text = "neu übersetzen"
                 translated = translate_recipe(recipe, deepl_code)
                 translated_recipes.append(translated)
                 new_count += 1
