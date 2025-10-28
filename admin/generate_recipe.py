@@ -8,6 +8,21 @@ import subprocess
 
 from typing import Dict, List, Optional, Union
 from datetime import datetime
+from pathlib import Path
+
+# Load environment variables
+def load_env():
+    """Lädt .env Datei aus dem aktuellen Verzeichnis"""
+    env_path = Path(__file__).parent / ".env"
+    if env_path.exists():
+        with open(env_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    os.environ[key.strip()] = value.strip()
+
+load_env()
 
 # Git Auto-Commit Helper
 def git_commit_changes(commit_message: str) -> bool:
@@ -1366,6 +1381,69 @@ def call_gemini(prompt):
     st.error("❌ Alle Gemini-Modelle fehlgeschlagen!")
     st.error(f"Letzter Fehler: {last_error}")
     return None
+
+def translate_with_deepl(text: str, target_lang: str = "EN", source_lang: str = "DE") -> Optional[str]:
+    """Übersetzt Text mit DeepL API.
+    
+    Args:
+        text: Zu übersetzender Text
+        target_lang: Zielsprache (EN, ES, FR, IT, etc.)
+        source_lang: Quellsprache (DE, EN, etc.)
+        
+    Returns:
+        Übersetzter Text oder None bei Fehler
+    """
+    api_key = os.environ.get("DEEPL_API_KEY")
+    if not api_key:
+        st.error("🔑 DeepL API-Key fehlt! Bitte in .env eintragen: DEEPL_API_KEY=...")
+        return None
+    
+    # DeepL API endpoint (Free vs Pro)
+    # Wenn der Key mit ':fx' endet, ist es ein Free-Key
+    if api_key.endswith(':fx'):
+        base_url = "https://api-free.deepl.com/v2/translate"
+    else:
+        base_url = "https://api.deepl.com/v2/translate"
+    
+    try:
+        headers = {
+            "Authorization": f"DeepL-Auth-Key {api_key}",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "text": [text],
+            "target_lang": target_lang.upper(),
+            "source_lang": source_lang.upper() if source_lang else None
+        }
+        
+        response = requests.post(base_url, headers=headers, json=data, timeout=15)
+        
+        if response.status_code == 200:
+            result = response.json()
+            if result.get("translations") and len(result["translations"]) > 0:
+                return result["translations"][0]["text"]
+            else:
+                st.error("❌ DeepL: Keine Übersetzung erhalten")
+                return None
+        elif response.status_code == 403:
+            st.error("❌ DeepL API-Key ungültig oder Quota überschritten")
+            return None
+        elif response.status_code == 456:
+            st.error("❌ DeepL: Quota überschritten")
+            return None
+        else:
+            st.error(f"❌ DeepL API Fehler: {response.status_code}")
+            with st.expander("🔍 API Response"):
+                st.code(response.text)
+            return None
+            
+    except requests.exceptions.RequestException as e:
+        st.error(f"❌ DeepL Verbindungsfehler: {str(e)}")
+        return None
+    except Exception as e:
+        st.error(f"❌ DeepL Fehler: {str(e)}")
+        return None
 
 def search_swiss_food_api(name):
     """Suche in Swiss Food Database. Returns nutrition dict or None."""
@@ -3349,8 +3427,8 @@ if mode == "Rezept bearbeiten":
             st.session_state["edit_index"] = idx
             r = recipes[idx]
             
-            # Aktionsbuttons: Duplizieren & Löschen
-            col_dup, col_del = st.columns([1, 1])
+            # Aktionsbuttons: Duplizieren, Übersetzen & Löschen
+            col_dup, col_translate, col_del = st.columns([1, 1, 1])
             with col_dup:
                 if st.button("🔄 Rezept duplizieren", key="duplicate_recipe"):
                     # Erstelle Kopie
@@ -3370,6 +3448,11 @@ if mode == "Rezept bearbeiten":
                         safe_rerun()
                     else:
                         st.error("❌ Fehler beim Duplizieren")
+            
+            with col_translate:
+                if st.button("🌍 Übersetzen", key="translate_recipe_btn"):
+                    st.session_state["show_translate_options"] = True
+                    safe_rerun()
             
             with col_del:
                 if st.button("🗑️ Rezept löschen", key="delete_recipe_edit"):
@@ -3391,6 +3474,95 @@ if mode == "Rezept bearbeiten":
                     else:
                         st.session_state["confirm_delete"] = idx
                         st.warning("⚠️ Nochmal klicken zum Bestätigen!")
+
+            # Übersetzungs-Dialog
+            if st.session_state.get("show_translate_options"):
+                st.markdown("---")
+                st.markdown("### 🌍 Rezept übersetzen")
+                
+                col_lang, col_action = st.columns([2, 1])
+                with col_lang:
+                    target_lang = st.selectbox(
+                        "Zielsprache:",
+                        [
+                            "EN (Englisch)", 
+                            "ES (Spanisch)", 
+                            "FR (Französisch)", 
+                            "ZH (Chinesisch - Mandarin)",
+                            "UK (Ukrainisch)",
+                            "AR (Arabisch)",
+                            "IT (Italienisch)", 
+                            "PT (Portugiesisch)", 
+                            "NL (Niederländisch)"
+                        ],
+                        key="translate_target_lang"
+                    )
+                
+                lang_code = target_lang.split(" ")[0]  # Extract EN, ES, etc.
+                
+                with col_action:
+                    st.write("")  # Spacing
+                    st.write("")  # Spacing
+                    if st.button("🚀 Jetzt übersetzen", key="do_translate"):
+                        with st.spinner(f"🌍 Übersetze nach {lang_code}..."):
+                            # Übersetze Titel
+                            translated_title = translate_with_deepl(r.get('title', ''), target_lang=lang_code)
+                            
+                            # Übersetze Untertitel
+                            translated_subtitle = translate_with_deepl(r.get('subtitle', ''), target_lang=lang_code) if r.get('subtitle') else ""
+                            
+                            # Übersetze Zutaten
+                            translated_ingredients = []
+                            for group in r.get('ingredients', []):
+                                new_group = group.copy()
+                                new_group['group'] = translate_with_deepl(group.get('group', ''), target_lang=lang_code) or group.get('group', '')
+                                new_items = []
+                                for item in group.get('items', []):
+                                    new_item = item.copy()
+                                    new_item['name'] = translate_with_deepl(item.get('name', ''), target_lang=lang_code) or item.get('name', '')
+                                    new_items.append(new_item)
+                                new_group['items'] = new_items
+                                translated_ingredients.append(new_group)
+                            
+                            # Übersetze Zubereitungsschritte
+                            translated_steps = []
+                            for step in r.get('steps', []):
+                                new_step = step.copy()
+                                new_substeps = []
+                                for substep in step.get('substeps', []):
+                                    translated_substep = translate_with_deepl(substep, target_lang=lang_code)
+                                    new_substeps.append(translated_substep or substep)
+                                new_step['substeps'] = new_substeps
+                                translated_steps.append(new_step)
+                            
+                            # Erstelle übersetztes Rezept
+                            if translated_title:
+                                new_recipe = r.copy()
+                                new_recipe['title'] = translated_title
+                                new_recipe['subtitle'] = translated_subtitle
+                                new_recipe['ingredients'] = translated_ingredients
+                                new_recipe['steps'] = translated_steps
+                                new_recipe['language'] = lang_code.lower()  # Sprach-Metadaten
+                                new_recipe['translation_source'] = r.get('title', '')  # Original-Titel
+                                new_recipe.pop('created_at', None)
+                                new_recipe.pop('updated_at', None)
+                                new_recipe.pop('version', None)
+                                
+                                # Füge zur Liste hinzu
+                                recipes.append(new_recipe)
+                                if save_recipes(recipes, force_save=True):
+                                    st.success(f"✅ '{translated_title}' ({lang_code}) wurde erstellt!")
+                                    st.session_state.pop('show_translate_options', None)
+                                    time.sleep(1)
+                                    safe_rerun()
+                                else:
+                                    st.error("❌ Fehler beim Speichern")
+                            else:
+                                st.error("❌ Übersetzung fehlgeschlagen")
+                
+                if st.button("❌ Abbrechen", key="cancel_translate"):
+                    st.session_state.pop('show_translate_options', None)
+                    safe_rerun()
 
             # AI helper for editing - ERWEITERT
             with st.expander("🤖 KI-Assistent (Gemini)", expanded=False):
