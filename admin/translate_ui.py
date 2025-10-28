@@ -245,7 +245,8 @@ def load_existing_translations(lang_code: str) -> Dict[str, Any]:
         try:
             with open(ui_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                return data.get(lang_code, {})
+                # FLAT Struktur: direkt die Keys zurückgeben
+                return data
         except:
             pass
     
@@ -365,13 +366,11 @@ def main() -> None:
         # Merge mit existierenden Übersetzungen
         complete_translations = merge_dicts(existing_translations, newly_translated)
         
-        # Erstelle JSON mit nur dieser Sprache
-        output_json = {lang_code: complete_translations}
-        
+        # FLAT Struktur: Direkt die Keys speichern, NICHT {lang_code: {...}}
         # Speichere
         output_file = Path(__file__).parent.parent / "src" / "lib" / f"ui-translations-{lang_code}.json"
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(output_json, f, ensure_ascii=False, indent=2)
+            json.dump(complete_translations, f, ensure_ascii=False, indent=2)
         
         print(f"✅ Gespeichert: {output_file.name} ({existing_count} wiederverwendet + {missing_count} neu)")
         print()
