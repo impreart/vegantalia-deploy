@@ -368,7 +368,7 @@
     "category": "Hauptgerichte",
     "preparationTime": "20 Min",
     "cookTime": "45 Min",
-    "portion": 2,
+    "portion": 4,
     "difficulty": "Mittel",
     "image": "",
     "ingredients": [
@@ -531,6 +531,19 @@
         ]
       },
       {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "Liter",
+            "name": "Salzwasser"
+          }
+        ],
+        "substeps": [
+          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
+        ]
+      },
+      {
         "time": "30 Min",
         "needed": [
           {
@@ -578,19 +591,6 @@
           "Für die Mojo Rojo die rote Spitzpaprika entkernen und im Backofen , der Heißluftfritteuse, Grill oder Pfanne kurz angrillen.",
           "Nun müssen alle Zutaten mehrere Minuten im Mixer zu einem zerkleinert werden. Sollte die Sauce zu fest sein, muss noch etwas Wasser rein. Ist es zu dünnflüssig, dann etwas mehr Paprika.",
           "Je länger die  Mojo Rojo zieht um so besser"
-        ]
-      },
-      {
-        "time": "5 Min",
-        "needed": [
-          {
-            "amount": "2",
-            "unit": "Liter",
-            "name": "Salzwasser"
-          }
-        ],
-        "substeps": [
-          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
         ]
       },
       {
@@ -658,7 +658,7 @@
         ]
       }
     ],
-    "tips": "Die Mojo Saucen können auch gut vorbereitet und im Kühlschrank aufbewahrt werden.  Statt Ñora-Paprika können auch andere milde, getrocknete rote Paprika verwendet werden. Für eine authentischere Mojo Rojo kann man geröstete Mandeln hinzufügen.",
+    "tips": "Die Mojo Saucen können auch gut vorbereitet und im Kühlschrank aufbewahrt werden.  Für eine authentischere Mojo Rojo kann man geröstete Mandeln hinzufügen.",
     "nutrition": {
       "kcal": 835,
       "protein": 17,
@@ -666,6 +666,446 @@
       "fat": 48,
       "fiber": 6
     },
-    "featuredWeek": false
+    "featuredWeek": false,
+    "published": true
+  },
+  {
+    "title": "Vegane Joppiesauce mit Pommes",
+    "subtitle": "Cremige und würzige Sauce für Pommes und mehr!",
+    "category": "Hauptgerichte",
+    "preparationTime": "20 Min",
+    "cookTime": "5 Min",
+    "portion": 2,
+    "difficulty": "Leicht",
+    "tags": [],
+    "published": false,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Vegane Mayonnaise",
+        "items": [
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Pflanzenmilch (z.B. Sojamilch)"
+          },
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Zitronensaft"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Senf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Zucker"
+          }
+        ]
+      },
+      {
+        "group": "Für die Joppiesauce",
+        "items": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise (siehe oben)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Cayennepfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Pflanzenmilch (z.B. Sojamilch. Je fetthaltiger umso einfacher)"
+          },
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Zitronensaft"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Senf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Zucker"
+          }
+        ],
+        "substeps": [
+          "Für die vegane Mayonnaise: Pflanzenmilch, Öl, Zitronensaft, Senf, Salz und Zucker in einen hohen Behälter geben.\nWichtig ist, dass die Sojamilch wirklich kalt ist, sonst ensteht keine cremige Emulsion.",
+          "Anschließend wird alles mit dem Stabmixer für ca. 30-40 Sekunden kräftig durchgemixt. (manchmal auch etwas länger)",
+          "So lange bis es dick und cremig ist"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          }
+        ],
+        "substeps": [
+          "Zwiebel und Gewürzgurke sehr fein hacken. Je feiner, desto besser!"
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise (siehe oben)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Cayennepfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Vegane Mayonnaise in eine Schüssel geben."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          }
+        ],
+        "substeps": [
+          "Die fein gehackte Zwiebel und Gewürzgurke in eine Schüssel geben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Die restlichen Zutaten hinzufügen und alles gut umrühren",
+          "Alles nochmals gründlich verrühren, um sicherzustellen, dass die Zutaten gleichmäßig verteilt sind.",
+          "Zum Schluss mit Salz, Pfeffer und Apfelessig abschmecken"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [],
+        "substeps": [
+          "Die Sauce abdecken und mindestens 30 Minuten (besser länger) im Kühlschrank ziehen lassen, damit sich die Aromen entfalten können. Das verbessert den Geschmack deutlich."
+        ]
+      }
+    ],
+    "tips": "Die Joppiesauce hält sich im Kühlschrank etwa 3-4 Tage. Sie passt hervorragend zu Pommes, veganen Burgern, als Dip für Gemüse oder als Sauce zu gegrilltem Gemüse.",
+    "nutrition": {
+      "kcal": 780,
+      "protein": 5,
+      "carbs": 21,
+      "fat": 73,
+      "fiber": 1
+    },
+    "created_at": "2025-10-28T11:49:36.500785",
+    "updated_at": "2025-10-28T11:49:36.500785",
+    "version": 1,
+    "seo": {
+      "meta_description": "Vegane Joppiesauce mit Pommes - Cremige und würzige Sauce für Pommes und mehr! - (Saucen & Dips)",
+      "keywords": [
+        "pflanzenmilch (z.b. sojamilch)",
+        "vegane joppiesauce mit pommes",
+        "salz",
+        "geschmacksneutrales pflanzenöl (z.b. sonnenblumenöl)",
+        "apfelessig oder zitronensaft",
+        "saucen & dips",
+        "senf"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Vegane Joppiesauce mit Pommes",
+        "description": "Vegane Joppiesauce mit Pommes - Cremige und würzige Sauce für Pommes und mehr! - (Saucen & Dips)",
+        "recipeCategory": "Saucen & Dips",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "5 Min",
+        "recipeIngredient": [
+          "100 ml Pflanzenmilch (z.B. Sojamilch)",
+          "200 ml geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)",
+          "1 EL Apfelessig oder Zitronensaft",
+          "1/2 TL Senf",
+          "1/4 TL Salz",
+          "1/4 TL Zucker",
+          "200 ml Vegane Mayonnaise (siehe oben)",
+          "2 EL Ketchup",
+          "1 EL Curry Ketchup",
+          "1 EL Essiggurkenflüssigkeit",
+          "1 kleine Zwiebel",
+          "1 kleine Gewürzgurke",
+          "1/2 TL Currypulver",
+          "1/4 TL Paprikapulver edelsüß",
+          "1/4 TL Knoblauchpulver",
+          "1 Prise Cayennepfeffer (optional)",
+          "1 Prise Salz",
+          "1 Prise Pfeffer"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Für die vegane Mayonnaise: Pflanzenmilch, Öl, Zitronensaft, Senf, Salz und Zucker in einen hohen Behälter geben.\nWichtig ist, dass die Sojamilch wirklich kalt ist, sonst ensteht keine cremige Emulsion."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Anschließend wird alles mit dem Stabmixer für ca. 30-40 Sekunden kräftig durchgemixt. (manchmal auch etwas länger)"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "So lange bis es dick und cremig ist"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zwiebel und Gewürzgurke sehr fein hacken. Je feiner, desto besser!"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Vegane Mayonnaise in eine Schüssel geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die fein gehackte Zwiebel und Gewürzgurke in eine Schüssel geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die restlichen Zutaten hinzufügen und alles gut umrühren"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Alles nochmals gründlich verrühren, um sicherzustellen, dass die Zutaten gleichmäßig verteilt sind."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zum Schluss mit Salz, Pfeffer und Apfelessig abschmecken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Sauce abdecken und mindestens 30 Minuten (besser länger) im Kühlschrank ziehen lassen, damit sich die Aromen entfalten können. Das verbessert den Geschmack deutlich."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "780 kcal",
+          "proteinContent": "5g",
+          "carbohydrateContent": "21g",
+          "fatContent": "73g",
+          "fiberContent": "1g"
+        }
+      }
+    }
   }
 ]

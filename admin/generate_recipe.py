@@ -9,6 +9,49 @@ import subprocess
 from typing import Dict, List, Optional, Union
 from datetime import datetime
 
+# Git Auto-Commit Helper
+def git_commit_changes(commit_message: str) -> bool:
+    """Automatischer Git-Commit nach Speicherung.
+    
+    Args:
+        commit_message: Die Commit-Nachricht
+        
+    Returns:
+        bool: True wenn erfolgreich, False bei Fehler
+    """
+    try:
+        # Gehe zum Projekt-Root (eins über admin/)
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        
+        # Git add (nur admin/recipes.json und templates.json)
+        subprocess.run(
+            ["git", "add", "admin/recipes.json", "admin/templates.json", "admin/categories.json"],
+            cwd=repo_root,
+            capture_output=True,
+            timeout=5
+        )
+        
+        # Git commit
+        result = subprocess.run(
+            ["git", "commit", "-m", commit_message],
+            cwd=repo_root,
+            capture_output=True,
+            timeout=5,
+            text=True
+        )
+        
+        # Erfolg wenn Returncode 0 ODER "nothing to commit" (kein Fehler)
+        if result.returncode == 0:
+            return True
+        elif "nothing to commit" in result.stdout.lower():
+            return True  # Keine Änderungen, aber kein Fehler
+        else:
+            return False
+            
+    except Exception as e:
+        # Fehler beim Git-Commit sind nicht kritisch - speichern war ja erfolgreich
+        return False
+
 # Small helper to safely request a rerun across Streamlit versions
 def safe_rerun():
     try:
@@ -37,11 +80,12 @@ def safe_rerun():
             pass
 
 # Initialize session state
-# Initialize session state
 if 'edit_index' not in st.session_state:
     st.session_state['edit_index'] = None
 if 'preview_recipe' not in st.session_state:
     st.session_state['preview_recipe'] = None
+if 'auto_save_enabled' not in st.session_state:
+    st.session_state['auto_save_enabled'] = False  # Default: Auto-Save AUS
 
 def process_form_transfer(parsed):
     """Verarbeitet die Übertragung von Rezeptdaten in Formularfelder.
@@ -341,12 +385,15 @@ def load_templates():
     return []
 
 def save_templates(templates):
-    """Speichert benutzerdefinierte Vorlagen in templates.json."""
-    template_file = os.path.join(os.path.dirname(__file__), "admin", "templates.json")
+    """Speichert benutzerdefinierte Vorlagen in templates.json mit Git-Integration."""
+    # Script liegt bereits in admin/, also direkt templates.json verwenden
+    template_file = os.path.join(os.path.dirname(__file__), "templates.json")
     try:
-        os.makedirs(os.path.dirname(template_file), exist_ok=True)
         with open(template_file, "w", encoding="utf-8") as f:
             json.dump(templates, f, ensure_ascii=False, indent=2)
+        
+        # Git Auto-Commit
+        git_commit_changes(f"Admin: Vorlagen aktualisiert ({len(templates)} Vorlagen)")
         return True
     except Exception as e:
         st.error(f"❌ Fehler beim Speichern der Vorlagen: {e}")
@@ -370,20 +417,33 @@ def load_categories():
            "Suppen & Eintöpfe", "Snacks & Fingerfood", "Getränke"]
 
 def save_categories(categories):
-    """Speichert benutzerdefinierte Kategorien in categories.json."""
+    """Speichert benutzerdefinierte Kategorien in categories.json mit Git-Integration."""
     # Script liegt in admin/, categories.json ist im gleichen Ordner
     categories_file = os.path.join(os.path.dirname(__file__), "categories.json")
     try:
         with open(categories_file, "w", encoding="utf-8") as f:
             json.dump(categories, f, ensure_ascii=False, indent=2)
+        
+        # Git Auto-Commit
+        git_commit_changes(f"Admin: Kategorien aktualisiert ({len(categories)} Kategorien)")
         return True
     except Exception as e:
         st.error(f"❌ Fehler beim Speichern der Kategorien: {e}")
         return False
-        return False
 
-def save_recipes(recipes):
-    """Speichert Rezepte in recipes.json mit Fehlerbehandlung."""
+def save_recipes(recipes, force_save=False):
+    """Speichert Rezepte in recipes.json mit Fehlerbehandlung und Git-Integration.
+    
+    Args:
+        recipes: Liste der Rezepte
+        force_save: Wenn True, speichert ohne Bestätigung (expliziter Save-Button)
+    """
+    # Nur speichern wenn:
+    # 1. force_save=True (expliziter Save-Button) ODER
+    # 2. Auto-Save aktiviert ist
+    if not force_save and not st.session_state.get('auto_save_enabled', False):
+        return False  # Stillschweigend nicht speichern
+        
     try:
         # Backup erstellen (für Version History)
         if os.path.exists(RECIPES_FILE):
@@ -415,6 +475,8 @@ def save_recipes(recipes):
         with open(RECIPES_FILE, "r", encoding="utf-8") as f:
             saved_data = json.load(f)
             if len(saved_data) == len(recipes):
+                # ✨ GIT AUTO-COMMIT ✨
+                git_commit_changes(f"Admin: Rezepte aktualisiert ({len(recipes)} Rezepte)")
                 return True
             else:
                 st.error(f"⚠️ Verifizierung fehlgeschlagen: {len(saved_data)} statt {len(recipes)} Rezepte")
@@ -1982,6 +2044,23 @@ mode = st.sidebar.radio(
     ["Neues Rezept erstellen", "Rezept bearbeiten", "Rezept löschen", "Alle Rezepte ansehen", "🏠 Startseiten-Rezepte", "📋 Vorlagen verwalten"]
 )
 
+# Auto-Save Toggle (GANZ OBEN in der Sidebar, direkt nach Navigation)
+st.sidebar.markdown("---")
+st.sidebar.markdown("### ⚙️ Speicher-Einstellungen")
+auto_save = st.sidebar.checkbox(
+    "🔄 Auto-Save aktivieren",
+    value=st.session_state.get('auto_save_enabled', False),
+    help="Wenn aktiviert: Änderungen werden sofort gespeichert (alte Funktion). Wenn deaktiviert: Nur manuelles Speichern über Button."
+)
+st.session_state['auto_save_enabled'] = auto_save
+
+if not auto_save:
+    st.sidebar.warning("⚠️ Auto-Save ist AUS - du musst manuell speichern!")
+else:
+    st.sidebar.success("✅ Auto-Save ist AN - Änderungen werden sofort gespeichert")
+
+st.sidebar.markdown("---")
+
 recipes = load_recipes()
 
 # ====== Rezept-Erstellung ======
@@ -3011,7 +3090,7 @@ KRITISCH WICHTIG:
                 
                 all_recipes = load_recipes()
                 all_recipes.append(recipe_to_save)
-                if save_recipes(all_recipes):
+                if save_recipes(all_recipes, force_save=True):
                     st.success("✅ Rezept wurde erfolgreich gespeichert!")
                     # clear preview
                     st.session_state["preview_recipe"] = None
@@ -3118,7 +3197,7 @@ if mode == "Rezept bearbeiten":
                     
                     # Füge zur Liste hinzu
                     recipes.append(new_recipe)
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success(f"✅ '{new_recipe['title']}' wurde erstellt!")
                         time.sleep(1)
                         safe_rerun()
@@ -3131,7 +3210,7 @@ if mode == "Rezept bearbeiten":
                     if st.session_state.get("confirm_delete") == idx:
                         try:
                             recipes.pop(idx)
-                            if save_recipes(recipes):
+                            if save_recipes(recipes, force_save=True):
                                 st.success("✅ Rezept gelöscht!")
                                 st.session_state.pop("confirm_delete", None)
                                 st.session_state.pop("edit_index", None)
@@ -3269,7 +3348,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["ingredients"][gi]["items"][ji]
                                 r["ingredients"][gi]["items"][ji] = r["ingredients"][gi]["items"][ji-1]
                                 r["ingredients"][gi]["items"][ji-1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     # Wichtig: edit_index explizit setzen BEVOR rerun
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
@@ -3281,7 +3360,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["ingredients"][gi]["items"][ji]
                                 r["ingredients"][gi]["items"][ji] = r["ingredients"][gi]["items"][ji+1]
                                 r["ingredients"][gi]["items"][ji+1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
                     
@@ -3296,32 +3375,30 @@ if mode == "Rezept bearbeiten":
                             # Entferne Zutat aus dem Rezept und speichere sofort
                             try:
                                 r["ingredients"][gi]["items"].pop(ji)
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     safe_rerun()
                                 else:
                                     st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
                             except Exception as e:
                                 st.error(f"Fehler beim Löschen der Zutat: {e}")
                     
-                    # Übernehme geänderte Werte in das Rezeptobjekt
-                    try:
-                        r["ingredients"][gi]["items"][ji] = {"amount": a, "unit": u, "name": n}
-                    except Exception:
-                        pass
+                    # NICHT direkt übernehmen - nur im Formular anzeigen
+                    # Die Werte werden erst beim "💾 Änderungen speichern" gespeichert
+                    items.append({"amount": a, "unit": u, "name": n})
                 
                 # Möglichkeit, neue Zeile in der Gruppe hinzuzufügen
                 if st.button(f"Zutat zu Gruppe {gi+1} hinzufügen", key=f"add_ing_g{gi}"):
                     try:
                         r["ingredients"][gi]["items"].append({"amount":"", "unit":"", "name":""})
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             safe_rerun()
                         else:
                             st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
                     except Exception as e:
                         st.error(f"Fehler beim Hinzufügen der Zutat: {e}")
-                # Gruppenname in Rezept übernehmen
-                r["ingredients"][gi]["group"] = g_name
-                edit_ingredient_groups.append({"group": g_name, "items": r["ingredients"][gi]["items"]})
+                
+                # Sammle die bearbeiteten Zutaten (werden erst beim "Speichern" Button übernommen)
+                edit_ingredient_groups.append({"group": g_name, "items": items})
 
             # Steps edit
             st.subheader("Zubereitungsschritte bearbeiten")
@@ -3339,7 +3416,7 @@ if mode == "Rezept bearbeiten":
                             temp = r["steps"][si]
                             r["steps"][si] = r["steps"][si-1]
                             r["steps"][si-1] = temp
-                            if save_recipes(recipes):
+                            if save_recipes(recipes, force_save=True):
                                 st.session_state["edit_index"] = idx
                                 safe_rerun()
                 
@@ -3349,7 +3426,7 @@ if mode == "Rezept bearbeiten":
                             temp = r["steps"][si]
                             r["steps"][si] = r["steps"][si+1]
                             r["steps"][si+1] = temp
-                            if save_recipes(recipes):
+                            if save_recipes(recipes, force_save=True):
                                 st.session_state["edit_index"] = idx
                                 safe_rerun()
                 
@@ -3360,7 +3437,7 @@ if mode == "Rezept bearbeiten":
                 if st.button("✕ Schritt löschen", key=f"del_edit_step_{si}"):
                     try:
                         r["steps"].pop(si)
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             safe_rerun()
                         else:
                             st.error("❌ Speichern fehlgeschlagen")
@@ -3379,7 +3456,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["steps"][si]["needed"][ni]
                                 r["steps"][si]["needed"][ni] = r["steps"][si]["needed"][ni-1]
                                 r["steps"][si]["needed"][ni-1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
                     
@@ -3389,7 +3466,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["steps"][si]["needed"][ni]
                                 r["steps"][si]["needed"][ni] = r["steps"][si]["needed"][ni+1]
                                 r["steps"][si]["needed"][ni+1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
                     
@@ -3403,7 +3480,7 @@ if mode == "Rezept bearbeiten":
                         if st.button("✕", key=f"del_need_{si}_{ni}"):
                             try:
                                 r["steps"][si]["needed"].pop(ni)
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     safe_rerun()
                                 else:
                                     st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3417,7 +3494,7 @@ if mode == "Rezept bearbeiten":
                 if st.button(f"+ Benötigte Zutat zu Schritt {si+1}", key=f"add_need_{si}"):
                     try:
                         r["steps"][si].setdefault("needed", []).append({"amount": "", "unit": "", "name": ""})
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             safe_rerun()
                         else:
                             st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3442,7 +3519,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["steps"][si]["substeps"][subi]
                                 r["steps"][si]["substeps"][subi] = r["steps"][si]["substeps"][subi-1]
                                 r["steps"][si]["substeps"][subi-1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
                     
@@ -3452,7 +3529,7 @@ if mode == "Rezept bearbeiten":
                                 temp = r["steps"][si]["substeps"][subi]
                                 r["steps"][si]["substeps"][subi] = r["steps"][si]["substeps"][subi+1]
                                 r["steps"][si]["substeps"][subi+1] = temp
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     st.session_state["edit_index"] = idx
                                     safe_rerun()
                     
@@ -3470,7 +3547,7 @@ if mode == "Rezept bearbeiten":
                             try:
                                 if 0 <= subi < len(r["steps"][si].get("substeps", [])):
                                     r["steps"][si]["substeps"].pop(subi)
-                                    if save_recipes(recipes):
+                                    if save_recipes(recipes, force_save=True):
                                         safe_rerun()
                                     else:
                                         st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3488,7 +3565,7 @@ if mode == "Rezept bearbeiten":
                         try:
                             r["steps"][si].setdefault("substeps", []).append("")
                             st.session_state[f"num_substeps_{si}"] = len(r["steps"][si]["substeps"])  # sync counter
-                            if save_recipes(recipes):
+                            if save_recipes(recipes, force_save=True):
                                 safe_rerun()
                             else:
                                 st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3500,38 +3577,29 @@ if mode == "Rezept bearbeiten":
                             if r["steps"][si].get("substeps"):
                                 r["steps"][si]["substeps"].pop()
                                 st.session_state[f"num_substeps_{si}"] = len(r["steps"][si]["substeps"])  # sync
-                                if save_recipes(recipes):
+                                if save_recipes(recipes, force_save=True):
                                     safe_rerun()
                                 else:
                                     st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
                         except Exception as e:
                             st.error(f"Fehler beim Entfernen des letzten Zwischenschritts: {e}")
                 
-                # Speichere den Schritt
+                # Speichere den Schritt - NICHT direkt in r schreiben
                 step_data = {"time": s_time, "needed": needed_list, "substeps": substeps_to_keep}
-                # Übernehme geänderte Zeit/Listen in Rezeptobjekt
-                try:
-                    r["steps"][si]["time"] = s_time
-                    r["steps"][si]["needed"] = needed_list
-                    r["steps"][si]["substeps"] = substeps_to_keep
-                except Exception:
-                    pass
+                edit_steps.append(step_data)
                 
                 # Button zum Löschen des gesamten Schritts
                 if si > 0:  # Erlaube Löschen nur wenn es nicht der erste Schritt ist
                     if st.button(f"🗑️ Schritt {si+1} komplett löschen", key=f"del_step_{si}"):
                         try:
                             r["steps"].pop(si)
-                            if save_recipes(recipes):
+                            if save_recipes(recipes, force_save=True):
+                                st.session_state["edit_index"] = idx
                                 safe_rerun()
                             else:
                                 st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
                         except Exception as e:
                             st.error(f"Fehler beim Löschen des Schritts: {e}")
-                
-                # Füge den Schritt nur hinzu, wenn er nicht zum Löschen markiert ist
-                if not st.session_state.get(f"delete_step_{si}"):
-                    edit_steps.append(step_data)
                     
                 st.markdown("---")  # Visuelle Trennung zwischen den Schritten
 
@@ -3545,7 +3613,7 @@ if mode == "Rezept bearbeiten":
                             "needed": [],
                             "substeps": [""]
                         })
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             safe_rerun()
                         else:
                             st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3602,7 +3670,7 @@ if mode == "Rezept bearbeiten":
                         "fiber": int(nutr.get('fiber', 0))
                     }
                     # Speichere und lade neu
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.session_state["calculated_nutrition"] = None  # Clear
                         st.success("✅ Nährwerte übernommen!")
                         safe_rerun()
@@ -3626,9 +3694,13 @@ if mode == "Rezept bearbeiten":
                     r["image"] = new_img_b64
                     r["tips"] = e_tips
                     r["nutrition"] = {"kcal": e_kcal, "protein": e_protein, "carbs": e_carbs, "fat": e_fat, "fiber": e_fiber}
-                    # Zutaten und Schritte wurden bereits in r aktualisiert
+                    
+                    # WICHTIG: Übernehme bearbeitete Zutaten und Schritte
+                    r["ingredients"] = edit_ingredient_groups
+                    r["steps"] = edit_steps
+                    
                     recipes[idx] = r
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success("✅ Änderungen erfolgreich gespeichert!")
                     else:
                         st.error("❌ Speichern fehlgeschlagen - siehe Fehler oben")
@@ -3648,7 +3720,7 @@ if mode == "Rezept bearbeiten":
                     st.warning("Klicke nochmals zum Bestätigen des Löschens.")
                     if st.button("Bestätige endgültiges Löschen", key=f"del_confirm_{idx}"):
                         recipes.pop(idx)
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             st.success("✅ Rezept wurde gelöscht!")
                             # clear state and reload
                             st.session_state["confirm_delete"] = None
@@ -3741,7 +3813,7 @@ if mode == "Rezept löschen":
                             except IndexError:
                                 errors += 1
                         
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             if errors > 0:
                                 st.warning(f"⚠️ {deleted_count} Rezepte gelöscht, {errors} Fehler (ungültige Indizes)")
                             else:
@@ -3767,7 +3839,7 @@ if mode == "Rezept löschen":
                     for idx in st.session_state["bulk_selected"]:
                         recipes[idx]["category"] = new_category
                     
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success(f"✅ Kategorie für {len(st.session_state['bulk_selected'])} Rezepte geändert!")
                         time.sleep(1)
                         safe_rerun()
@@ -3930,7 +4002,7 @@ if mode == "🏠 Startseiten-Rezepte":
                 if st.button("🗑️ Rezept der Woche entfernen", key="remove_week"):
                     recipes[current_idx]["featuredWeek"] = False
                     recipes[current_idx]["featuredWeekText"] = ""
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success("✅ Entfernt!")
                         safe_rerun()
             else:
@@ -3977,7 +4049,7 @@ if mode == "🏠 Startseiten-Rezepte":
                             else:
                                 recipes[i]["featuredWeek"] = False
                         
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             st.success(f"✅ '{recipe.get('title')}' ist jetzt Rezept der Woche!")
                             safe_rerun()
         
@@ -4020,7 +4092,7 @@ if mode == "🏠 Startseiten-Rezepte":
                 if st.button("🗑️ Monatsrezept entfernen", key="remove_month"):
                     recipes[current_idx]["featuredMonth"] = False
                     recipes[current_idx]["featuredMonthText"] = ""
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success("✅ Entfernt!")
                         safe_rerun()
             else:
@@ -4067,7 +4139,7 @@ if mode == "🏠 Startseiten-Rezepte":
                             else:
                                 recipes[i]["featuredMonth"] = False
                         
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             st.success(f"✅ '{recipe.get('title')}' ist jetzt Monatsrezept!")
                             safe_rerun()
         
@@ -4110,7 +4182,7 @@ if mode == "🏠 Startseiten-Rezepte":
                 if st.button("🗑️ Jahreszeitrezept entfernen", key="remove_season"):
                     recipes[current_idx]["featuredSeason"] = False
                     recipes[current_idx]["featuredSeasonText"] = ""
-                    if save_recipes(recipes):
+                    if save_recipes(recipes, force_save=True):
                         st.success("✅ Entfernt!")
                         safe_rerun()
             else:
@@ -4157,7 +4229,7 @@ if mode == "🏠 Startseiten-Rezepte":
                             else:
                                 recipes[i]["featuredSeason"] = False
                         
-                        if save_recipes(recipes):
+                        if save_recipes(recipes, force_save=True):
                             st.success(f"✅ '{recipe.get('title')}' ist jetzt Jahreszeitrezept!")
                             safe_rerun()
 
@@ -4430,7 +4502,7 @@ if mode == "📋 Vorlagen verwalten":
                                         # Speichern
                                         if save_categories(categories):
                                             if recipes_updated:
-                                                save_recipes(recipes)
+                                                save_recipes(recipes, force_save=True)
                                                 st.success(f"✅ Kategorie '{old_name}' → '{new_name_clean}' umbenannt und {used_categories.get(old_name, 0)} Rezepte aktualisiert!")
                                             else:
                                                 st.success(f"✅ Kategorie '{old_name}' → '{new_name_clean}' umbenannt!")
@@ -4497,6 +4569,38 @@ if mode == "📋 Vorlagen verwalten":
 st.sidebar.markdown("## 📊 Dashboard")
 recipes_count = len(recipes)
 st.sidebar.metric("Gesamt Rezepte", recipes_count)
+
+# Git Status anzeigen
+try:
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    git_status = subprocess.run(
+        ["git", "status", "--short", "admin/recipes.json", "admin/templates.json", "admin/categories.json"],
+        cwd=repo_root,
+        capture_output=True,
+        timeout=2,
+        text=True
+    )
+    
+    if git_status.returncode == 0:
+        changes = git_status.stdout.strip()
+        if changes:
+            st.sidebar.warning(f"⚠️ Ungespeicherte Git-Änderungen")
+        else:
+            # Prüfe ob Commits vorhanden sind die noch nicht gepusht wurden
+            git_unpushed = subprocess.run(
+                ["git", "log", "@{u}..", "--oneline"],
+                cwd=repo_root,
+                capture_output=True,
+                timeout=2,
+                text=True
+            )
+            if git_unpushed.returncode == 0 and git_unpushed.stdout.strip():
+                unpushed_count = len(git_unpushed.stdout.strip().split("\n"))
+                st.sidebar.info(f"📤 {unpushed_count} Commit(s) bereit zum Push")
+            else:
+                st.sidebar.success("✅ Git: Alles synchronisiert")
+except:
+    pass  # Git-Status nicht kritisch
 
 # Kategorien-Verteilung
 if recipes_count > 0:
