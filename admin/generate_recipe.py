@@ -477,6 +477,17 @@ def save_recipes(recipes, force_save=False):
             if len(saved_data) == len(recipes):
                 # ✨ GIT AUTO-COMMIT ✨
                 git_commit_changes(f"Admin: Rezepte aktualisiert ({len(recipes)} Rezepte)")
+                
+                # 🗺️ SITEMAP REGENERIEREN
+                try:
+                    import subprocess
+                    sitemap_script = os.path.join(os.path.dirname(__file__), "generate_sitemap.py")
+                    if os.path.exists(sitemap_script):
+                        subprocess.run([sys.executable, sitemap_script], check=True, capture_output=True)
+                except Exception as e:
+                    # Sitemap-Fehler sollten nicht das Speichern verhindern
+                    print(f"⚠️ Sitemap-Generierung fehlgeschlagen: {e}")
+                
                 return True
             else:
                 st.error(f"⚠️ Verifizierung fehlgeschlagen: {len(saved_data)} statt {len(recipes)} Rezepte")
@@ -645,6 +656,162 @@ def decode_image(base64_str):
     if not base64_str:
         return None
     return base64.b64decode(base64_str)
+
+# ----- Bilder-Verwaltung -----
+def save_recipe_image(image_file, recipe_slug):
+    """Speichert Bild als Datei im public/recipe-images/ Ordner.
+    
+    Args:
+        image_file: Streamlit UploadedFile oder File-Like Object
+        recipe_slug: Eindeutiger Slug für das Rezept
+        
+    Returns:
+        str: Dateiname des gespeicherten Bildes (z.B. "kaesespaetzle-vegan-1234.jpg")
+    """
+    try:
+        from PIL import Image
+        import io
+        from datetime import datetime
+        
+        # Projekt-Root ermitteln (eins über admin/)
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        images_dir = os.path.join(project_root, "public", "recipe-images")
+        os.makedirs(images_dir, exist_ok=True)
+        
+        # Bild laden
+        image = Image.open(image_file)
+        
+        # Konvertiere zu RGB (wichtig für WebP)
+        if image.mode in ('RGBA', 'LA', 'P'):
+            background = Image.new('RGB', image.size, (255, 255, 255))
+            if image.mode == 'P':
+                image = image.convert('RGBA')
+            background.paste(image, mask=image.split()[-1] if image.mode in ('RGBA', 'LA') else None)
+            image = background
+        
+        # Skaliere auf max 1200px Breite (für Performance)
+        max_width = 1200
+        if image.width > max_width:
+            ratio = max_width / image.width
+            new_height = int(image.height * ratio)
+            image = image.resize((max_width, new_height), Image.Resampling.LANCZOS)
+        
+        # Generiere Dateinamen
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{recipe_slug}_{timestamp}.webp"
+        filepath = os.path.join(images_dir, filename)
+        
+        # Speichere als WebP (bessere Kompression)
+        image.save(filepath, 'WEBP', quality=85, optimize=True)
+        
+        return filename
+        
+    except Exception as e:
+        st.error(f"❌ Fehler beim Speichern des Bildes: {e}")
+        return None
+
+def list_recipe_images():
+    """Listet alle Rezeptbilder aus public/recipe-images/ UND src/assets/.
+    
+    Returns:
+        list: Liste von Dictionaries mit {filename, path, size, date, source}
+    """
+    try:
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        images = []
+        
+        # Quelle 1: public/recipe-images/
+        public_images_dir = os.path.join(project_root, "public", "recipe-images")
+        if os.path.exists(public_images_dir):
+            for filename in os.listdir(public_images_dir):
+                if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
+                    filepath = os.path.join(public_images_dir, filename)
+                    stat = os.stat(filepath)
+                    images.append({
+                        'filename': filename,
+                        'path': filepath,
+                        'size': stat.st_size,
+                        'date': datetime.fromtimestamp(stat.st_mtime),
+                        'source': 'public/recipe-images',
+                        'url': f"/recipe-images/{filename}"
+                    })
+        
+        # Quelle 2: src/assets/
+        assets_dir = os.path.join(project_root, "src", "assets")
+        if os.path.exists(assets_dir):
+            for filename in os.listdir(assets_dir):
+                if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
+                    filepath = os.path.join(assets_dir, filename)
+                    stat = os.stat(filepath)
+                    images.append({
+                        'filename': filename,
+                        'path': filepath,
+                        'size': stat.st_size,
+                        'date': datetime.fromtimestamp(stat.st_mtime),
+                        'source': 'src/assets',
+                        'url': f"/assets/{filename}"  # Vite URL
+                    })
+        
+        # Sortiere nach Datum (neueste zuerst)
+        images.sort(key=lambda x: x['date'], reverse=True)
+        return images
+        
+    except Exception as e:
+        st.error(f"❌ Fehler beim Laden der Bilder: {e}")
+        return []
+
+def get_image_url(filename):
+    """Gibt die URL für ein Rezeptbild zurück.
+    
+    Args:
+        filename: Dateiname des Bildes (z.B. "kaesespaetzle-vegan-123.webp")
+        
+    Returns:
+        str: Relative URL (z.B. "/recipe-images/kaesespaetzle-vegan-123.webp")
+    """
+    return f"/recipe-images/{filename}" if filename else ""
+
+def extract_images_from_recipes():
+    """Extrahiert alle Bilder aus recipes.json (Base64 oder Dateinamen).
+    
+    Returns:
+        list: Liste von Dictionaries mit {recipe, image_data, image_type, title}
+    """
+    try:
+        recipes = load_recipes()
+        images = []
+        
+        for recipe in recipes:
+            image = recipe.get('image', '')
+            if not image:
+                continue
+            
+            # Base64-Bild
+            if image.startswith('data:image'):
+                images.append({
+                    'recipe': recipe.get('slug', recipe.get('title', 'unknown')),
+                    'title': recipe.get('title', 'Unbekannt'),
+                    'image_data': image,
+                    'image_type': 'base64',
+                    'size': len(image) * 3 / 4,  # Grobe Schätzung
+                    'date': recipe.get('updated_at') or recipe.get('created_at') or 'Unbekannt'
+                })
+            # Dateiname
+            elif not image.startswith('http'):
+                images.append({
+                    'recipe': recipe.get('slug', recipe.get('title', 'unknown')),
+                    'title': recipe.get('title', 'Unbekannt'),
+                    'filename': image,
+                    'image_type': 'file',
+                    'size': 0,
+                    'date': recipe.get('updated_at') or recipe.get('created_at') or 'Unbekannt'
+                })
+        
+        return images
+        
+    except Exception as e:
+        st.error(f"❌ Fehler beim Extrahieren der Bilder: {e}")
+        return []
 
 
 # ----- Web Scraping -----
@@ -2041,7 +2208,7 @@ _ = load_api_key()
 # Hauptnavigation
 mode = st.sidebar.radio(
     "Was möchtest du tun?",
-    ["Neues Rezept erstellen", "Rezept bearbeiten", "Rezept löschen", "Alle Rezepte ansehen", "🏠 Startseiten-Rezepte", "📋 Vorlagen verwalten"]
+    ["Neues Rezept erstellen", "Rezept bearbeiten", "Rezept löschen", "Alle Rezepte ansehen", "🏠 Startseiten-Rezepte", "📋 Vorlagen verwalten", "📸 Bilder verwalten"]
 )
 
 # Auto-Save Toggle (GANZ OBEN in der Sidebar, direkt nach Navigation)
@@ -3225,10 +3392,236 @@ if mode == "Rezept bearbeiten":
                         st.session_state["confirm_delete"] = idx
                         st.warning("⚠️ Nochmal klicken zum Bestätigen!")
 
-            # AI helper for editing
-            with st.expander("AI-Hilfe für dieses Rezept (z. B. 'Ersetze X durch Y' oder 'Formuliere Tipps um')"):
-                ai_instruction = st.text_area("Anweisung an die AI (z. B. 'Ersetze 200g Mehl durch 200g Dinkelmehl')")
-                if st.button("AI-Anweisung anwenden"):
+            # AI helper for editing - ERWEITERT
+            with st.expander("🤖 KI-Assistent (Gemini)", expanded=False):
+                st.markdown("**Schnelle KI-Aktionen:**")
+                
+                col1, col2, col3, col4 = st.columns(4)
+                
+                with col1:
+                    if st.button("✨ SEO verbessern", key="ai_seo", help="Optimiert Titel, Untertitel und SEO-Text"):
+                        with st.spinner("🤖 KI optimiert SEO..."):
+                            prompt = f"""Du bist SEO-Experte für vegane Rezept-Websites.
+                            
+Aktuelles Rezept:
+Titel: {r.get('title', '')}
+Untertitel: {r.get('subtitle', '')}
+Kategorie: {r.get('category', '')}
+Zutaten: {', '.join([item.get('name', '') for group in r.get('ingredients', []) for item in group.get('items', [])])}
+
+Aufgabe:
+1. Verbessere den Titel (max 60 Zeichen, SEO-optimiert, appetitlich)
+2. Verbessere den Untertitel (max 120 Zeichen, verkaufsfördernd)
+3. Generiere SEO-Meta-Description (max 155 Zeichen, mit Keywords)
+
+Format GENAU so:
+TITEL: [neuer Titel]
+UNTERTITEL: [neuer Untertitel]
+META: [Meta-Description]"""
+                            
+                            result = call_gemini(prompt)
+                            if result:
+                                # Parse Result
+                                lines = result.strip().split('\n')
+                                for line in lines:
+                                    if line.startswith('TITEL:'):
+                                        st.session_state['ai_title'] = line.replace('TITEL:', '').strip()
+                                    elif line.startswith('UNTERTITEL:'):
+                                        st.session_state['ai_subtitle'] = line.replace('UNTERTITEL:', '').strip()
+                                    elif line.startswith('META:'):
+                                        st.session_state['ai_meta'] = line.replace('META:', '').strip()
+                                
+                                st.success("✅ SEO-Vorschläge generiert!")
+                                st.info("📝 Vorschläge weiter unten in den Feldern sichtbar")
+                                safe_rerun()
+                
+                with col2:
+                    if st.button("🏷️ Tags vorschlagen", key="ai_tags", help="Analysiert Rezept und schlägt Tags vor"):
+                        with st.spinner("🤖 KI analysiert Rezept..."):
+                            prompt = f"""Analysiere dieses vegane Rezept und schlage passende Tags vor.
+
+Rezept: {r.get('title', '')}
+Zutaten: {', '.join([item.get('name', '') for group in r.get('ingredients', []) for item in group.get('items', [])])}
+Schwierigkeit: {r.get('difficulty', '')}
+Zeit: {r.get('preparationTime', '')} + {r.get('cookTime', '')}
+
+Schlage 5-10 passende Tags vor aus diesen Kategorien:
+- Zeitaufwand: schnell, mittel, zeitintensiv
+- Ernährung: proteinreich, kalorienarm, glutenfrei, sojafrei, nussfrei
+- Anlass: Meal-Prep, Party, Festtag, Alltag
+- Stil: comfort food, healthy, herzhaft, süß
+- Jahreszeit: Sommer, Winter, Herbst, Frühling
+
+Format: Kommagetrennte Liste ohne Anführungszeichen."""
+                            
+                            result = call_gemini(prompt)
+                            if result:
+                                st.session_state['ai_tags'] = result.strip()
+                                st.success("✅ Tags generiert!")
+                                st.code(result.strip())
+                
+                with col3:
+                    if st.button("🔢 Nährwerte schätzen", key="ai_nutrition", help="Berechnet Nährwerte aus Zutaten"):
+                        with st.spinner("🤖 KI berechnet Nährwerte..."):
+                            ingredients_text = '\n'.join([
+                                f"{item.get('amount', '')} {item.get('unit', '')} {item.get('name', '')}"
+                                for group in r.get('ingredients', [])
+                                for item in group.get('items', [])
+                            ])
+                            
+                            prompt = f"""Schätze die Nährwerte pro Portion für dieses vegane Rezept.
+
+Portionen: {r.get('portion', 1)}
+Zutaten:
+{ingredients_text}
+
+Berechne die Nährwerte PRO PORTION und antworte NUR mit Zahlen im Format:
+KCAL: [Zahl]
+PROTEIN: [Zahl]
+CARBS: [Zahl]
+FAT: [Zahl]
+FIBER: [Zahl]"""
+                            
+                            result = call_gemini(prompt)
+                            if result:
+                                # Parse Result
+                                for line in result.strip().split('\n'):
+                                    if 'KCAL:' in line:
+                                        st.session_state['ai_kcal'] = int(''.join(filter(str.isdigit, line)))
+                                    elif 'PROTEIN:' in line:
+                                        st.session_state['ai_protein'] = int(''.join(filter(str.isdigit, line)))
+                                    elif 'CARBS:' in line:
+                                        st.session_state['ai_carbs'] = int(''.join(filter(str.isdigit, line)))
+                                    elif 'FAT:' in line:
+                                        st.session_state['ai_fat'] = int(''.join(filter(str.isdigit, line)))
+                                    elif 'FIBER:' in line:
+                                        st.session_state['ai_fiber'] = int(''.join(filter(str.isdigit, line)))
+                                
+                                st.success("✅ Nährwerte geschätzt!")
+                                st.info("📝 Werte weiter unten in den Feldern übernehmen")
+                                safe_rerun()
+                
+                with col4:
+                    if st.button("🔄 Variante erstellen", key="ai_variation", help="Generiert eine Rezept-Variante"):
+                        st.session_state["show_variation_options"] = True
+                        safe_rerun()
+                
+                # Varianten-Generator (zeigt sich nach Button-Klick)
+                if st.session_state.get("show_variation_options"):
+                    st.markdown("---")
+                    st.markdown("**🔄 Rezept-Variante generieren:**")
+                    
+                    variation_type = st.selectbox(
+                        "Art der Variante:",
+                        ["Glutenfrei", "High-Protein", "Low-Carb", "Budget-Version", "Schnellversion (< 30 Min)", 
+                         "Gourmet-Version", "Meal-Prep optimiert", "Kinder-freundlich", "Eigene..."],
+                        key="variation_type"
+                    )
+                    
+                    custom_variation = ""
+                    if variation_type == "Eigene...":
+                        custom_variation = st.text_input("Beschreibe die gewünschte Variante:", key="custom_variation")
+                    
+                    if st.button("🚀 Variante jetzt generieren", key="generate_variation"):
+                        variation_desc = custom_variation if variation_type == "Eigene..." else variation_type
+                        
+                        with st.spinner(f"🤖 Generiere {variation_desc}-Variante..."):
+                            ingredients_text = '\n'.join([
+                                f"- {item.get('amount', '')} {item.get('unit', '')} {item.get('name', '')}"
+                                for group in r.get('ingredients', [])
+                                for item in group.get('items', [])
+                            ])
+                            
+                            steps_text = '\n'.join([
+                                f"{i+1}. {step.get('substeps', [''])[0]}"
+                                for i, step in enumerate(r.get('steps', []))
+                            ])
+                            
+                            prompt = f"""Erstelle eine {variation_desc}-Variante von diesem veganen Rezept.
+
+ORIGINAL-REZEPT:
+Titel: {r.get('title', '')}
+Zutaten:
+{ingredients_text}
+
+Zubereitung:
+{steps_text}
+
+AUFGABE:
+Erstelle eine {variation_desc}-Version dieses Rezepts. Passe Zutaten UND Zubereitung an!
+
+FORMAT (GENAU einhalten):
+TITEL: [Neuer Titel inkl. '{variation_desc}']
+ZUTATEN:
+- [Menge] [Einheit] [Name]
+- [weitere Zutaten...]
+
+ZUBEREITUNG:
+1. [Schritt 1]
+2. [Schritt 2]
+...
+
+ÄNDERUNGEN:
+- [Was wurde geändert und warum]"""
+                            
+                            result = call_gemini(prompt)
+                            if result:
+                                st.session_state['ai_variation_result'] = result
+                                st.success(f"✅ {variation_desc}-Variante generiert!")
+                                safe_rerun()
+                    
+                    # Zeige generierte Variante
+                    if st.session_state.get('ai_variation_result'):
+                        st.markdown("---")
+                        st.markdown("**📋 Generierte Variante:**")
+                        st.code(st.session_state['ai_variation_result'], language="text")
+                        
+                        col_save, col_cancel = st.columns([1, 1])
+                        with col_save:
+                            if st.button("💾 Als neues Rezept speichern", key="save_variation"):
+                                # Parse die generierte Variante
+                                variation_text = st.session_state['ai_variation_result']
+                                parsed = extract_recipe_info(variation_text)
+                                
+                                if parsed:
+                                    # Erstelle neues Rezept basierend auf Original
+                                    new_recipe = r.copy()
+                                    new_recipe["title"] = parsed.get("title", r.get("title", "") + " (Variante)")
+                                    
+                                    # Aktualisiere mit AI-Vorschlägen
+                                    if parsed.get("ingredients"):
+                                        new_recipe["ingredients"] = parsed["ingredients"]
+                                    if parsed.get("steps"):
+                                        new_recipe["steps"] = parsed["steps"]
+                                    
+                                    # Entferne Metadaten für neues Rezept
+                                    new_recipe.pop("created_at", None)
+                                    new_recipe.pop("updated_at", None)
+                                    new_recipe.pop("version", None)
+                                    
+                                    # Füge zur Liste hinzu
+                                    recipes.append(new_recipe)
+                                    if save_recipes(recipes, force_save=True):
+                                        st.success(f"✅ Variante '{new_recipe['title']}' wurde erstellt!")
+                                        st.session_state.pop('ai_variation_result', None)
+                                        st.session_state.pop('show_variation_options', None)
+                                        time.sleep(1)
+                                        safe_rerun()
+                                    else:
+                                        st.error("❌ Fehler beim Speichern")
+                                else:
+                                    st.error("❌ Konnte Variante nicht parsen. Bitte manuell erstellen.")
+                        
+                        with col_cancel:
+                            if st.button("❌ Verwerfen", key="discard_variation"):
+                                st.session_state.pop('ai_variation_result', None)
+                                st.session_state.pop('show_variation_options', None)
+                                safe_rerun()
+                
+                st.markdown("---")
+                st.markdown("**Freie KI-Anweisung:**")
+                ai_instruction = st.text_area("Anweisung an die AI (z. B. 'Ersetze 200g Mehl durch 200g Dinkelmehl')", key="ai_custom")
+                if st.button("AI-Anweisung anwenden", key="ai_apply"):
                     try:
                         # Use the instruction text as input for recipe extraction
                         parsed = extract_recipe_info(ai_instruction)
@@ -3247,9 +3640,24 @@ if mode == "Rezept bearbeiten":
                     except Exception as e:
                         st.error(f"AI-Anwendung fehlgeschlagen: {e}")
 
-            # Vorbefüllte Felder
-            e_title = st.text_input("Titel*", value=r.get("title",""))
-            e_subtitle = st.text_input("Untertitel", value=r.get("subtitle",""))
+            # Vorbefüllte Felder - MIT KI-VORSCHLÄGEN
+            # Nutze KI-Vorschläge falls vorhanden
+            title_value = st.session_state.get('ai_title', r.get("title", ""))
+            subtitle_value = st.session_state.get('ai_subtitle', r.get("subtitle", ""))
+            
+            e_title = st.text_input("Titel*", value=title_value, key="edit_title")
+            if st.session_state.get('ai_title'):
+                st.success(f"💡 KI-Vorschlag übernommen!")
+                if st.button("❌ KI-Vorschlag verwerfen", key="clear_ai_title"):
+                    st.session_state.pop('ai_title', None)
+                    safe_rerun()
+            
+            e_subtitle = st.text_input("Untertitel", value=subtitle_value, key="edit_subtitle")
+            if st.session_state.get('ai_subtitle'):
+                st.success(f"💡 KI-Vorschlag übernommen!")
+                if st.button("❌ KI-Vorschlag verwerfen", key="clear_ai_subtitle"):
+                    st.session_state.pop('ai_subtitle', None)
+                    safe_rerun()
             
             # Kategorie mit dynamischer Liste
             categories_list = load_categories()
@@ -3623,20 +4031,46 @@ if mode == "Rezept bearbeiten":
             # tips & nutrition
             st.markdown("---")
             e_tips = st.text_area("Tipps", value=r.get("tips",""))
+            
             st.subheader("Nährwerte")
+            
+            # Zeige KI-Button wenn Nährwerte fehlen
+            if st.session_state.get('ai_kcal'):
+                st.info("💡 KI hat Nährwerte geschätzt - Übernimm sie mit den Buttons unten!")
+            
             nc1, nc2, nc3, nc4, nc5 = st.columns(5)
             with nc1:
-                e_kcal = st.number_input("kcal", min_value=0, value=int(r.get("nutrition",{}).get("kcal",0)), key="e_kcal")
+                kcal_value = st.session_state.get('ai_kcal', int(r.get("nutrition",{}).get("kcal",0)))
+                e_kcal = st.number_input("kcal", min_value=0, value=kcal_value, key="e_kcal")
+                if st.session_state.get('ai_kcal') and st.button("✅", key="accept_kcal"):
+                    st.session_state.pop('ai_kcal', None)
+                    safe_rerun()
             with nc2:
-                e_protein = st.number_input("Protein (g)", min_value=0, value=int(r.get("nutrition",{}).get("protein",0)), key="e_protein")
+                protein_value = st.session_state.get('ai_protein', int(r.get("nutrition",{}).get("protein",0)))
+                e_protein = st.number_input("Protein (g)", min_value=0, value=protein_value, key="e_protein")
+                if st.session_state.get('ai_protein') and st.button("✅", key="accept_protein"):
+                    st.session_state.pop('ai_protein', None)
+                    safe_rerun()
             with nc3:
-                e_carbs = st.number_input("KH (g)", min_value=0, value=int(r.get("nutrition",{}).get("carbs",0)), key="e_carbs")
+                carbs_value = st.session_state.get('ai_carbs', int(r.get("nutrition",{}).get("carbs",0)))
+                e_carbs = st.number_input("KH (g)", min_value=0, value=carbs_value, key="e_carbs")
+                if st.session_state.get('ai_carbs') and st.button("✅", key="accept_carbs"):
+                    st.session_state.pop('ai_carbs', None)
+                    safe_rerun()
             with nc4:
-                e_fat = st.number_input("Fett (g)", min_value=0, value=int(r.get("nutrition",{}).get("fat",0)), key="e_fat")
+                fat_value = st.session_state.get('ai_fat', int(r.get("nutrition",{}).get("fat",0)))
+                e_fat = st.number_input("Fett (g)", min_value=0, value=fat_value, key="e_fat")
+                if st.session_state.get('ai_fat') and st.button("✅", key="accept_fat"):
+                    st.session_state.pop('ai_fat', None)
+                    safe_rerun()
             with nc5:
-                e_fiber = st.number_input("Ballaststoffe (g)", min_value=0, value=int(r.get("nutrition",{}).get("fiber",0)), key="e_fiber")
+                fiber_value = st.session_state.get('ai_fiber', int(r.get("nutrition",{}).get("fiber",0)))
+                e_fiber = st.number_input("Ballast. (g)", min_value=0, value=fiber_value, key="e_fiber")
+                if st.session_state.get('ai_fiber') and st.button("✅", key="accept_fiber"):
+                    st.session_state.pop('ai_fiber', None)
+                    safe_rerun()
 
-            if st.button("🔬 Nährwerte berechnen (AI)", key="calc_nutr"):
+            if st.button("🔬 Nährwerte berechnen (Swiss Food DB)", key="calc_nutr"):
                 try:
                     # Berechne Nährwerte
                     with st.spinner("Berechne Nährwerte..."):
@@ -4761,7 +5195,7 @@ if st.sidebar.button("🔄 Auf Updates prüfen"):
     st.rerun()
 
 if st.sidebar.button("📦 Pakete neu installieren"):
-    required = ['requests', 'beautifulsoup4', 'google-generativeai']
+    required = ['requests', 'beautifulsoup4', 'google-generativeai', 'pillow']
     with st.spinner("Installiere Pakete..."):
         try:
             subprocess.check_call([sys.executable, "-m", "pip", "install", "--force-reinstall"] + required)
@@ -4769,5 +5203,169 @@ if st.sidebar.button("📦 Pakete neu installieren"):
             st.info("🔄 Bitte App neu starten")
         except Exception as e:
             st.error(f"❌ Fehler: {e}")
+
+# === Modus: Bilder verwalten ===
+if mode == "📸 Bilder verwalten":
+    st.header("📸 Bilder-Galerie & Verwaltung")
+    
+    st.markdown("""
+    **Alle Rezeptbilder:**
+    - Verwalte deine Bilder zentral
+    - Konvertiere Base64 zu WebP-Dateien
+    - Wiederverwende Bilder für neue Rezepte
+    """)
+    
+    # Tabs: Rezeptbilder vs Galerie
+    tab1, tab2 = st.tabs(["📋 Rezeptbilder (aus JSON)", "📁 Galerie (Dateien)"])
+    
+    with tab1:
+        st.subheader("Bilder aus Rezepten")
+        
+        recipe_images = extract_images_from_recipes()
+        
+        if not recipe_images:
+            st.info("📁 Keine Bilder in Rezepten gefunden.")
+        else:
+            st.success(f"✅ {len(recipe_images)} Bild(er) in Rezepten")
+            
+            # Suche
+            search_recipe = st.text_input("🔍 Suche nach Rezeptname", placeholder="z.B. Käsespätzle", key="search_recipe")
+            
+            if search_recipe:
+                recipe_images = [img for img in recipe_images if search_recipe.lower() in img['title'].lower()]
+                st.info(f"🔎 {len(recipe_images)} Treffer")
+            
+            # Anzeige
+            cols_per_row = 3
+            for i in range(0, len(recipe_images), cols_per_row):
+                cols = st.columns(cols_per_row)
+                
+                for col_idx, img in enumerate(recipe_images[i:i+cols_per_row]):
+                    with cols[col_idx]:
+                        try:
+                            # Zeige Bild
+                            if img['image_type'] == 'base64':
+                                st.image(img['image_data'], use_container_width=True)
+                                
+                                # Info
+                                st.caption(f"**{img['title']}**")
+                                size_mb = img['size'] / (1024 * 1024)
+                                st.caption(f"� {size_mb:.1f} MB (Base64) | 📅 {img['date']}")
+                                st.caption(f"🔖 {img['recipe']}")
+                                
+                                # Aktion: Zu Datei konvertieren
+                                if st.button("💾 Als WebP speichern", key=f"convert_{img['recipe']}", help="Konvertiert zu Datei"):
+                                    with st.spinner("Konvertiere..."):
+                                        try:
+                                            # Decode Base64
+                                            import io
+                                            from PIL import Image
+                                            
+                                            # Extrahiere Base64-Daten
+                                            if ',' in img['image_data']:
+                                                base64_data = img['image_data'].split(',', 1)[1]
+                                            else:
+                                                base64_data = img['image_data']
+                                            
+                                            # Decode und öffne als Bild
+                                            image_bytes = base64.b64decode(base64_data)
+                                            image_file = io.BytesIO(image_bytes)
+                                            
+                                            # Speichere als Datei
+                                            filename = save_recipe_image(image_file, img['recipe'])
+                                            
+                                            if filename:
+                                                st.success(f"✅ Gespeichert: {filename}")
+                                                st.info("💡 Du kannst jetzt das Rezept bearbeiten und den Dateinamen verwenden!")
+                                            
+                                        except Exception as e:
+                                            st.error(f"❌ Fehler: {e}")
+                            
+                            else:  # file
+                                # Zeige Vorschau (falls Datei existiert)
+                                st.caption(f"**{img['title']}**")
+                                st.code(img['filename'], language=None)
+                                st.caption(f"🔖 {img['recipe']}")
+                        
+                        except Exception as e:
+                            st.error(f"Fehler: {e}")
+    
+    with tab2:
+        st.subheader("Datei-Galerie")
+        
+        images = list_recipe_images()
+        
+        if not images:
+            st.info("📁 Noch keine Dateien in der Galerie. Konvertiere Base64-Bilder oder lade neue hoch.")
+        else:
+            st.success(f"✅ {len(images)} Datei(en) gefunden")
+            
+            # Suche
+            search_query = st.text_input("🔍 Suche nach Dateiname", placeholder="z.B. käsespätzle", key="search_gallery")
+            
+            # Filter
+            if search_query:
+                images = [img for img in images if search_query.lower() in img['filename'].lower()]
+                st.info(f"🔎 {len(images)} Treffer")
+            
+            # Anzeige
+            cols_per_row = 3
+            for i in range(0, len(images), cols_per_row):
+                cols = st.columns(cols_per_row)
+                
+                for col_idx, img in enumerate(images[i:i+cols_per_row]):
+                    with cols[col_idx]:
+                        try:
+                            # Zeige Bild
+                            st.image(img['path'], use_container_width=True)
+                            
+                            # Info
+                            st.caption(f"**{img['filename']}**")
+                            size_mb = img['size'] / (1024 * 1024)
+                            st.caption(f"📏 {size_mb:.2f} MB | 📅 {img['date'].strftime('%d.%m.%Y %H:%M')}")
+                            st.caption(f"📂 {img['source']}")
+                            
+                            # URL zum Kopieren
+                            st.code(img['url'], language=None)
+                            
+                            # Aktionen
+                            col_del, col_use = st.columns(2)
+                            
+                            with col_del:
+                                # Nur löschen wenn nicht in assets (sind statisch)
+                                if img['source'] != 'src/assets':
+                                    if st.button("🗑️", key=f"del_img_{img['filename']}_{img['source']}", help="Bild löschen"):
+                                        try:
+                                            os.remove(img['path'])
+                                            st.success("✅ Gelöscht!")
+                                            time.sleep(0.5)
+                                            safe_rerun()
+                                        except Exception as e:
+                                            st.error(f"❌ Fehler: {e}")
+                                else:
+                                    st.caption("🔒 Statisch")
+                            
+                            with col_use:
+                                if st.button("📋", key=f"copy_img_{img['filename']}_{img['source']}", help="URL kopieren"):
+                                    st.session_state['selected_image'] = img['url']
+                                    st.info(f"✅ {img['url']}")
+                            
+                        except Exception as e:
+                            st.error(f"Fehler beim Laden: {e}")
+        
+        # Upload neuer Bilder
+        st.markdown("---")
+        st.subheader("📤 Neues Bild hochladen")
+        
+        upload_file = st.file_uploader("Bild auswählen", type=['jpg', 'jpeg', 'png', 'webp'], key="gallery_upload")
+        upload_slug = st.text_input("Slug/Name (z.B. 'vegane-pizza')", key="gallery_slug")
+        
+        if st.button("💾 Bild speichern") and upload_file and upload_slug:
+            with st.spinner("Speichere Bild..."):
+                filename = save_recipe_image(upload_file, upload_slug)
+                if filename:
+                    st.success(f"✅ Bild gespeichert: {filename}")
+                    time.sleep(1)
+                    safe_rerun()
 
 # ========== ENDE TEIL 2 ==========
