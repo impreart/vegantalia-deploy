@@ -368,7 +368,7 @@
     "category": "Hauptgerichte",
     "preparationTime": "20 Min",
     "cookTime": "45 Min",
-    "portion": 2,
+    "portion": 4,
     "difficulty": "Mittel",
     "image": "",
     "ingredients": [
@@ -531,6 +531,19 @@
         ]
       },
       {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "Liter",
+            "name": "Salzwasser"
+          }
+        ],
+        "substeps": [
+          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
+        ]
+      },
+      {
         "time": "30 Min",
         "needed": [
           {
@@ -578,19 +591,6 @@
           "Für die Mojo Rojo die rote Spitzpaprika entkernen und im Backofen , der Heißluftfritteuse, Grill oder Pfanne kurz angrillen.",
           "Nun müssen alle Zutaten mehrere Minuten im Mixer zu einem zerkleinert werden. Sollte die Sauce zu fest sein, muss noch etwas Wasser rein. Ist es zu dünnflüssig, dann etwas mehr Paprika.",
           "Je länger die  Mojo Rojo zieht um so besser"
-        ]
-      },
-      {
-        "time": "5 Min",
-        "needed": [
-          {
-            "amount": "2",
-            "unit": "Liter",
-            "name": "Salzwasser"
-          }
-        ],
-        "substeps": [
-          "Das Wasser abgießen, aber einen kleinen Rest im Topf lassen."
         ]
       },
       {
@@ -658,7 +658,7 @@
         ]
       }
     ],
-    "tips": "Die Mojo Saucen können auch gut vorbereitet und im Kühlschrank aufbewahrt werden.  Statt Ñora-Paprika können auch andere milde, getrocknete rote Paprika verwendet werden. Für eine authentischere Mojo Rojo kann man geröstete Mandeln hinzufügen.",
+    "tips": "Die Mojo Saucen können auch gut vorbereitet und im Kühlschrank aufbewahrt werden.  Für eine authentischere Mojo Rojo kann man geröstete Mandeln hinzufügen.",
     "nutrition": {
       "kcal": 835,
       "protein": 17,
@@ -666,6 +666,7 @@
       "fat": 48,
       "fiber": 6
     },
-    "featuredWeek": false
+    "featuredWeek": false,
+    "published": true
   }
 ]
