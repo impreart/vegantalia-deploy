@@ -1,0 +1,153 @@
+[
+  {
+    "title": "Vegane Käsespätzle mit Lauch und Räuchertofu",
+    "subtitle": "",
+    "category": "Hauptgerichte",
+    "preparationTime": "20 Min",
+    "cookTime": "45 Min",
+    "portion": 4,
+    "difficulty": "Mittel",
+    "image": "",
+    "ingredients": [
+      {
+        "group": "Spätzle",
+        "items": [
+          { "amount": 225, "unit": "g", "name": "Weizenmehl" },
+          { "amount": 75, "unit": "g", "name": "Hartweizengrieß" },
+          { "amount": 3, "unit": "EL", "name": "Sojamehl" },
+          { "amount": 240, "unit": "ml", "name": "Mineralwasser" },
+          { "amount": 1, "unit": "Prise", "name": "Kurkuma" },
+          { "amount": 0.5, "unit": "TL", "name": "Salz" },
+          { "amount": 1, "unit": "Prise", "name": "Pfeffer" }
+        ]
+      },
+      {
+        "group": "Käsesauce",
+        "items": [
+          { "amount": 80, "unit": "g", "name": "Sonnenblumenkerne" },
+          { "amount": 125, "unit": "ml", "name": "ungesüßte Hafer- oder Sojamilch" },
+          { "amount": 1, "unit": "TL", "name": "Weißweinessig" },
+          { "amount": 1.5, "unit": "TL", "name": "Senf" },
+          { "amount": 3, "unit": "EL", "name": "Hefeflocken" },
+          { "amount": 1, "unit": "TL", "name": "helle Misopaste" },
+          { "amount": 1, "unit": "Prise", "name": "Salz (Käsesauce)" },
+          { "amount": 1, "unit": "Prise", "name": "Pfeffer (Käsesauce)" },
+          { "amount": 1, "unit": "Prise", "name": "Kurkuma (Käsesauce)" }
+        ]
+      },
+      {
+        "group": "Außerdem",
+        "items": [
+          { "amount": 1, "unit": "Stange", "name": "Lauch" },
+          { "amount": 200, "unit": "g", "name": "Räuchertofu" },
+          { "amount": 2, "unit": "EL", "name": "Olivenöl" },
+          { "amount": 1, "unit": "EL", "name": "frisch gehackte Petersilie" }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          { "amount": 80, "unit": "g", "name": "Sonnenblumenkerne" },
+          { "amount": 125, "unit": "ml", "name": "Pflanzenmilch" },
+          { "amount": 1, "unit": "TL", "name": "Essig" },
+          { "amount": 1.5, "unit": "TL", "name": "Senf" },
+          { "amount": 3, "unit": "EL", "name": "Hefeflocken" },
+          { "amount": 1, "unit": "TL", "name": "Misopaste" },
+          { "amount": 1, "unit": "Prise", "name": "Gewürze" }
+        ],
+        "substeps": [
+          "Sonnenblumenkerne in einen Mixer geben",
+          "Zu einem feinen Pulver zermahlen",
+          "Restliche Zutaten (Pflanzenmilch, Essig, Senf, Hefeflocken, Misopaste, Salz, Pfeffer, Kurkuma) dazugeben",
+          "Alles zu einer glatten Sauce verarbeiten und zur Seite stellen"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [],
+        "substeps": [
+          "Einen großen Topf mit Salzwasser zum Kochen bringen"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          { "amount": 1, "unit": "Stange", "name": "Lauch" },
+          { "amount": 200, "unit": "g", "name": "Räuchertofu" }
+        ],
+        "substeps": [
+          "Den Lauch waschen",
+          "In Ringe schneiden",
+          "Den Räuchertofu würfeln"
+        ]
+      },
+      {
+        "time": "10 Min",
+        "needed": [
+          { "amount": 2, "unit": "EL", "name": "Olivenöl" },
+          { "amount": 1, "unit": "EL", "name": "Wasser" },
+          { "amount": 0, "unit": "", "name": "Salz & Pfeffer" }
+        ],
+        "substeps": [
+          "Einen Esslöffel Olivenöl in einer Pfanne erhitzen",
+          "Den Lauch zusammen mit einem Esslöffel Wasser dazugeben",
+          "Circa fünf Minuten anschwitzen",
+          "Mit Salz und Pfeffer würzen",
+          "In einer separaten Pfanne Öl erhitzen",
+          "Den Räuchertofu darin knusprig anbraten"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          { "amount": 225, "unit": "g", "name": "Weizenmehl" },
+          { "amount": 75, "unit": "g", "name": "Hartweizengrieß" },
+          { "amount": 3, "unit": "EL", "name": "Sojamehl" },
+          { "amount": 240, "unit": "ml", "name": "Mineralwasser" },
+          { "amount": 0, "unit": "", "name": "Gewürze" }
+        ],
+        "substeps": [
+          "Weizenmehl in einer Schüssel mit Hartweizengrieß vermengen",
+          "Sojamehl, Salz, Pfeffer und Kurkuma hinzufügen",
+          "Alles gut vermengen",
+          "Mineralwasser dazugeben",
+          "Mit einem Kochlöffel gut umrühren (Teig sollte relativ weich und klebrig sein)"
+        ]
+      },
+      {
+        "time": "10 Min",
+        "needed": [],
+        "substeps": [
+          "Teig in eine Spätzlepresse füllen",
+          "Ins kochende Salzwasser drücken",
+          "Wenn die Spätzle zu lang werden, mit einem Messer durchtrennen",
+          "Sobald die Spätzle oben schwimmen, mit einer Schaumkelle abschöpfen",
+          "Kurz mit kaltem Wasser abspülen, sodass sie nicht zu weich werden"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          { "amount": 0, "unit": "", "name": "Käsesauce" },
+          { "amount": 1, "unit": "Stange", "name": "Lauch" },
+          { "amount": 0, "unit": "", "name": "Spätzle" },
+          { "amount": 200, "unit": "g", "name": "Räuchertofu" },
+          { "amount": 1, "unit": "EL", "name": "Petersilie" }
+        ],
+        "substeps": [
+          "Käsesauce in einer Pfanne erhitzen",
+          "Den Lauch dazugeben",
+          "Die fertigen Spätzle untermischen",
+          "Den Räuchertofu hinzufügen",
+          "Alles warm werden lassen",
+          "Mit Salz und Pfeffer würzen",
+          "Mit Petersilie bestreuen und servieren"
+        ]
+      }
+    ],
+    "tips": "Die Sonnenblumenkerne können bei einem Hochleistungsmixer trocken verwendet werden. Bei weniger starken Mixern können sie vorher eingeweicht werden. Wichtig: Nur ungesüßte Pflanzenmilch verwenden, sonst wird die Sauce leicht süßlich. Wer keine Spätzlepresse hat, kann den Teig auch durch ein Sieb oder Spätzlehobel drücken. Die Käsespätzle schmecken auch am nächsten Tag aufgewärmt noch hervorragend. Für eine knusprige Variante die fertigen Käsespätzle in einer Pfanne mit etwas Öl anbraten.",
+    "nutrition": { "kcal": 580, "protein": 22, "carbs": 68, "fat": 24, "fiber": 6 }
+  }
+]
