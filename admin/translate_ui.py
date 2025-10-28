@@ -275,14 +275,13 @@ def main():
         # Merge mit existierenden Übersetzungen
         complete_translations = merge_dicts(existing_translations, newly_translated)
         
-        # Erstelle vollständiges JSON
-        full_json = ui_texts.copy()
-        full_json[lang_code] = complete_translations
+        # Erstelle JSON mit nur dieser Sprache
+        output_json = {lang_code: complete_translations}
         
         # Speichere
         output_file = Path(__file__).parent.parent / "src" / "lib" / f"ui-translations-{lang_code}.json"
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(full_json, f, ensure_ascii=False, indent=2)
+            json.dump(output_json, f, ensure_ascii=False, indent=2)
         
         print(f"✅ Gespeichert: {output_file.name} ({existing_count} wiederverwendet + {missing_count} neu)")
         print()
