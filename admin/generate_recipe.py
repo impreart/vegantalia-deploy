@@ -149,9 +149,15 @@ def process_form_transfer(parsed):
                 items = group.get("items", [])
                 st.session_state[f"items_{i}"] = max(1, len(items))
                 for j, item in enumerate(items):
-                    st.session_state[f"amount_{i}_{j}"] = str(item.get("amount", ""))
-                    st.session_state[f"unit_{i}_{j}"] = str(item.get("unit", ""))
-                    st.session_state[f"name_{i}_{j}"] = str(item.get("name", ""))
+                    key_amount = f"amount_{i}_{j}"
+                    key_unit = f"unit_{i}_{j}"
+                    key_name = f"name_{i}_{j}"
+                    if key_amount not in st.session_state:
+                        st.session_state[key_amount] = str(item.get("amount", ""))
+                    if key_unit not in st.session_state:
+                        st.session_state[key_unit] = str(item.get("unit", ""))
+                    if key_name not in st.session_state:
+                        st.session_state[key_name] = str(item.get("name", ""))
         else:
             # Setze Minimalwerte wenn keine Zutaten vorhanden
             st.session_state["num_groups"] = 1
@@ -166,13 +172,21 @@ def process_form_transfer(parsed):
                 needed = step.get("needed", [])
                 st.session_state[f"needed_{s}"] = len(needed)
                 for n, need in enumerate(needed):
-                    st.session_state[f"n_amount_{s}_{n}"] = str(need.get("amount", ""))
-                    st.session_state[f"n_unit_{s}_{n}"] = str(need.get("unit", ""))
-                    st.session_state[f"n_name_{s}_{n}"] = str(need.get("name", ""))
+                    key_n_amount = f"n_amount_{s}_{n}"
+                    key_n_unit = f"n_unit_{s}_{n}"
+                    key_n_name = f"n_name_{s}_{n}"
+                    if key_n_amount not in st.session_state:
+                        st.session_state[key_n_amount] = str(need.get("amount", ""))
+                    if key_n_unit not in st.session_state:
+                        st.session_state[key_n_unit] = str(need.get("unit", ""))
+                    if key_n_name not in st.session_state:
+                        st.session_state[key_n_name] = str(need.get("name", ""))
                 substeps = step.get("substeps", [])
                 st.session_state[f"num_substeps_{s}"] = max(1, len(substeps))
                 for subi, subv in enumerate(substeps):
-                    st.session_state[f"subtext_{s}_{subi}"] = str(subv)
+                    key_subtext = f"subtext_{s}_{subi}"
+                    if key_subtext not in st.session_state:
+                        st.session_state[key_subtext] = str(subv)
         else:
             # Setze Minimalwerte wenn keine Schritte vorhanden
             st.session_state["num_steps"] = 1
@@ -3072,7 +3086,9 @@ KRITISCH WICHTIG:
                 n_name = st.text_input(f"Zutat", key=f"n_name_{s}_{n}", label_visibility="collapsed", placeholder="Zutat")
             with cols[5]:
                 if st.button("✕", key=f"del_needed_create_{s}_{n}", help="Zutat entfernen"):
-                    st.session_state[f"needed_{s}"] = max(0, num_needed - 1)
+                    key_needed = f"needed_{s}"
+                    st.session_state.pop(key_needed, None)
+                    st.session_state[key_needed] = max(0, num_needed - 1)
                     for field in ["n_amount", "n_unit", "n_name"]:
                         st.session_state.pop(f"{field}_{s}_{n}", None)
                     safe_rerun()
@@ -3094,10 +3110,12 @@ KRITISCH WICHTIG:
                     if st.button("↑", key=f"up_sub_{s}_{sub}", help="Nach oben"):
                         key_current = f"subtext_{s}_{sub}"
                         key_above = f"subtext_{s}_{sub-1}"
-                        temp = st.session_state.get(key_current, "")
-                        st.session_state[key_current] = st.session_state.get(key_above, "")
-                        st.session_state[key_above] = temp
-                        safe_rerun()
+                        # Nur tauschen, wenn die Keys noch nicht von einem Widget initialisiert wurden
+                        if key_current not in st.session_state or key_above not in st.session_state:
+                            temp = st.session_state.get(key_current, "")
+                            st.session_state[key_current] = st.session_state.get(key_above, "")
+                            st.session_state[key_above] = temp
+                            safe_rerun()
             
             with subcols[1]:
                 if sub < num_sub - 1:

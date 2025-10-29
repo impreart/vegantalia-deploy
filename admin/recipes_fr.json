@@ -2780,5 +2780,2378 @@
     "original_title": "Vegane Weißwurst",
     "translation_source": "deepl",
     "translated_at": "2025-10-29T10:08:32.792893"
+  },
+  {
+    "title": "Ragoût de soja aux abricots",
+    "subtitle": "du livre de cuisine romain de Marcus Gavius Apicius : De re coquinaria veganisé.",
+    "category": "Hauptgerichte",
+    "preparationTime": "20 Min",
+    "cookTime": "45 Min",
+    "portion": 2,
+    "difficulty": "Mittel",
+    "tags": [
+      "römisch",
+      "ragout"
+    ],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Ingrédients",
+        "items": [
+          {
+            "amount": "800",
+            "unit": "g",
+            "name": "Emincé de soja"
+          },
+          {
+            "amount": "1.5",
+            "unit": "l",
+            "name": "bouillon de légumes chaud"
+          },
+          {
+            "amount": "3",
+            "unit": "EL",
+            "name": "Huile d'olive"
+          },
+          {
+            "amount": "2",
+            "unit": "Stück",
+            "name": "Oignons, finement hachés"
+          },
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "vin rouge végétalien (ou vin rouge sans alcool / jus de raisin)"
+          },
+          {
+            "amount": "4",
+            "unit": "EL",
+            "name": "Sauce sans poisson"
+          },
+          {
+            "amount": "500",
+            "unit": "g",
+            "name": "abricots, dénoyautés et coupés en quartiers"
+          },
+          {
+            "amount": "1",
+            "unit": "Messerspitze",
+            "name": "poivre noir fraîchement moulu"
+          },
+          {
+            "amount": "1",
+            "unit": "Messerspitze",
+            "name": "cumin moulu"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "aneth haché"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "menthe hachée"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "sirop de betterave (ou sirop d'agave)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Jus de poire concentré"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Vinaigre de vin"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Sel"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "15 Min",
+        "needed": [
+          {
+            "amount": "800",
+            "unit": "g",
+            "name": "Sojageschnetzeltes"
+          },
+          {
+            "amount": "1.5",
+            "unit": "l",
+            "name": "heiße Gemüsebrühe"
+          }
+        ],
+        "substeps": [
+          "Mettre l'émincé de soja dans un grand bol."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "3",
+            "unit": "EL",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "800",
+            "unit": "g",
+            "name": "Sojageschnetzeltes"
+          }
+        ],
+        "substeps": [
+          "Chauffer l'huile d'olive dans une grande casserole."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "Stück",
+            "name": "Zwiebeln, fein gehackt"
+          }
+        ],
+        "substeps": [
+          "Ajoutez les oignons hachés et faites-les revenir jusqu'à ce qu'ils deviennent translucides."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "veganer Rotwein (oder alkoholfreier Rotwein / Traubensaft)"
+          }
+        ],
+        "substeps": [
+          "Mouiller avec le vin rouge et laisser réduire brièvement."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "4",
+            "unit": "EL",
+            "name": "No-Fish Sauce"
+          },
+          {
+            "amount": "1",
+            "unit": "Messerspitze",
+            "name": "frisch gemahlener schwarzer Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "Messerspitze",
+            "name": "gemahlener Kümmel"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "gehackter Dill"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "gehackte Minze"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Zuckerrübensirup (oder Agavendicksaft)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Birnendicksaft"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Weinessig"
+          }
+        ],
+        "substeps": [
+          "Ajouter la sauce no-fish, le poivre, le cumin, l'aneth, la menthe, le sirop de betterave sucrière (ou le sirop d'agave), le sirop de poire et le vinaigre de vin."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "500",
+            "unit": "g",
+            "name": "Aprikosen, entsteint und in Spalten geschnitten"
+          }
+        ],
+        "substeps": [
+          "Incorporer les abricots frais et porter brièvement à ébullition."
+        ]
+      },
+      {
+        "time": "25 Min",
+        "needed": [],
+        "substeps": [
+          "Laisser mijoter doucement le ragoût à feu doux pendant environ 25-30 minutes, jusqu'à ce que les vermicelles de soja soient tendres et que les abricots soient légèrement défaits."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Messerspitze",
+            "name": "frisch gemahlener schwarzer Pfeffer"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "gehackte Minze"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Weinessig"
+          }
+        ],
+        "substeps": [
+          "Assaisonnez avec du sel, du poivre et, si vous le souhaitez, un peu de menthe ou de vinaigre supplémentaire."
+        ]
+      }
+    ],
+    "tips": [
+      "S",
+      "e",
+      "r",
+      "v",
+      "i",
+      "e",
+      "r",
+      "e",
+      " ",
+      "d",
+      "a",
+      "s",
+      " ",
+      "R",
+      "a",
+      "g",
+      "o",
+      "u",
+      "t",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "R",
+      "e",
+      "i",
+      "s",
+      ",",
+      " ",
+      "K",
+      "a",
+      "r",
+      "t",
+      "o",
+      "f",
+      "f",
+      "e",
+      "l",
+      "p",
+      "ü",
+      "r",
+      "e",
+      "e",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "P",
+      "o",
+      "l",
+      "e",
+      "n",
+      "t",
+      "a",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 332,
+      "protein": 8,
+      "carbs": 49,
+      "fat": 14,
+      "fiber": 4
+    },
+    "created_at": "2025-10-29T13:19:22.434546",
+    "updated_at": "2025-10-29T13:19:22.434546",
+    "version": 1,
+    "seo": {
+      "meta_description": "Sojaragout mit Aprikosen - aus dem römischen Kochbuch des Marcus Gavius Apicius: De re coquinaria veganisiert. - (Hauptgerichte)",
+      "keywords": [
+        "hauptgerichte",
+        "sojaragout mit aprikosen",
+        "olivenöl",
+        "römisch",
+        "veganer rotwein (oder alkoholfreier rotwein / traubensaft)",
+        "ragout",
+        "heiße gemüsebrühe",
+        "sojageschnetzeltes",
+        "zwiebeln, fein gehackt"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Sojaragout mit Aprikosen",
+        "description": "Sojaragout mit Aprikosen - aus dem römischen Kochbuch des Marcus Gavius Apicius: De re coquinaria veganisiert. - (Hauptgerichte)",
+        "recipeCategory": "Hauptgerichte",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "45 Min",
+        "recipeIngredient": [
+          "800 g Sojageschnetzeltes",
+          "1.5 l heiße Gemüsebrühe",
+          "3 EL Olivenöl",
+          "2 Stück Zwiebeln, fein gehackt",
+          "250 ml veganer Rotwein (oder alkoholfreier Rotwein / Traubensaft)",
+          "4 EL No-Fish Sauce",
+          "500 g Aprikosen, entsteint und in Spalten geschnitten",
+          "1 Messerspitze frisch gemahlener schwarzer Pfeffer",
+          "1 Messerspitze gemahlener Kümmel",
+          "1 EL gehackter Dill",
+          "2 EL gehackte Minze",
+          "1 EL Zuckerrübensirup (oder Agavendicksaft)",
+          "1 EL Birnendicksaft",
+          "2 EL Weinessig",
+          "nach Bedarf  Salz"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Sojageschnetzeltes in eine große Schüssel geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Das Olivenöl in einem großen Topf erhitzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die gehackten Zwiebeln zugeben und mitbraten, bis sie glasig werden."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit dem Rotwein ablöschen und kurz einkochen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "No-Fish Sauce, Pfeffer, Kümmel, Dill, Minze, Zuckerrübensirup (oder Agavendicksaft), Birnendicksaft und Weinessig hinzufügen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die frischen Aprikosen einrühren und kurz aufkochen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Das Ragout bei niedriger Hitze ca. 25–30 Minuten sanft köcheln lassen, bis die Sojaschnetzel weich und die Aprikosen leicht zerfallen sind."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Salz, Pfeffer und nach Belieben etwas zusätzlicher Minze oder Essig abschmecken."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "332 kcal",
+          "proteinContent": "8g",
+          "carbohydrateContent": "49g",
+          "fatContent": "14g",
+          "fiberContent": "4g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Sojaragout mit Aprikosen",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T15:59:52.482416"
+  },
+  {
+    "title": "Globoli - Boulettes de semoule au sirop de betterave sucrière",
+    "subtitle": "ancienne pâtisserie romaine",
+    "category": "Dessert",
+    "preparationTime": "20 Min",
+    "cookTime": "30 Min",
+    "portion": 2,
+    "difficulty": "Mittel",
+    "tags": [
+      "römisch",
+      "nachspeise"
+    ],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Pour les boulettes de semoule",
+        "items": [
+          {
+            "amount": "200",
+            "unit": "g",
+            "name": "Semoule de blé ou d'épeautre"
+          },
+          {
+            "amount": "300",
+            "unit": "g",
+            "name": "Alternative végétalienne au fromage blanc (par ex. fromage blanc de soja ou de noix de cajou)"
+          },
+          {
+            "amount": "6",
+            "unit": "EL",
+            "name": "Huile d'olive (pour faire frire)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Huile végétale (pour les mains)"
+          }
+        ]
+      },
+      {
+        "group": "Pour affiner",
+        "items": [
+          {
+            "amount": "4",
+            "unit": "EL",
+            "name": "sirop de betterave (ou sirop d'agave)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Pavot"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "g",
+            "name": "Weizen- oder Dinkelgrieß"
+          },
+          {
+            "amount": "300",
+            "unit": "g",
+            "name": "Vegane Quarkalternative (z.B. Sojaquark oder Cashewquark)"
+          }
+        ],
+        "substeps": [
+          "Mélangez la semoule et le fromage blanc alternatif végétalien dans un saladier."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [],
+        "substeps": [
+          "Couvrir et laisser reposer au moins 2 heures, idéalement toute la nuit, au réfrigérateur."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [],
+        "substeps": [
+          "Sortir la pâte du réfrigérateur et bien la pétrir à nouveau."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Pflanzenöl (für die Hände)"
+          }
+        ],
+        "substeps": [
+          "Humidifier les mains avec un peu d'huile végétale pour que la pâte ne colle pas."
+        ]
+      },
+      {
+        "time": "15 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "EL",
+            "name": "Olivenöl (zum Ausbacken)"
+          }
+        ],
+        "substeps": [
+          "Chauffer l'huile d'olive dans une poêle à feu moyen."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [],
+        "substeps": [
+          "Fais cuire les boulettes jusqu'à ce qu'elles soient dorées, en les retournant souvent.  Veille à ce qu'elles ne soient pas trop foncées."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "4",
+            "unit": "EL",
+            "name": "Zuckerrübensirup (oder Agavendicksaft)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Mohn"
+          }
+        ],
+        "substeps": [
+          "Retirer les boulettes de la poêle une fois qu'elles sont cuites et les laisser égoutter sur du papier absorbant."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [],
+        "substeps": [
+          "Servir et savourer !"
+        ]
+      }
+    ],
+    "tips": [
+      "D",
+      "i",
+      "e",
+      " ",
+      "G",
+      "r",
+      "i",
+      "e",
+      "ß",
+      "b",
+      "ä",
+      "l",
+      "l",
+      "c",
+      "h",
+      "e",
+      "n",
+      " ",
+      "s",
+      "c",
+      "h",
+      "m",
+      "e",
+      "c",
+      "k",
+      "e",
+      "n",
+      " ",
+      "w",
+      "a",
+      "r",
+      "m",
+      " ",
+      "a",
+      "m",
+      " ",
+      "b",
+      "e",
+      "s",
+      "t",
+      "e",
+      "n",
+      ".",
+      " ",
+      " ",
+      "N",
+      "a",
+      "c",
+      "h",
+      " ",
+      "d",
+      "e",
+      "m",
+      " ",
+      "A",
+      "b",
+      "k",
+      "ü",
+      "h",
+      "l",
+      "e",
+      "n",
+      " ",
+      "k",
+      "ö",
+      "n",
+      "n",
+      "e",
+      "n",
+      " ",
+      "s",
+      "i",
+      "e",
+      " ",
+      "e",
+      "t",
+      "w",
+      "a",
+      "s",
+      " ",
+      "f",
+      "e",
+      "s",
+      "t",
+      "e",
+      "r",
+      " ",
+      "w",
+      "e",
+      "r",
+      "d",
+      "e",
+      "n",
+      ".",
+      " ",
+      " ",
+      "W",
+      "e",
+      "r",
+      " ",
+      "m",
+      "a",
+      "g",
+      ",",
+      " ",
+      "k",
+      "a",
+      "n",
+      "n",
+      " ",
+      "d",
+      "e",
+      "m",
+      " ",
+      "T",
+      "e",
+      "i",
+      "g",
+      " ",
+      "n",
+      "o",
+      "c",
+      "h",
+      " ",
+      "e",
+      "t",
+      "w",
+      "a",
+      "s",
+      " ",
+      "g",
+      "e",
+      "r",
+      "i",
+      "e",
+      "b",
+      "e",
+      "n",
+      "e",
+      " ",
+      "Z",
+      "i",
+      "t",
+      "r",
+      "o",
+      "n",
+      "e",
+      "n",
+      "s",
+      "c",
+      "h",
+      "a",
+      "l",
+      "e",
+      " ",
+      "h",
+      "i",
+      "n",
+      "z",
+      "u",
+      "f",
+      "ü",
+      "g",
+      "e",
+      "n",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 802,
+      "protein": 16,
+      "carbs": 42,
+      "fat": 67,
+      "fiber": 2
+    },
+    "created_at": "2025-10-29T13:32:25.224006",
+    "updated_at": "2025-10-29T13:32:25.224006",
+    "version": 1,
+    "seo": {
+      "meta_description": "Globoli - Grießbällchen mit Zuckerrübensirup - altes römisches Gebäck - (Dessert)",
+      "keywords": [
+        "pflanzenöl (für die hände)",
+        "vegane quarkalternative (z.b. sojaquark oder cashewquark)",
+        "dessert",
+        "globoli - grießbällchen mit zuckerrübensirup",
+        "nachspeise",
+        "römisch",
+        "olivenöl (zum ausbacken)",
+        "weizen- oder dinkelgrieß"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Globoli - Grießbällchen mit Zuckerrübensirup",
+        "description": "Globoli - Grießbällchen mit Zuckerrübensirup - altes römisches Gebäck - (Dessert)",
+        "recipeCategory": "Dessert",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "30 Min",
+        "recipeIngredient": [
+          "200 g Weizen- oder Dinkelgrieß",
+          "300 g Vegane Quarkalternative (z.B. Sojaquark oder Cashewquark)",
+          "6 EL Olivenöl (zum Ausbacken)",
+          "2 EL Pflanzenöl (für die Hände)",
+          "4 EL Zuckerrübensirup (oder Agavendicksaft)",
+          "2 EL Mohn"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Grieß und vegane Quarkalternative in einer Schüssel vermischen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zugedeckt mindestens 2 Stunden, idealerweise über Nacht, im Kühlschrank ziehen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Den Teig aus dem Kühlschrank nehmen und nochmals gut durchkneten."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Hände mit etwas Pflanzenöl befeuchten, damit der Teig nicht klebt."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl in einer Pfanne bei mittlerer Hitze erhitzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Bällchen unter häufigem Wenden goldbraun braten.  Achte darauf, dass sie nicht zu dunkel werden."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die fertig gebratenen Bällchen aus der Pfanne nehmen und auf einem Küchenpapier abtropfen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Servieren und genießen!"
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "802 kcal",
+          "proteinContent": "16g",
+          "carbohydrateContent": "42g",
+          "fatContent": "67g",
+          "fiberContent": "2g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Globoli - Grießbällchen mit Zuckerrübensirup",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T16:03:00.112834"
+  },
+  {
+    "title": "Libum - pain d'offrande romain",
+    "subtitle": "Petits pains aromatiques au tofu et au laurier",
+    "category": "Brot&Gebäck",
+    "preparationTime": "20 Min",
+    "cookTime": "25 Min",
+    "portion": 6,
+    "difficulty": "Leicht",
+    "tags": [
+      "römisch"
+    ],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Pour la pâte",
+        "items": [
+          {
+            "amount": "200",
+            "unit": "g",
+            "name": "Farine de blé"
+          },
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Tofu nature (ferme)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Farine de soja"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Eau"
+          },
+          {
+            "amount": "20",
+            "unit": "",
+            "name": "Feuilles de laurier"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Sel"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Poivre"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Sojamehl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Wasser"
+          }
+        ],
+        "substeps": [
+          "Mélangez la farine de soja et l'eau dans un petit bol et laissez gonfler. Cela sert de substitut à l'œuf."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Natur Tofu (fest)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          }
+        ],
+        "substeps": [
+          "Émietter ou écraser finement le tofu dans un bol à l'aide d'une fourchette ou d'un presse-purée, puis saler."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "g",
+            "name": "Weizenmehl"
+          },
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Natur Tofu (fest)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Sojamehl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Wasser"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Verser la farine dans un grand saladier. Ajoutez le tofu émietté, le substitut d'œuf, le sel et le poivre."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "20",
+            "unit": "",
+            "name": "Lorbeerblätter"
+          }
+        ],
+        "substeps": [
+          "Tapisser une plaque de cuisson avec environ la moitié des feuilles de laurier."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "g",
+            "name": "Weizenmehl"
+          },
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Natur Tofu (fest)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Sojamehl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Wasser"
+          }
+        ],
+        "substeps": [
+          "Former 6 petits pains avec la pâte."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [
+          {
+            "amount": "20",
+            "unit": "",
+            "name": "Lorbeerblätter"
+          }
+        ],
+        "substeps": [
+          "Dépose les pains formés sur la plaque de cuisson recouverte de feuilles de laurier. Répartis le reste des feuilles de laurier autour des petits pains."
+        ]
+      },
+      {
+        "time": "25 Min",
+        "needed": [],
+        "substeps": [
+          "Enfourner la plaque dans le four préchauffé et faire cuire les weckers à environ 180 °C (chaleur de voûte et de sole) pendant environ 25 minutes, jusqu'à ce qu'ils soient bien dorés."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [],
+        "substeps": [
+          "Retirer les libums végétaliens terminés du four et les servir chauds ou froids en option."
+        ]
+      }
+    ],
+    "tips": [
+      "D",
+      "i",
+      "e",
+      " ",
+      "B",
+      "r",
+      "ö",
+      "t",
+      "c",
+      "h",
+      "e",
+      "n",
+      " ",
+      "s",
+      "c",
+      "h",
+      "m",
+      "e",
+      "c",
+      "k",
+      "e",
+      "n",
+      " ",
+      "b",
+      "e",
+      "s",
+      "o",
+      "n",
+      "d",
+      "e",
+      "r",
+      "s",
+      " ",
+      "g",
+      "u",
+      "t",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      "m",
+      " ",
+      "T",
+      "z",
+      "a",
+      "t",
+      "z",
+      "i",
+      "k",
+      "i",
+      " ",
+      "D",
+      "i",
+      "p",
+      ".",
+      " ",
+      "A",
+      "b",
+      "e",
+      "r",
+      " ",
+      "a",
+      "u",
+      "c",
+      "h",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      "m",
+      " ",
+      "f",
+      "r",
+      "i",
+      "s",
+      "c",
+      "h",
+      "e",
+      "n",
+      " ",
+      "S",
+      "a",
+      "l",
+      "a",
+      "t",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "a",
+      "l",
+      "s",
+      " ",
+      "B",
+      "e",
+      "i",
+      "l",
+      "a",
+      "g",
+      "e",
+      " ",
+      "z",
+      "u",
+      " ",
+      "S",
+      "u",
+      "p",
+      "p",
+      "e",
+      "n",
+      " ",
+      "u",
+      "n",
+      "d",
+      " ",
+      "E",
+      "i",
+      "n",
+      "t",
+      "ö",
+      "p",
+      "f",
+      "e",
+      "n",
+      " ",
+      "s",
+      "i",
+      "n",
+      "d",
+      " ",
+      "s",
+      "i",
+      "e",
+      " ",
+      "l",
+      "e",
+      "c",
+      "k",
+      "e",
+      "r",
+      " ",
+      ".",
+      " ",
+      "F",
+      "ü",
+      "r",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      " ",
+      "i",
+      "n",
+      "t",
+      "e",
+      "n",
+      "s",
+      "i",
+      "v",
+      "e",
+      "r",
+      "e",
+      " ",
+      "G",
+      "e",
+      "s",
+      "c",
+      "h",
+      "m",
+      "a",
+      "c",
+      "k",
+      "s",
+      "n",
+      "o",
+      "t",
+      "e",
+      " ",
+      "k",
+      "a",
+      "n",
+      "n",
+      " ",
+      "m",
+      "a",
+      "n",
+      " ",
+      "d",
+      "e",
+      "n",
+      " ",
+      "T",
+      "e",
+      "i",
+      "g",
+      " ",
+      "z",
+      "u",
+      "s",
+      "ä",
+      "t",
+      "z",
+      "l",
+      "i",
+      "c",
+      "h",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "K",
+      "r",
+      "ä",
+      "u",
+      "t",
+      "e",
+      "r",
+      "n",
+      " ",
+      "w",
+      "i",
+      "e",
+      " ",
+      "R",
+      "o",
+      "s",
+      "m",
+      "a",
+      "r",
+      "i",
+      "n",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "T",
+      "h",
+      "y",
+      "m",
+      "i",
+      "a",
+      "n",
+      " ",
+      "v",
+      "e",
+      "r",
+      "f",
+      "e",
+      "i",
+      "n",
+      "e",
+      "r",
+      "n",
+      ".",
+      "\n",
+      "\n",
+      "F",
+      "ü",
+      "r",
+      " ",
+      "d",
+      "i",
+      "e",
+      " ",
+      "s",
+      "ü",
+      "ß",
+      "e",
+      " ",
+      "V",
+      "a",
+      "r",
+      "i",
+      "a",
+      "n",
+      "t",
+      "e",
+      " ",
+      "w",
+      "e",
+      "r",
+      "d",
+      "e",
+      "n",
+      " ",
+      "d",
+      "i",
+      "e",
+      " ",
+      "B",
+      "r",
+      "o",
+      "t",
+      "e",
+      " ",
+      "d",
+      "i",
+      "r",
+      "e",
+      "k",
+      "t",
+      " ",
+      "n",
+      "a",
+      "c",
+      "h",
+      " ",
+      "d",
+      "e",
+      "m",
+      " ",
+      "B",
+      "a",
+      "c",
+      "k",
+      "e",
+      "n",
+      " ",
+      "(",
+      "n",
+      "o",
+      "c",
+      "h",
+      " ",
+      "h",
+      "e",
+      "i",
+      "ß",
+      ")",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "H",
+      "o",
+      "n",
+      "i",
+      "g",
+      " ",
+      "b",
+      "e",
+      "s",
+      "t",
+      "r",
+      "i",
+      "c",
+      "h",
+      "e",
+      "n",
+      " ",
+      "u",
+      "n",
+      "d",
+      " ",
+      "t",
+      "r",
+      "o",
+      "c",
+      "k",
+      "n",
+      "e",
+      "n",
+      " ",
+      "g",
+      "e",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "n",
+      ".",
+      "\n",
+      "\n",
+      "H",
+      "e",
+      "i",
+      "ß",
+      "l",
+      "u",
+      "f",
+      "t",
+      "f",
+      "r",
+      "i",
+      "t",
+      "t",
+      "e",
+      "u",
+      "s",
+      "e",
+      " ",
+      "1",
+      "8",
+      "0",
+      " ",
+      "G",
+      "r",
+      "a",
+      "d",
+      " ",
+      "c",
+      "a",
+      " ",
+      "1",
+      "5",
+      " ",
+      "M",
+      "i",
+      "n"
+    ],
+    "nutrition": {
+      "kcal": 175,
+      "protein": 9,
+      "carbs": 25,
+      "fat": 4,
+      "fiber": 2
+    },
+    "created_at": "2025-10-29T13:52:23.197198",
+    "updated_at": "2025-10-29T13:52:23.197198",
+    "version": 1,
+    "seo": {
+      "meta_description": "Libum – römisches Opferbrot - Aromatische Brötchen mit Tofu und Lorbeer - (Hauptgerichte)",
+      "keywords": [
+        "hauptgerichte",
+        "sojamehl",
+        "wasser",
+        "lorbeerblätter",
+        "römisch",
+        "natur tofu (fest)",
+        "weizenmehl",
+        "libum – römisches opferbrot"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Libum – römisches Opferbrot",
+        "description": "Libum – römisches Opferbrot - Aromatische Brötchen mit Tofu und Lorbeer - (Hauptgerichte)",
+        "recipeCategory": "Hauptgerichte",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "6 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "25 Min",
+        "recipeIngredient": [
+          "200 g Weizenmehl",
+          "400 g Natur Tofu (fest)",
+          "2 EL Sojamehl",
+          "2 EL Wasser",
+          "20  Lorbeerblätter",
+          "1 TL Salz",
+          "1/2 TL Pfeffer"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Sojamehl und Wasser in einer kleinen Schüssel verrühren und quellen lassen. Dies dient als Ei-Ersatz."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Tofu mit einer Gabel oder einem Kartoffelstampfer in einer Schüssel fein zerbröseln oder zerdrücken und salzen "
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mehl in eine große Schüssel geben. Den zerbröselten Tofu, den Ei-Ersatz, Salz und Pfeffer hinzufügen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Ein Backblech mit ca. der Hälfte der Lorbeerblätter auslegen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Aus dem Teig 6 Brötchen formen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die geformten Brote auf die mit Lorbeerblättern ausgelegte Backblech legen. Verteile die restlichen Lorbeerblätter um die Weckerl."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Das Backblech in den vorgeheizten Ofen schieben und die Weckerl bei ca. 180 °C (Ober-/Unterhitze) etwa 25 Minuten backen, bis sie goldbraun sind."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die fertigen veganen Libum aus dem Ofen nehmen und optional warm oder kalt servieren."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "175 kcal",
+          "proteinContent": "9g",
+          "carbohydrateContent": "25g",
+          "fatContent": "4g",
+          "fiberContent": "2g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Libum – römisches Opferbrot",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T16:10:41.856751"
+  },
+  {
+    "title": "Gyros végétalien au seitan",
+    "subtitle": "Gyros savoureux à base de seitan",
+    "category": "Hauptgerichte",
+    "preparationTime": "15 Min",
+    "cookTime": "10 Min",
+    "portion": 6,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Gyros au seitan",
+        "items": [
+          {
+            "amount": "120",
+            "unit": "g",
+            "name": "Seitan-Fix"
+          },
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Bouillon de légumes"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Tahin (régionalement, purée de graines de tournesol ou de courge)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sauce soja"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Sel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Poivre"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Épices pour gyros"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "120",
+            "unit": "g",
+            "name": "Seitan-Fix"
+          },
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Gemüsebrühe"
+          }
+        ],
+        "substeps": [
+          "Mélangez 120 g de Seitan-Fix avec 150 ml de bouillon de légumes jusqu'à obtenir une masse homogène."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Tahin"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sojasoße"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Gyrosgewürz"
+          }
+        ],
+        "substeps": [
+          "Ajoutez 2 cuillères à soupe de tahin, 1 cuillère à soupe de sauce soja, 0,5 cuillère à café de sel, 0,5 cuillère à café de poivre et 1 cuillère à soupe d'épices pour gyros et mélangez bien le tout."
+        ]
+      },
+      {
+        "time": "15 Min",
+        "needed": [
+          {
+            "amount": "120",
+            "unit": "g",
+            "name": "Seitan-Fix"
+          },
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Gemüsebrühe"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Tahin"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sojasoße"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Gyrosgewürz"
+          }
+        ],
+        "substeps": [
+          "Bien laisser reposer le mélange (par ex. laisser reposer un peu pour que les arômes se mélangent) min. 15 minutes"
+        ]
+      },
+      {
+        "time": "10 Min",
+        "needed": [
+          {
+            "amount": "120",
+            "unit": "g",
+            "name": "Seitan-Fix"
+          },
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Gemüsebrühe"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Tahin"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sojasoße"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Gyrosgewürz"
+          }
+        ],
+        "substeps": [
+          "Dans une poêle à feu moyen, faire revenir le seitan par portions jusqu'à ce qu'il soit légèrement doré et qu'il présente des points de grillage typiques du gyros."
+        ]
+      }
+    ],
+    "tips": [
+      "S",
+      "e",
+      "r",
+      "v",
+      "i",
+      "e",
+      "r",
+      "e",
+      " ",
+      "d",
+      "a",
+      "s",
+      " ",
+      "S",
+      "e",
+      "i",
+      "t",
+      "a",
+      "n",
+      " ",
+      "G",
+      "y",
+      "r",
+      "o",
+      "s",
+      " ",
+      "i",
+      "n",
+      " ",
+      "P",
+      "i",
+      "t",
+      "a",
+      " ",
+      "m",
+      "i",
+      "t",
+      " ",
+      "T",
+      "z",
+      "a",
+      "t",
+      "z",
+      "i",
+      "k",
+      "i",
+      " ",
+      "u",
+      "n",
+      "d",
+      " ",
+      "S",
+      "a",
+      "l",
+      "a",
+      "t",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 505,
+      "protein": 39,
+      "carbs": 53,
+      "fat": 12,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T14:03:19.396965",
+    "updated_at": "2025-10-29T14:03:19.396965",
+    "version": 1,
+    "seo": {
+      "meta_description": "Veganes Seitan Gyros - Herzhaftes Gyros aus Seitan - (Hauptgerichte)",
+      "keywords": [
+        "hauptgerichte",
+        "tahin (regional sonnenblumen- oder kürbiskernmus)",
+        "gemüsebrühe",
+        "sojasoße",
+        "veganes seitan gyros",
+        "salz",
+        "seitan-fix"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Veganes Seitan Gyros",
+        "description": "Veganes Seitan Gyros - Herzhaftes Gyros aus Seitan - (Hauptgerichte)",
+        "recipeCategory": "Hauptgerichte",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "6 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "10 Min",
+        "recipeIngredient": [
+          "120 g Seitan-Fix",
+          "150 ml Gemüsebrühe",
+          "2 EL Tahin (regional Sonnenblumen- oder Kürbiskernmus)",
+          "1 EL Sojasoße",
+          "0.5 TL Salz",
+          "0.5 TL Pfeffer",
+          "1 EL Gyrosgewürz"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "120 g Seitan-Fix mit 150 ml Gemüsebrühe verrühren, bis eine gleichmäßige Masse entsteht."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "2 EL Tahin, 1 EL Sojasoße, 0.5 TL Salz, 0.5 TL Pfeffer und 1 EL Gyrosgewürz hinzufügen und gut unterrühren."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Mischung gut durchziehen lassen (z. B. etwas ruhen, damit sich die Aromen verbinden) min. 15 Minuten"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "In einer Pfanne bei mittlerer Hitze den Seitan portionsweise anbraten, bis er leicht gebräunt ist und typische Gyros-Röststellen bekommt."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "505 kcal",
+          "proteinContent": "39g",
+          "carbohydrateContent": "53g",
+          "fatContent": "12g",
+          "fiberContent": "0g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Veganes Seitan Gyros",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T16:11:55.950931"
+  },
+  {
+    "title": "Tzatziki",
+    "subtitle": "trempette grecque, parfaite pour le gyros végétalien, etc.",
+    "category": "Saucen & Dips",
+    "preparationTime": "15",
+    "cookTime": "",
+    "portion": 2,
+    "difficulty": "Einfach",
+    "tags": [
+      "griechisch",
+      "gyros"
+    ],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Tzatziki",
+        "items": [
+          {
+            "amount": "0,5",
+            "unit": "Stück",
+            "name": "Concombre"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sel"
+          },
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Fromage blanc de soja (ou SKYR de soja)"
+          },
+          {
+            "amount": "3",
+            "unit": "Zehen",
+            "name": "Ail"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Poivre"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Jus de citron"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5",
+        "needed": [
+          {
+            "amount": "0,5",
+            "unit": "Stück",
+            "name": "Gurke"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Salz"
+          }
+        ],
+        "substeps": [
+          "Râper le concombre. Saupoudrer ensuite de sel et laisser reposer un moment."
+        ]
+      },
+      {
+        "time": "5",
+        "needed": [
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "Sojaquark (alternativ Soja-SKYR)"
+          },
+          {
+            "amount": "3",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Zitronensaft"
+          }
+        ],
+        "substeps": [
+          "Éplucher l'ail",
+          "presser l'ail ou le hacher très finement",
+          "Mélanger avec du séré de soja",
+          "Assaisonner avec du poivre et du jus de citron."
+        ]
+      },
+      {
+        "time": "2",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Gurkenraspel"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "vermengter Quark"
+          }
+        ],
+        "substeps": [
+          "Pressez le concombre râpé. Avec une presse à spätzle, c'est super rapide. L'eau peut aussi être utilisée pour arroser les fleurs, par exemple. Mais je la garde pour en rajouter éventuellement à la fin pour l'assaisonnement.",
+          "Assembler maintenant le tout",
+          "Rectifier éventuellement l'assaisonnement avec du poivre, du jus de citron, du sel ou de l'eau de concombre."
+        ]
+      },
+      {
+        "time": "60",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Tzatziki"
+          }
+        ],
+        "substeps": [
+          "Mettre au réfrigérateur et laisser reposer au moins une heure. Si le tzatziki a trop durci, on peut le remuer avec une gorgée de lait de soja pour qu'il redevienne crémeux."
+        ]
+      }
+    ],
+    "tips": "",
+    "nutrition": {
+      "kcal": 102,
+      "protein": 4,
+      "carbs": 20,
+      "fat": 2,
+      "fiber": 2
+    },
+    "created_at": "2025-10-29T14:41:48.396528",
+    "updated_at": "2025-10-29T14:41:48.396528",
+    "version": 1,
+    "seo": {
+      "meta_description": "Tzatziki  - griechischer Dip, perfekt für veganes Gyros, etc. - (Saucen & Dips)",
+      "keywords": [
+        "griechisch",
+        "saucen & dips",
+        "tzatziki ",
+        "knoblauch",
+        "salz",
+        "gyros",
+        "gurke",
+        "sojaquark (alternativ soja-skyr)",
+        "pfeffer"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Tzatziki ",
+        "description": "Tzatziki  - griechischer Dip, perfekt für veganes Gyros, etc. - (Saucen & Dips)",
+        "recipeCategory": "Saucen & Dips",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "15",
+        "cookTime": "",
+        "recipeIngredient": [
+          "0,5 Stück Gurke",
+          "1 EL Salz",
+          "400 g Sojaquark (alternativ Soja-SKYR)",
+          "3 Zehen Knoblauch",
+          "1 Prise Pfeffer",
+          "1 TL Zitronensaft"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Salatgurke Raspeln. Dann mit Salz bestreuen und erst mal ruhen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Knoblauch schälen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Knoblauch pressen oder ganz klein hacken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Sojaquark vermengen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Pfeffer und Zitronensaft schon mal abschmecken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Gurkenraspel auspressen. Mit einer Spätzlepresse geht sowas super schnell. Das Wasser kann z.B auch für zum Blumengießen verwendet werden. Ich hebe es aber auf um evtl dann noch was nachzugießen am Ende zum abschmecken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Nun alles zusammenfügen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Evtl. noch mal mit Pfeffer, Zitronensaft, Salz oder dem Gurkenwasser abschmecken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Ab in den Kühlschrank und mindestens eine Stunde ziehen lassen. Wenn das Tzatziki zu fest geworden ist, kann man es mit einem Schluck Sojamilch wieder cremig rühren."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "0 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "0g",
+          "fatContent": "0g",
+          "fiberContent": "0g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Tzatziki ",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T16:12:15.488523"
+  },
+  {
+    "title": "Crêpes aux pommes au four",
+    "subtitle": "quelque part entre les crêpes et le Kaiserschmarrn quelque chose entre les deux",
+    "category": "Frühstück",
+    "preparationTime": "20",
+    "cookTime": "30",
+    "portion": 2,
+    "difficulty": "Einfach",
+    "tags": [
+      "nachspeise",
+      "frühstück",
+      "süßspeise"
+    ],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Base",
+        "items": [
+          {
+            "amount": "160",
+            "unit": "g",
+            "name": "Farine d'épeautre"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Poudre à lever"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Sel"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Cannelle"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Cacao (substitut)"
+          },
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Lait de soja"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Sucre vanillé (ou sirop de sucre ou sucre de bouleau)"
+          }
+        ]
+      },
+      {
+        "group": "Pomme au four",
+        "items": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Pomme"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Huile"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sucre de bouleau"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Cannelle"
+          }
+        ]
+      },
+      {
+        "group": "Servir",
+        "items": [
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Sucre en poudre"
+          }
+        ]
+      },
+      {
+        "group": "Facultatif : fromage blanc",
+        "items": [
+          {
+            "amount": "200",
+            "unit": "Gramm",
+            "name": "Séré de soja"
+          },
+          {
+            "amount": "4",
+            "unit": "Tropfen",
+            "name": "Arôme de citron"
+          },
+          {
+            "amount": "2",
+            "unit": "Tropfen",
+            "name": "Arôme d'amande"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [],
+        "substeps": [
+          "Préparer tous les ingrédients",
+          "Couper la pomme en morceaux et l'épépiner",
+          "Mettre la pomme avec le sucre dans la poêle chaude et la faire déjà \"suer\".",
+          "Répartir la cannelle sur la masse, remuer brièvement et poursuivre la cuisson",
+          "Ajouter de l'huile",
+          "Ajouter la pâte",
+          "Mélanger sans cesse avec la cuillère en bois pour ne pas obtenir une masse entière.",
+          "Lorsque la pâte est bien cuite, la déposer sur une assiette et la saupoudrer de sucre glace.",
+          "En option : mélanger le fromage blanc avec l'arôme. Disposer sur les assiettes et saupoudrer de sucre glace."
+        ]
+      }
+    ],
+    "tips": "",
+    "nutrition": {
+      "kcal": 650,
+      "protein": 13,
+      "carbs": 106,
+      "fat": 19,
+      "fiber": 4
+    },
+    "created_at": "2025-10-29T15:15:32.629591",
+    "updated_at": "2025-10-29T15:15:32.629591",
+    "version": 1,
+    "seo": {
+      "meta_description": "Bratapfelkaisypfannkuchen - irgendwo zwischen Pancakes und Kaiserschmarrn etwas dazwischen - (Frühstück)",
+      "keywords": [
+        "süßspeise",
+        "frühstück",
+        "backpulver",
+        "zimt",
+        "nachspeise",
+        "kakao(-ersatz)",
+        "dinkelmehl",
+        "salz",
+        "bratapfelkaisypfannkuchen"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Bratapfelkaisypfannkuchen",
+        "description": "Bratapfelkaisypfannkuchen - irgendwo zwischen Pancakes und Kaiserschmarrn etwas dazwischen - (Frühstück)",
+        "recipeCategory": "Frühstück",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "",
+        "cookTime": "",
+        "recipeIngredient": [
+          "160 g Dinkelmehl",
+          "2 TL Backpulver",
+          "1 Prise Salz",
+          "1 TL Zimt",
+          "1 EL Kakao(-ersatz)",
+          "200 ml Sojamilch",
+          "2 EL Vanillezucker (alternativ Zuckerübensirup oder Birkenzucker)",
+          "1 Stück Apfel",
+          "2 EL Öl",
+          "1 EL Birkenzucker",
+          "1 EL Zimt",
+          "1 EL Puderzucker",
+          "200 Gramm Sojaquark",
+          "4 Tropfen Zitronenaroma",
+          "2 Tropfen Mandelaroma"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Alles für den Teig vermischen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Apfel in Stücke schneiden und entkernen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Apfel mit dem Zucker in die heiße Pfanne geben und schon mal \"schwitzig\" braten."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zimt verteilen auf die Masse, kurz durchschwenken und weiter braten"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Öl hinzufügen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Teig hinzufügen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Immer wieder mit dem Kochlöffel vermengen, damit es nicht eine ganze Masse wird"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Wenn Teig soweit durch, auf Teller packen und mit Puderzucker bestreuen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Optional: Quark mit Aroma vermengen. Auf Teller platzieren und ebenfalls mit dme Puderzucker bestreuen"
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "0 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "0g",
+          "fatContent": "0g",
+          "fiberContent": "0g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Bratapfelkaisypfannkuchen",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T16:12:49.551737"
   }
 ]
