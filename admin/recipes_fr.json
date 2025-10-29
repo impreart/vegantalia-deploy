@@ -1119,5 +1119,1666 @@
     "original_title": "Vegane Joppiesauce mit Pommes",
     "translation_source": "deepl",
     "translated_at": "2025-10-28T18:37:53.837630"
+  },
+  {
+    "title": "Gyros, mélange d'épices pour souvlaki",
+    "subtitle": "Mélange d'épices végétalien pour les plats méditerranéens",
+    "category": "Gewürze",
+    "preparationTime": "5 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Épices",
+        "items": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Origan"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thym"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Sel"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "poivre noir (moulu)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprika en poudre (doux)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Marjolaine"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Sucre"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Poudre d'oignon"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Ail en poudre"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Romarin (moulu)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Coriandre (moulue)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Cumin"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Poudre de chili"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ],
+        "substeps": [
+          "Mélange 6 cuillères à café d'origan, 4 cuillères à café de thym, 3 cuillères à café de sel, 3 cuillères à café de poivre noir, 3 cuillères à café de paprika en poudre, 2 cuillères à café de marjolaine, 2 cuillères à café de sucre, 2 cuillères à café d'oignon en poudre, 2 cuillères à café d'ail en poudre, 2 cuillères à café de romarin, 2 cuillères à café de coriandre, 1 cuillère à café de cumin et 0,5 cuillère à café de poudre de chili."
+        ]
+      }
+    ],
+    "tips": [
+      "I",
+      "d",
+      "e",
+      "a",
+      "l",
+      " ",
+      "f",
+      "ü",
+      "r",
+      " ",
+      "G",
+      "y",
+      "r",
+      "o",
+      "s",
+      ",",
+      " ",
+      "S",
+      "o",
+      "u",
+      "v",
+      "l",
+      "a",
+      "k",
+      "i",
+      " ",
+      "u",
+      "n",
+      "d",
+      " ",
+      "C",
+      "o",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 36,
+      "protein": 0,
+      "carbs": 3,
+      "fat": 1,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:45:35.056744",
+    "updated_at": "2025-10-29T08:45:35.056744",
+    "version": 1,
+    "seo": {
+      "meta_description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+      "keywords": [
+        "oregano",
+        "schwarzer pfeffer (gemahlen)",
+        "salz",
+        "gyros, souvlaki gewürzmischung",
+        "paprikapulver (edelsüß)",
+        "thymian",
+        "gewürze"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Gyros, Souvlaki Gewürzmischung",
+        "description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+        "recipeCategory": "Gewürze",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "5 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "6 TL Oregano",
+          "4 TL Thymian",
+          "3 TL Salz",
+          "3 TL schwarzer Pfeffer (gemahlen)",
+          "3 TL Paprikapulver (edelsüß)",
+          "2 TL Majoran",
+          "2 TL Zucker",
+          "2 TL Zwiebelpulver",
+          "2 TL Knoblauchpulver",
+          "2 TL Rosmarin (gemahlen)",
+          "2 TL Koriander (gemahlen)",
+          "1 TL Kreuzkümmel",
+          "0.5 TL Chilipulver"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "36 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "3g",
+          "fatContent": "1g",
+          "fiberContent": "0g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Gyros, Souvlaki Gewürzmischung",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T09:59:48.156865"
+  },
+  {
+    "title": "Mojo Verde",
+    "subtitle": "Sauce verte des Canaries",
+    "category": "Saucen",
+    "preparationTime": "15 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Ingrédients",
+        "items": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Huile d'olive"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Vinaigre de vin rouge"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Poivron vert"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Ail"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Persil frais"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Coriandre fraîche"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thym"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Sel de mer"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Poivre"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pain blanc"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          }
+        ],
+        "substeps": [
+          "Laver les herbes et les poivrons.",
+          "Couper et épépiner les poivrons"
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Mettre le vinaigre de vin rouge, le paprika, l'ail, le persil, la coriandre, le thym, le sel et le poivre dans le mixeur."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Ajouter l'huile d'olive."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Assaisonner avec de l'ail, du sel et du poivre et rectifier l'assaisonnement."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Wasser"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ],
+        "substeps": [
+          "Si la consistance est trop épaisse, diluer avec de l'huile ou de l'eau."
+        ]
+      }
+    ],
+    "tips": [
+      "D",
+      "i",
+      "e",
+      " ",
+      "S",
+      "a",
+      "u",
+      "c",
+      "e",
+      " ",
+      "e",
+      "t",
+      "w",
+      "a",
+      "s",
+      " ",
+      "s",
+      "t",
+      "e",
+      "h",
+      "e",
+      "n",
+      " ",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "n",
+      ",",
+      " ",
+      "d",
+      "a",
+      "m",
+      "i",
+      "t",
+      " ",
+      "s",
+      "i",
+      "c",
+      "h",
+      " ",
+      "d",
+      "i",
+      "e",
+      " ",
+      "A",
+      "r",
+      "o",
+      "m",
+      "e",
+      "n",
+      " ",
+      "e",
+      "n",
+      "t",
+      "f",
+      "a",
+      "l",
+      "t",
+      "e",
+      "n",
+      " ",
+      "k",
+      "ö",
+      "n",
+      "n",
+      "e",
+      "n",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 660,
+      "protein": 1,
+      "carbs": 13,
+      "fat": 66,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:58:07.523590",
+    "updated_at": "2025-10-29T08:58:07.523590",
+    "version": 1,
+    "seo": {
+      "meta_description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+      "keywords": [
+        "knoblauch",
+        "saucen",
+        "mojo verde",
+        "frische petersilie",
+        "olivenöl",
+        "rotweinessig",
+        "grüne paprika"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Mojo Verde",
+        "description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+        "recipeCategory": "Saucen",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "150 ml Olivenöl",
+          "60 ml Rotweinessig",
+          "1 Stück Grüne Paprika",
+          "8-10 Zehen Knoblauch",
+          "2 Bund Frische Petersilie",
+          "2 Bund Frischer Koriander",
+          "nach Bedarf  Thymian",
+          "nach Bedarf  Meersalz",
+          "nach Bedarf  Pfeffer",
+          "nach Bedarf  Weißbrot"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Kräuter und Paprika waschen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Paprika schneiden und entkernen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Bei zu dicker Konsistenz mit Öl oder Wasser verdünnen."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "660 kcal",
+          "proteinContent": "1g",
+          "carbohydrateContent": "13g",
+          "fatContent": "66g",
+          "fiberContent": "0g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Mojo Verde",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T10:01:30.981948"
+  },
+  {
+    "title": "Mojo Rojo végétalien",
+    "subtitle": "Sauce canarienne piquante sans concentré de tomates",
+    "category": "Saucen & Dips",
+    "preparationTime": "15 Min",
+    "cookTime": "60 Min (inkl. Ziehzeit)",
+    "portion": 6,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Pour le mojo rojo",
+        "items": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Huile d'olive"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Vinaigre de vin rouge"
+          },
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Ail"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Piment séché (plus ou moins fort selon le degré de piquant)"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Poivrons rouges grillés"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Paprika fumé en poudre"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Cumin en poudre"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Sel de mer"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Poivre noir"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Rotweinessig"
+          }
+        ],
+        "substeps": [
+          "Mettre l'huile d'olive et le vinaigre de vin rouge dans un mixeur ou un robot ménager."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Getrocknete Chili-Schoten (je nach Schärfe und belieben mehr)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Geräuchertes Paprikapulver"
+          }
+        ],
+        "substeps": [
+          "Hacher grossièrement les piments séchés (facultatif, laisser les graines pour plus de piquant)."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          }
+        ],
+        "substeps": [
+          "Eplucher l'ail et le hacher grossièrement."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gegrillte rote Paprika"
+          }
+        ],
+        "substeps": [
+          "Épépiner le poivron grillé, puis le couper grossièrement et l'ajouter au mixeur."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Getrocknete Chili-Schoten"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gegrillte rote Paprika"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Geräuchertes Paprikapulver"
+          }
+        ],
+        "substeps": [
+          "Mélanger tous les ingrédients dans un mixeur ou un robot ménager jusqu'à obtention d'une pâte lisse. Si nécessaire, ajouter un peu d'eau pour obtenir la consistance souhaitée.  Le mélange doit être épais, mais encore facile à mélanger."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmelpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Schwarzer Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Assaisonnez le mojo rojo avec du cumin, du sel de mer et du poivre."
+        ]
+      },
+      {
+        "time": "60 Min",
+        "needed": [],
+        "substeps": [
+          "Laisser reposer le mojo rojo pendant au moins une heure pour que les arômes se développent pleinement. Il est encore meilleur s'il a macéré toute la nuit au réfrigérateur."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [],
+        "substeps": [
+          "Avant de servir, bien remuer le mojo rojo."
+        ]
+      }
+    ],
+    "tips": [
+      "D",
+      "i",
+      "e",
+      " ",
+      "M",
+      "o",
+      "j",
+      "o",
+      " ",
+      "R",
+      "o",
+      "j",
+      "o",
+      " ",
+      "p",
+      "a",
+      "s",
+      "s",
+      "t",
+      " ",
+      "h",
+      "e",
+      "r",
+      "v",
+      "o",
+      "r",
+      "r",
+      "a",
+      "g",
+      "e",
+      "n",
+      "d",
+      " ",
+      "z",
+      "u",
+      " ",
+      "K",
+      "a",
+      "r",
+      "t",
+      "o",
+      "f",
+      "f",
+      "e",
+      "l",
+      "n",
+      ",",
+      " ",
+      "G",
+      "e",
+      "m",
+      "ü",
+      "s",
+      "e",
+      ",",
+      " ",
+      "T",
+      "o",
+      "f",
+      "u",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "a",
+      "l",
+      "s",
+      " ",
+      "D",
+      "i",
+      "p",
+      " ",
+      "z",
+      "u",
+      " ",
+      "B",
+      "r",
+      "o",
+      "t",
+      ".",
+      " ",
+      "F",
+      "ü",
+      "r",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      " ",
+      "m",
+      "i",
+      "l",
+      "d",
+      "e",
+      "r",
+      "e",
+      " ",
+      "V",
+      "a",
+      "r",
+      "i",
+      "a",
+      "n",
+      "t",
+      "e",
+      " ",
+      "w",
+      "e",
+      "n",
+      "i",
+      "g",
+      "e",
+      "r",
+      " ",
+      "C",
+      "h",
+      "i",
+      "l",
+      "i",
+      " ",
+      "v",
+      "e",
+      "r",
+      "w",
+      "e",
+      "n",
+      "d",
+      "e",
+      "n",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "d",
+      "i",
+      "e",
+      " ",
+      "K",
+      "e",
+      "r",
+      "n",
+      "e",
+      " ",
+      "e",
+      "n",
+      "t",
+      "f",
+      "e",
+      "r",
+      "n",
+      "e",
+      "n",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 969,
+      "protein": 20,
+      "carbs": 90,
+      "fat": 56,
+      "fiber": 24
+    },
+    "created_at": "2025-10-29T09:06:11.069131",
+    "updated_at": "2025-10-29T09:06:11.069131",
+    "version": 1,
+    "seo": {
+      "meta_description": "Vegane Mojo Rojo - Scharfe kanarische Sauce ohne Tomatenmark - (Saucen & Dips)",
+      "keywords": [
+        "knoblauch",
+        "vegane mojo rojo",
+        "olivenöl",
+        "gegrillte rote paprika",
+        "rotweinessig",
+        "getrocknete chili-schoten (je nach schärfe und beleiben mehr)",
+        "saucen & dips"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Vegane Mojo Rojo",
+        "description": "Vegane Mojo Rojo - Scharfe kanarische Sauce ohne Tomatenmark - (Saucen & Dips)",
+        "recipeCategory": "Saucen & Dips",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "6 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "60 Min (inkl. Ziehzeit)",
+        "recipeIngredient": [
+          "250 ml Olivenöl",
+          "2 EL Rotweinessig",
+          "4 Zehen Knoblauch",
+          "3 Stück Getrocknete Chili-Schoten (je nach Schärfe und beleiben mehr)",
+          "3 Stück Gegrillte rote Paprika",
+          "2 TL Geräuchertes Paprikapulver",
+          "1 TL Kreuzkümmelpulver",
+          "1 Prise Meersalz",
+          "1 Prise Schwarzer Pfeffer"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl und Rotweinessig in einen Mixer oder eine Küchenmaschine geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die getrockneten Chili-Schoten grob zerkleinern (optional, für mehr Schärfe die Kerne drin lassen)."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Knoblauch schälen und grob hacken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die gegrillte Paprika entkernen, dann grob schneiden und zum Mixer hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Alle Zutaten im Mixer oder der Küchenmaschine zu einer glatten Paste verarbeiten. Bei Bedarf etwas Wasser hinzufügen, um die gewünschte Konsistenz zu erreichen.  Die Mischung sollte dickflüssig, aber noch gut rührfähig sein."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Mojo Rojo mit Kreuzkümmel, Meersalz und Pfeffer abschmecken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Mojo Rojo mindestens eine Stunde ziehen lassen, damit sich die Aromen voll entfalten können. Am besten schmeckt sie, wenn sie über Nacht im Kühlschrank zieht."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Vor dem Servieren die Mojo Rojo noch einmal gut umrühren."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "969 kcal",
+          "proteinContent": "20g",
+          "carbohydrateContent": "90g",
+          "fatContent": "56g",
+          "fiberContent": "24g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Vegane Mojo Rojo",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T10:04:58.712260"
+  },
+  {
+    "title": "Boudin blanc végétalien",
+    "subtitle": "Saucisse blanche sans viande à base de haricots et de Seitan-Fix.",
+    "category": "Hauptgerichte",
+    "preparationTime": "20 Min",
+    "cookTime": "30 Min",
+    "portion": 4,
+    "difficulty": "Mittel",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Ingrédients principaux",
+        "items": [
+          {
+            "amount": "1",
+            "unit": "große",
+            "name": "Oignon"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gousses d'ail"
+          },
+          {
+            "amount": "1",
+            "unit": "Abrieb",
+            "name": "Citron"
+          },
+          {
+            "amount": "3",
+            "unit": "EL",
+            "name": "Persil (haché)"
+          },
+          {
+            "amount": "240",
+            "unit": "g",
+            "name": "Seitan-Fix (farine de seitan)"
+          },
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "haricots blancs (poids égoutté, cuits)"
+          },
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Eau"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Marjolaine"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "cumin (moulu)"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Noix de muscade (râpée)"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Cardamome (moulue)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Sel"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Poivre"
+          },
+          {
+            "amount": "1 ",
+            "unit": "Prise",
+            "name": "Cannelle"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "10",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "große",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Knoblauchzehen"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Zitronenabrieb"
+          },
+          {
+            "amount": "3",
+            "unit": "EL",
+            "name": "Petersilie (gehackt)"
+          }
+        ],
+        "substeps": [
+          "Peler l'oignon et l'ail et les hacher finement.",
+          "Râper le citron avec une râpe",
+          "Hacher le persil"
+        ]
+      },
+      {
+        "time": "10",
+        "needed": [
+          {
+            "amount": "400",
+            "unit": "g",
+            "name": "weiße Bohnen (Abtropfgewicht, gegart)"
+          },
+          {
+            "amount": "1",
+            "unit": "große",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Knoblauchzehen"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Zitrone (Abrieb)"
+          },
+          {
+            "amount": "3",
+            "unit": "EL",
+            "name": "Petersilie (gehackt)"
+          },
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Wasser"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel (gemahlen)"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Muskatnuss (gerieben)"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Kardamom (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Zimt"
+          }
+        ],
+        "substeps": [
+          "Rincer les haricots et les égoutter.",
+          "Mettre tous les ingrédients dans le mixeur et réduire en purée"
+        ]
+      },
+      {
+        "time": "10",
+        "needed": [
+          {
+            "amount": "240",
+            "unit": "g",
+            "name": "Seitan-Fix (Seitanmehl)"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "pürierte Masse"
+          }
+        ],
+        "substeps": [
+          "Mélanger la purée avec les 240 g de Seitan-Fix et pétrir jusqu'à obtention d'une pâte."
+        ]
+      },
+      {
+        "time": "20 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Teig"
+          }
+        ],
+        "substeps": [
+          "Diviser la pâte en 8 portions égales et former des saucisses avec chacune d'entre elles.",
+          "Envelopper fermement dans des torchons et attacher avec un fil. (J'ai coupé un vieux torchon en morceaux)."
+        ]
+      },
+      {
+        "time": "30 Min",
+        "needed": [
+          {
+            "amount": "8",
+            "unit": "Stück",
+            "name": "Würstcheb"
+          },
+          {
+            "amount": "3",
+            "unit": "L",
+            "name": "Siedendes Wasser"
+          }
+        ],
+        "substeps": [
+          "Cuire maintenant les saucisses pendant 30 minutes dans de l'eau bouillante."
+        ]
+      }
+    ],
+    "tips": [
+      "F",
+      "ü",
+      "r",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      " ",
+      "r",
+      "a",
+      "u",
+      "c",
+      "h",
+      "i",
+      "g",
+      "e",
+      "r",
+      "e",
+      " ",
+      "N",
+      "o",
+      "t",
+      "e",
+      " ",
+      "k",
+      "a",
+      "n",
+      "n",
+      " ",
+      "m",
+      "a",
+      "n",
+      " ",
+      "e",
+      "t",
+      "w",
+      "a",
+      "s",
+      " ",
+      "R",
+      "a",
+      "u",
+      "c",
+      "h",
+      "s",
+      "a",
+      "l",
+      "z",
+      " ",
+      "o",
+      "d",
+      "e",
+      "r",
+      " ",
+      "L",
+      "i",
+      "q",
+      "u",
+      "i",
+      "d",
+      " ",
+      "S",
+      "m",
+      "o",
+      "k",
+      "e",
+      " ",
+      "z",
+      "u",
+      "r",
+      " ",
+      "M",
+      "a",
+      "s",
+      "s",
+      "e",
+      " ",
+      "g",
+      "e",
+      "b",
+      "e",
+      "n",
+      ".",
+      " ",
+      "D",
+      "i",
+      "e",
+      " ",
+      "W",
+      "ü",
+      "r",
+      "s",
+      "t",
+      "e",
+      " ",
+      "k",
+      "ö",
+      "n",
+      "n",
+      "e",
+      "n",
+      " ",
+      "a",
+      "u",
+      "c",
+      "h",
+      " ",
+      "a",
+      "n",
+      "g",
+      "e",
+      "b",
+      "r",
+      "a",
+      "t",
+      "e",
+      "n",
+      " ",
+      "w",
+      "e",
+      "r",
+      "d",
+      "e",
+      "n",
+      ",",
+      " ",
+      "u",
+      "m",
+      " ",
+      "e",
+      "i",
+      "n",
+      "e",
+      " ",
+      "k",
+      "n",
+      "u",
+      "s",
+      "p",
+      "r",
+      "i",
+      "g",
+      "e",
+      " ",
+      "O",
+      "b",
+      "e",
+      "r",
+      "f",
+      "l",
+      "ä",
+      "c",
+      "h",
+      "e",
+      " ",
+      "z",
+      "u",
+      " ",
+      "e",
+      "r",
+      "h",
+      "a",
+      "l",
+      "t",
+      "e",
+      "n",
+      "."
+    ],
+    "nutrition": {
+      "kcal": 189,
+      "protein": 7,
+      "carbs": 36,
+      "fat": 1,
+      "fiber": 4
+    },
+    "created_at": "2025-10-29T09:28:10.472152",
+    "updated_at": "2025-10-29T09:28:10.472152",
+    "version": 1,
+    "seo": {
+      "meta_description": "Vegane Weißwurst - Fleischfreie Weißwurst auf Basis von Bohnen und Seitan-Fix. - (Hauptgerichte)",
+      "keywords": [
+        "vegane weißwurst",
+        "hauptgerichte",
+        "petersilie (gehackt)",
+        "knoblauchzehen",
+        "zwiebel",
+        "seitan-fix (seitanmehl)",
+        "zitrone"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Vegane Weißwurst",
+        "description": "Vegane Weißwurst - Fleischfreie Weißwurst auf Basis von Bohnen und Seitan-Fix. - (Hauptgerichte)",
+        "recipeCategory": "Hauptgerichte",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "30 Min",
+        "recipeIngredient": [
+          "1 große Zwiebel",
+          "3 Stück Knoblauchzehen",
+          "1 Stück Zitronenabrieb",
+          "3 EL Petersilie (gehackt)",
+          "240 g Seitan-Fix (Seitanmehl)",
+          "400 g weiße Bohnen (Abtropfgewicht, gegart)",
+          "100 ml Wasser",
+          "2 TL Majoran",
+          "1 TL Kreuzkümmel (gemahlen)",
+          "0.5 TL Muskatnuss (gerieben)",
+          "0.5 TL Kardamom (gemahlen)",
+          "1 Prise Salz",
+          "1 Prise Pfeffer",
+          "1  Prise Zimt"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Zwiebel und Knoblauch abziehen und fein hacken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zitron mit einer Reibe abreiben"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Petersilie hacken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Bohnen abwaschen und abtropfen lassen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Alle Zutaten in den Mixer geben und pürieren"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die pürierte Masse mit dem 240 g Seitan-Fix vermengen und zu einem Teig kneten."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Den Teig in 8 gleichgroße Portionen teilen und aus jeder Würste formen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "In Tücher fest einwickeln und mit einem Faden zubinden. (Ich habe ein altes Geschirrtuch in Stücke geschnitten.)"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Würste nun 30 Minuten lang in siedendem Wasser kochen. "
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "189 kcal",
+          "proteinContent": "7g",
+          "carbohydrateContent": "36g",
+          "fatContent": "1g",
+          "fiberContent": "4g"
+        }
+      }
+    },
+    "language": "fr",
+    "original_title": "Vegane Weißwurst",
+    "translation_source": "deepl",
+    "translated_at": "2025-10-29T10:08:32.792893"
   }
 ]

@@ -363,12 +363,12 @@
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce "
   },
   {
-    "title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "title": "Papas arrugadas mit Mojo Verde & Mojo Rojo ",
     "subtitle": "kanarisches traditionsgericht mit grüner und roter Soße",
     "category": "Hauptgerichte",
     "preparationTime": "20 Min",
     "cookTime": "45 Min",
-    "portion": 2,
+    "portion": 4,
     "difficulty": "Mittel",
     "image": "",
     "ingredients": [
@@ -668,5 +668,1307 @@
     },
     "featuredWeek": false,
     "published": true
+  },
+  {
+    "title": "Vegane Joppiesauce mit Pommes",
+    "subtitle": "Cremige und würzige Sauce für Pommes und mehr!",
+    "category": "Saucen & Dips",
+    "preparationTime": "20 Min",
+    "cookTime": "5 Min",
+    "portion": 2,
+    "difficulty": "Leicht",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Vegane Mayonnaise",
+        "items": [
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Pflanzenmilch (z.B. Sojamilch)"
+          },
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Zitronensaft"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Senf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Zucker"
+          }
+        ]
+      },
+      {
+        "group": "Für die Joppiesauce",
+        "items": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise (siehe oben)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Cayennepfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "100",
+            "unit": "ml",
+            "name": "Pflanzenmilch (z.B. Sojamilch. Je fetthaltiger umso einfacher)"
+          },
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Zitronensaft"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Senf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Zucker"
+          }
+        ],
+        "substeps": [
+          "Für die vegane Mayonnaise: Pflanzenmilch, Öl, Zitronensaft, Senf, Salz und Zucker in einen hohen Behälter geben.\nWichtig ist, dass die Sojamilch wirklich kalt ist, sonst ensteht keine cremige Emulsion.",
+          "Anschließend wird alles mit dem Stabmixer für ca. 30-40 Sekunden kräftig durchgemixt. (manchmal auch etwas länger)",
+          "So lange bis es dick und cremig ist"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          }
+        ],
+        "substeps": [
+          "Zwiebel und Gewürzgurke sehr fein hacken. Je feiner, desto besser!"
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise (siehe oben)"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Cayennepfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Vegane Mayonnaise in eine Schüssel geben."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          }
+        ],
+        "substeps": [
+          "Die fein gehackte Zwiebel und Gewürzgurke in eine Schüssel geben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "200",
+            "unit": "ml",
+            "name": "Vegane Mayonnaise"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Ketchup"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Currypulver"
+          },
+          {
+            "amount": "1",
+            "unit": "EL",
+            "name": "Essiggurkenflüssigkeit"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Zwiebel"
+          },
+          {
+            "amount": "1",
+            "unit": "kleine",
+            "name": "Gewürzgurke"
+          },
+          {
+            "amount": "1/2",
+            "unit": "TL",
+            "name": "Apfelessig"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Paprikapulver scharf"
+          },
+          {
+            "amount": "1/4",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer (optional)"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Salz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Die restlichen Zutaten hinzufügen und alles gut umrühren",
+          "Alles nochmals gründlich verrühren, um sicherzustellen, dass die Zutaten gleichmäßig verteilt sind.",
+          "Zum Schluss mit Salz, Pfeffer und Apfelessig abschmecken"
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [],
+        "substeps": [
+          "Die Sauce abdecken und mindestens 30 Minuten (besser länger) im Kühlschrank ziehen lassen, damit sich die Aromen entfalten können. Das verbessert den Geschmack deutlich."
+        ]
+      }
+    ],
+    "tips": "Die Joppiesauce hält sich im Kühlschrank etwa 3-4 Tage. Sie passt hervorragend zu Pommes, veganen Burgern, als Dip für Gemüse oder als Sauce zu gegrilltem Gemüse.",
+    "nutrition": {
+      "kcal": 780,
+      "protein": 5,
+      "carbs": 21,
+      "fat": 73,
+      "fiber": 1
+    },
+    "created_at": "2025-10-28T11:49:36.500785",
+    "updated_at": "2025-10-28T11:49:36.500785",
+    "version": 1,
+    "seo": {
+      "meta_description": "Vegane Joppiesauce mit Pommes - Cremige und würzige Sauce für Pommes und mehr! - (Saucen & Dips)",
+      "keywords": [
+        "pflanzenmilch (z.b. sojamilch)",
+        "vegane joppiesauce mit pommes",
+        "salz",
+        "geschmacksneutrales pflanzenöl (z.b. sonnenblumenöl)",
+        "apfelessig oder zitronensaft",
+        "saucen & dips",
+        "senf"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Vegane Joppiesauce mit Pommes",
+        "description": "Vegane Joppiesauce mit Pommes - Cremige und würzige Sauce für Pommes und mehr! - (Saucen & Dips)",
+        "recipeCategory": "Saucen & Dips",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "2 Portionen",
+        "prepTime": "20 Min",
+        "cookTime": "5 Min",
+        "recipeIngredient": [
+          "100 ml Pflanzenmilch (z.B. Sojamilch)",
+          "200 ml geschmacksneutrales Pflanzenöl (z.B. Sonnenblumenöl)",
+          "1 EL Apfelessig oder Zitronensaft",
+          "1/2 TL Senf",
+          "1/4 TL Salz",
+          "1/4 TL Zucker",
+          "200 ml Vegane Mayonnaise (siehe oben)",
+          "2 EL Ketchup",
+          "1 EL Curry Ketchup",
+          "1 EL Essiggurkenflüssigkeit",
+          "1 kleine Zwiebel",
+          "1 kleine Gewürzgurke",
+          "1/2 TL Currypulver",
+          "1/4 TL Paprikapulver edelsüß",
+          "1/4 TL Knoblauchpulver",
+          "1 Prise Cayennepfeffer (optional)",
+          "1 Prise Salz",
+          "1 Prise Pfeffer"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Für die vegane Mayonnaise: Pflanzenmilch, Öl, Zitronensaft, Senf, Salz und Zucker in einen hohen Behälter geben.\nWichtig ist, dass die Sojamilch wirklich kalt ist, sonst ensteht keine cremige Emulsion."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Anschließend wird alles mit dem Stabmixer für ca. 30-40 Sekunden kräftig durchgemixt. (manchmal auch etwas länger)"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "So lange bis es dick und cremig ist"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zwiebel und Gewürzgurke sehr fein hacken. Je feiner, desto besser!"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Vegane Mayonnaise in eine Schüssel geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die fein gehackte Zwiebel und Gewürzgurke in eine Schüssel geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die restlichen Zutaten hinzufügen und alles gut umrühren"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Alles nochmals gründlich verrühren, um sicherzustellen, dass die Zutaten gleichmäßig verteilt sind."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Zum Schluss mit Salz, Pfeffer und Apfelessig abschmecken"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Sauce abdecken und mindestens 30 Minuten (besser länger) im Kühlschrank ziehen lassen, damit sich die Aromen entfalten können. Das verbessert den Geschmack deutlich."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "780 kcal",
+          "proteinContent": "5g",
+          "carbohydrateContent": "21g",
+          "fatContent": "73g",
+          "fiberContent": "1g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Gyros, Souvlaki Gewürzmischung",
+    "subtitle": "Vegane Gewürzmischung für mediterrane Gerichte",
+    "category": "Gewürze",
+    "preparationTime": "5 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Gewürze",
+        "items": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ],
+        "substeps": [
+          "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+        ]
+      }
+    ],
+    "tips": "Ideal für Gyros, Souvlaki und Co.",
+    "nutrition": {
+      "kcal": 36,
+      "protein": 0,
+      "carbs": 3,
+      "fat": 1,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:45:35.056744",
+    "updated_at": "2025-10-29T08:45:35.056744",
+    "version": 1,
+    "seo": {
+      "meta_description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+      "keywords": [
+        "oregano",
+        "schwarzer pfeffer (gemahlen)",
+        "salz",
+        "gyros, souvlaki gewürzmischung",
+        "paprikapulver (edelsüß)",
+        "thymian",
+        "gewürze"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Gyros, Souvlaki Gewürzmischung",
+        "description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+        "recipeCategory": "Gewürze",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "5 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "6 TL Oregano",
+          "4 TL Thymian",
+          "3 TL Salz",
+          "3 TL schwarzer Pfeffer (gemahlen)",
+          "3 TL Paprikapulver (edelsüß)",
+          "2 TL Majoran",
+          "2 TL Zucker",
+          "2 TL Zwiebelpulver",
+          "2 TL Knoblauchpulver",
+          "2 TL Rosmarin (gemahlen)",
+          "2 TL Koriander (gemahlen)",
+          "1 TL Kreuzkümmel",
+          "0.5 TL Chilipulver"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "36 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "3g",
+          "fatContent": "1g",
+          "fiberContent": "0g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Mojo Verde",
+    "subtitle": "Kanarische grüne Sauce",
+    "category": "Saucen",
+    "preparationTime": "15 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Zutaten",
+        "items": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          }
+        ],
+        "substeps": [
+          "Kräuter und Paprika waschen.",
+          "Paprika schneiden und entkernen"
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Olivenöl hinzugeben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Wasser"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ],
+        "substeps": [
+          "Bei zu dicker Konsistenz mit Öl oder Wasser verdünnen."
+        ]
+      }
+    ],
+    "tips": "Die Sauce etwas stehen lassen, damit sich die Aromen entfalten können.",
+    "nutrition": {
+      "kcal": 660,
+      "protein": 1,
+      "carbs": 13,
+      "fat": 66,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:58:07.523590",
+    "updated_at": "2025-10-29T08:58:07.523590",
+    "version": 1,
+    "seo": {
+      "meta_description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+      "keywords": [
+        "knoblauch",
+        "saucen",
+        "mojo verde",
+        "frische petersilie",
+        "olivenöl",
+        "rotweinessig",
+        "grüne paprika"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Mojo Verde",
+        "description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+        "recipeCategory": "Saucen",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "150 ml Olivenöl",
+          "60 ml Rotweinessig",
+          "1 Stück Grüne Paprika",
+          "8-10 Zehen Knoblauch",
+          "2 Bund Frische Petersilie",
+          "2 Bund Frischer Koriander",
+          "nach Bedarf  Thymian",
+          "nach Bedarf  Meersalz",
+          "nach Bedarf  Pfeffer",
+          "nach Bedarf  Weißbrot"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Kräuter und Paprika waschen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Paprika schneiden und entkernen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Bei zu dicker Konsistenz mit Öl oder Wasser verdünnen."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "660 kcal",
+          "proteinContent": "1g",
+          "carbohydrateContent": "13g",
+          "fatContent": "66g",
+          "fiberContent": "0g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Vegane Mojo Rojo",
+    "subtitle": "Scharfe kanarische Sauce ohne Tomatenmark",
+    "category": "Saucen & Dips",
+    "preparationTime": "15 Min",
+    "cookTime": "60 Min (inkl. Ziehzeit)",
+    "portion": 6,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Für die Mojo Rojo",
+        "items": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Getrocknete Chili-Schoten (je nach Schärfe und beleiben mehr)"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gegrillte rote Paprika"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Geräuchertes Paprikapulver"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmelpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Schwarzer Pfeffer"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Rotweinessig"
+          }
+        ],
+        "substeps": [
+          "Olivenöl und Rotweinessig in einen Mixer oder eine Küchenmaschine geben."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Getrocknete Chili-Schoten (je nach Schärfe und belieben mehr)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Geräuchertes Paprikapulver"
+          }
+        ],
+        "substeps": [
+          "Die getrockneten Chili-Schoten grob zerkleinern (optional, für mehr Schärfe die Kerne drin lassen)."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          }
+        ],
+        "substeps": [
+          "Knoblauch schälen und grob hacken."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gegrillte rote Paprika"
+          }
+        ],
+        "substeps": [
+          "Die gegrillte Paprika entkernen, dann grob schneiden und zum Mixer hinzugeben."
+        ]
+      },
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "250",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "2",
+            "unit": "EL",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "4",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Getrocknete Chili-Schoten"
+          },
+          {
+            "amount": "3",
+            "unit": "Stück",
+            "name": "Gegrillte rote Paprika"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Geräuchertes Paprikapulver"
+          }
+        ],
+        "substeps": [
+          "Alle Zutaten im Mixer oder der Küchenmaschine zu einer glatten Paste verarbeiten. Bei Bedarf etwas Wasser hinzufügen, um die gewünschte Konsistenz zu erreichen.  Die Mischung sollte dickflüssig, aber noch gut rührfähig sein."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmelpulver"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "1",
+            "unit": "Prise",
+            "name": "Schwarzer Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Die Mojo Rojo mit Kreuzkümmel, Meersalz und Pfeffer abschmecken."
+        ]
+      },
+      {
+        "time": "60 Min",
+        "needed": [],
+        "substeps": [
+          "Die Mojo Rojo mindestens eine Stunde ziehen lassen, damit sich die Aromen voll entfalten können. Am besten schmeckt sie, wenn sie über Nacht im Kühlschrank zieht."
+        ]
+      },
+      {
+        "time": "1 Min",
+        "needed": [],
+        "substeps": [
+          "Vor dem Servieren die Mojo Rojo noch einmal gut umrühren."
+        ]
+      }
+    ],
+    "tips": "Die Mojo Rojo passt hervorragend zu Kartoffeln, Gemüse, Tofu oder als Dip zu Brot. Für eine mildere Variante weniger Chili verwenden oder die Kerne entfernen.",
+    "nutrition": {
+      "kcal": 969,
+      "protein": 20,
+      "carbs": 90,
+      "fat": 56,
+      "fiber": 24
+    },
+    "created_at": "2025-10-29T09:06:11.069131",
+    "updated_at": "2025-10-29T09:06:11.069131",
+    "version": 1,
+    "seo": {
+      "meta_description": "Vegane Mojo Rojo - Scharfe kanarische Sauce ohne Tomatenmark - (Saucen & Dips)",
+      "keywords": [
+        "knoblauch",
+        "vegane mojo rojo",
+        "olivenöl",
+        "gegrillte rote paprika",
+        "rotweinessig",
+        "getrocknete chili-schoten (je nach schärfe und beleiben mehr)",
+        "saucen & dips"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Vegane Mojo Rojo",
+        "description": "Vegane Mojo Rojo - Scharfe kanarische Sauce ohne Tomatenmark - (Saucen & Dips)",
+        "recipeCategory": "Saucen & Dips",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "6 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "60 Min (inkl. Ziehzeit)",
+        "recipeIngredient": [
+          "250 ml Olivenöl",
+          "2 EL Rotweinessig",
+          "4 Zehen Knoblauch",
+          "3 Stück Getrocknete Chili-Schoten (je nach Schärfe und beleiben mehr)",
+          "3 Stück Gegrillte rote Paprika",
+          "2 TL Geräuchertes Paprikapulver",
+          "1 TL Kreuzkümmelpulver",
+          "1 Prise Meersalz",
+          "1 Prise Schwarzer Pfeffer"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl und Rotweinessig in einen Mixer oder eine Küchenmaschine geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die getrockneten Chili-Schoten grob zerkleinern (optional, für mehr Schärfe die Kerne drin lassen)."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Knoblauch schälen und grob hacken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die gegrillte Paprika entkernen, dann grob schneiden und zum Mixer hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Alle Zutaten im Mixer oder der Küchenmaschine zu einer glatten Paste verarbeiten. Bei Bedarf etwas Wasser hinzufügen, um die gewünschte Konsistenz zu erreichen.  Die Mischung sollte dickflüssig, aber noch gut rührfähig sein."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Mojo Rojo mit Kreuzkümmel, Meersalz und Pfeffer abschmecken."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Die Mojo Rojo mindestens eine Stunde ziehen lassen, damit sich die Aromen voll entfalten können. Am besten schmeckt sie, wenn sie über Nacht im Kühlschrank zieht."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Vor dem Servieren die Mojo Rojo noch einmal gut umrühren."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "969 kcal",
+          "proteinContent": "20g",
+          "carbohydrateContent": "90g",
+          "fatContent": "56g",
+          "fiberContent": "24g"
+        }
+      }
+    }
   }
 ]

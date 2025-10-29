@@ -363,7 +363,7 @@
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce "
   },
   {
-    "title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "title": "Papas arrugadas mit Mojo Verde & Mojo Rojo ",
     "subtitle": "kanarisches traditionsgericht mit grüner und roter Soße",
     "category": "Hauptgerichte",
     "preparationTime": "20 Min",
@@ -705,7 +705,7 @@
           {
             "amount": "1",
             "unit": "EL",
-            "name": "Apfelessig oder Zitronensaft"
+            "name": "Zitronensaft"
           },
           {
             "amount": "1/2",
@@ -740,7 +740,7 @@
           {
             "amount": "1",
             "unit": "EL",
-            "name": "Curry Ketchup"
+            "name": "Currypulver"
           },
           {
             "amount": "1",
@@ -760,12 +760,12 @@
           {
             "amount": "1/2",
             "unit": "TL",
-            "name": "Currypulver"
+            "name": "Apfelessig"
           },
           {
             "amount": "1/4",
             "unit": "TL",
-            "name": "Paprikapulver edelsüß"
+            "name": "Paprikapulver scharf"
           },
           {
             "amount": "1/4",
@@ -1011,8 +1011,8 @@
       "fat": 73,
       "fiber": 1
     },
-    "created_at": "2025-10-28T11:49:28.008074",
-    "updated_at": "2025-10-28T11:49:28.008074",
+    "created_at": "2025-10-28T11:49:36.500785",
+    "updated_at": "2025-10-28T11:49:36.500785",
     "version": 1,
     "seo": {
       "meta_description": "Vegane Joppiesauce mit Pommes - Cremige und würzige Sauce für Pommes und mehr! - (Saucen & Dips)",
@@ -1104,6 +1104,906 @@
           "carbohydrateContent": "21g",
           "fatContent": "73g",
           "fiberContent": "1g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Gyros, Souvlaki Gewürzmischung",
+    "subtitle": "Vegane Gewürzmischung für mediterrane Gerichte",
+    "category": "Gewürze",
+    "preparationTime": "5 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Gewürze",
+        "items": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ],
+        "substeps": [
+          "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+        ]
+      }
+    ],
+    "tips": "Ideal für Gyros, Souvlaki und Co.",
+    "nutrition": {
+      "kcal": 36,
+      "protein": 0,
+      "carbs": 3,
+      "fat": 1,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:45:35.056744",
+    "updated_at": "2025-10-29T08:45:35.056744",
+    "version": 1,
+    "seo": {
+      "meta_description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+      "keywords": [
+        "oregano",
+        "schwarzer pfeffer (gemahlen)",
+        "salz",
+        "gyros, souvlaki gewürzmischung",
+        "paprikapulver (edelsüß)",
+        "thymian",
+        "gewürze"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Gyros, Souvlaki Gewürzmischung",
+        "description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+        "recipeCategory": "Gewürze",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "5 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "6 TL Oregano",
+          "4 TL Thymian",
+          "3 TL Salz",
+          "3 TL schwarzer Pfeffer (gemahlen)",
+          "3 TL Paprikapulver (edelsüß)",
+          "2 TL Majoran",
+          "2 TL Zucker",
+          "2 TL Zwiebelpulver",
+          "2 TL Knoblauchpulver",
+          "2 TL Rosmarin (gemahlen)",
+          "2 TL Koriander (gemahlen)",
+          "1 TL Kreuzkümmel",
+          "0.5 TL Chilipulver"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "36 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "3g",
+          "fatContent": "1g",
+          "fiberContent": "0g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Mojo Verde",
+    "subtitle": "Kanarische grüne Sauce",
+    "category": "Saucen",
+    "preparationTime": "15 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Zutaten",
+        "items": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          }
+        ],
+        "substeps": [
+          "Kräuter und Paprika waschen.",
+          "Paprika schneiden und entkernen"
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Olivenöl hinzugeben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Wasser"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ],
+        "substeps": [
+          "Bei zu dicker Konsistenz mit Öl oder Wasser verdünnen."
+        ]
+      }
+    ],
+    "tips": "Die Sauce etwas stehen lassen, damit sich die Aromen entfalten können.",
+    "nutrition": {
+      "kcal": 660,
+      "protein": 1,
+      "carbs": 13,
+      "fat": 66,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:58:07.523590",
+    "updated_at": "2025-10-29T08:58:07.523590",
+    "version": 1,
+    "seo": {
+      "meta_description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+      "keywords": [
+        "knoblauch",
+        "saucen",
+        "mojo verde",
+        "frische petersilie",
+        "olivenöl",
+        "rotweinessig",
+        "grüne paprika"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Mojo Verde",
+        "description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+        "recipeCategory": "Saucen",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "150 ml Olivenöl",
+          "60 ml Rotweinessig",
+          "1 Stück Grüne Paprika",
+          "8-10 Zehen Knoblauch",
+          "2 Bund Frische Petersilie",
+          "2 Bund Frischer Koriander",
+          "nach Bedarf  Thymian",
+          "nach Bedarf  Meersalz",
+          "nach Bedarf  Pfeffer",
+          "nach Bedarf  Weißbrot"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Kräuter und Paprika waschen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Paprika schneiden und entkernen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Bei zu dicker Konsistenz mit Öl oder Wasser verdünnen."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "660 kcal",
+          "proteinContent": "1g",
+          "carbohydrateContent": "13g",
+          "fatContent": "66g",
+          "fiberContent": "0g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Mojo Verde",
+    "subtitle": "Kanarische grüne Sauce",
+    "category": "Saucen",
+    "preparationTime": "15 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Zutaten",
+        "items": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          }
+        ],
+        "substeps": [
+          "Kräuter und Paprika waschen.",
+          "Paprika schneiden und entkernen"
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "60",
+            "unit": "ml",
+            "name": "Rotweinessig"
+          },
+          {
+            "amount": "1",
+            "unit": "Stück",
+            "name": "Grüne Paprika"
+          },
+          {
+            "amount": "8-10",
+            "unit": "Zehen",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frische Petersilie"
+          },
+          {
+            "amount": "2",
+            "unit": "Bund",
+            "name": "Frischer Koriander"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Thymian"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Olivenöl hinzugeben."
+        ]
+      },
+      {
+        "time": "2 Min",
+        "needed": [
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Knoblauch"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Meersalz"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Pfeffer"
+          }
+        ],
+        "substeps": [
+          "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+        ]
+      },
+      {
+        "time": "3 Min",
+        "needed": [
+          {
+            "amount": "150",
+            "unit": "ml",
+            "name": "Olivenöl"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Wasser"
+          },
+          {
+            "amount": "nach Bedarf",
+            "unit": "",
+            "name": "Weißbrot"
+          }
+        ],
+        "substeps": [
+          "Ist die Sauce etwas zu dickflüssig geraten, mit Öl und auch einem kleinen bisschen Wasser nachhelfen. Ist die Mojo verde hingegen zu dünnflüssig, gebe etwas Weißbrot hinzu."
+        ]
+      }
+    ],
+    "tips": "Die Sauce etwas stehen lassen, damit sich die Aromen entfalten können.",
+    "nutrition": {
+      "kcal": 660,
+      "protein": 1,
+      "carbs": 13,
+      "fat": 66,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T09:00:03.432793",
+    "updated_at": "2025-10-29T09:00:03.432793",
+    "version": 1,
+    "seo": {
+      "meta_description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+      "keywords": [
+        "knoblauch",
+        "saucen",
+        "mojo verde",
+        "frische petersilie",
+        "olivenöl",
+        "rotweinessig",
+        "grüne paprika"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Mojo Verde",
+        "description": "Mojo Verde - Kanarische grüne Sauce - (Saucen)",
+        "recipeCategory": "Saucen",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "15 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "150 ml Olivenöl",
+          "60 ml Rotweinessig",
+          "1 Stück Grüne Paprika",
+          "8-10 Zehen Knoblauch",
+          "2 Bund Frische Petersilie",
+          "2 Bund Frischer Koriander",
+          "nach Bedarf  Thymian",
+          "nach Bedarf  Meersalz",
+          "nach Bedarf  Pfeffer",
+          "nach Bedarf  Weißbrot"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Kräuter und Paprika waschen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Paprika schneiden und entkernen"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Rotweinessig, Paprika, Knoblauch, Petersilie, Koriander, Thymian, Salz und Pfeffer in den Mixer geben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Olivenöl hinzugeben."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Mit Knoblauch, Salz und Pfeffer abschmecken und nachwürzen."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Ist die Sauce etwas zu dickflüssig geraten, mit Öl und auch einem kleinen bisschen Wasser nachhelfen. Ist die Mojo verde hingegen zu dünnflüssig, gebe etwas Weißbrot hinzu."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "660 kcal",
+          "proteinContent": "1g",
+          "carbohydrateContent": "13g",
+          "fatContent": "66g",
+          "fiberContent": "0g"
         }
       }
     }

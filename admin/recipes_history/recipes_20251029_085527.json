@@ -363,7 +363,7 @@
     "featuredWeekText": "Selbstgemachte Spätzle treffen auf würzige Sonnenblumen-Käsesauce "
   },
   {
-    "title": "Papas arrugadas mit Mojo Verda & Mojo Rojo ",
+    "title": "Papas arrugadas mit Mojo Verde & Mojo Rojo ",
     "subtitle": "kanarisches traditionsgericht mit grüner und roter Soße",
     "category": "Hauptgerichte",
     "preparationTime": "20 Min",
@@ -672,13 +672,13 @@
   {
     "title": "Vegane Joppiesauce mit Pommes",
     "subtitle": "Cremige und würzige Sauce für Pommes und mehr!",
-    "category": "Hauptgerichte",
+    "category": "Saucen & Dips",
     "preparationTime": "20 Min",
     "cookTime": "5 Min",
     "portion": 2,
     "difficulty": "Leicht",
     "tags": [],
-    "published": false,
+    "published": true,
     "featuredWeek": false,
     "featuredWeekText": "",
     "featuredMonth": false,
@@ -1104,6 +1104,466 @@
           "carbohydrateContent": "21g",
           "fatContent": "73g",
           "fiberContent": "1g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Gyros, Souvlaki Gewürzmischung",
+    "subtitle": "Vegane Gewürzmischung für mediterrane Gerichte",
+    "category": "Gewürze",
+    "preparationTime": "5 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Gewürze",
+        "items": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ],
+        "substeps": [
+          "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+        ]
+      }
+    ],
+    "tips": "Ideal für Gyros, Souvlaki und Co.",
+    "nutrition": {
+      "kcal": 36,
+      "protein": 0,
+      "carbs": 3,
+      "fat": 1,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:45:35.056744",
+    "updated_at": "2025-10-29T08:45:35.056744",
+    "version": 1,
+    "seo": {
+      "meta_description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+      "keywords": [
+        "oregano",
+        "schwarzer pfeffer (gemahlen)",
+        "salz",
+        "gyros, souvlaki gewürzmischung",
+        "paprikapulver (edelsüß)",
+        "thymian",
+        "gewürze"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Gyros, Souvlaki Gewürzmischung",
+        "description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+        "recipeCategory": "Gewürze",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "5 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "6 TL Oregano",
+          "4 TL Thymian",
+          "3 TL Salz",
+          "3 TL schwarzer Pfeffer (gemahlen)",
+          "3 TL Paprikapulver (edelsüß)",
+          "2 TL Majoran",
+          "2 TL Zucker",
+          "2 TL Zwiebelpulver",
+          "2 TL Knoblauchpulver",
+          "2 TL Rosmarin (gemahlen)",
+          "2 TL Koriander (gemahlen)",
+          "1 TL Kreuzkümmel",
+          "0.5 TL Chilipulver"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "36 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "3g",
+          "fatContent": "1g",
+          "fiberContent": "0g"
+        }
+      }
+    }
+  },
+  {
+    "title": "Gyros, Souvlaki Gewürzmischung",
+    "subtitle": "Vegane Gewürzmischung für mediterrane Gerichte",
+    "category": "Gewürze",
+    "preparationTime": "5 Min",
+    "cookTime": "0 Min",
+    "portion": 4,
+    "difficulty": "Einfach",
+    "tags": [],
+    "published": true,
+    "featuredWeek": false,
+    "featuredWeekText": "",
+    "featuredMonth": false,
+    "featuredMonthText": "",
+    "featuredSeason": false,
+    "featuredSeasonText": "",
+    "image": "",
+    "image_filename": "",
+    "image_url": "",
+    "ingredients": [
+      {
+        "group": "Gewürze",
+        "items": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "time": "5 Min",
+        "needed": [
+          {
+            "amount": "6",
+            "unit": "TL",
+            "name": "Oregano"
+          },
+          {
+            "amount": "4",
+            "unit": "TL",
+            "name": "Thymian"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Salz"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "schwarzer Pfeffer (gemahlen)"
+          },
+          {
+            "amount": "3",
+            "unit": "TL",
+            "name": "Paprikapulver (edelsüß)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Majoran"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zucker"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Zwiebelpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Knoblauchpulver"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Rosmarin (gemahlen)"
+          },
+          {
+            "amount": "2",
+            "unit": "TL",
+            "name": "Koriander (gemahlen)"
+          },
+          {
+            "amount": "1",
+            "unit": "TL",
+            "name": "Kreuzkümmel"
+          },
+          {
+            "amount": "0.5",
+            "unit": "TL",
+            "name": "Chilipulver"
+          }
+        ],
+        "substeps": [
+          "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+        ]
+      }
+    ],
+    "tips": "Ideal für Gyros, Souvlaki und Co.",
+    "nutrition": {
+      "kcal": 36,
+      "protein": 0,
+      "carbs": 3,
+      "fat": 1,
+      "fiber": 0
+    },
+    "created_at": "2025-10-29T08:45:47.804011",
+    "updated_at": "2025-10-29T08:45:47.804011",
+    "version": 1,
+    "seo": {
+      "meta_description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+      "keywords": [
+        "oregano",
+        "schwarzer pfeffer (gemahlen)",
+        "salz",
+        "gyros, souvlaki gewürzmischung",
+        "paprikapulver (edelsüß)",
+        "thymian",
+        "gewürze"
+      ],
+      "schema_org": {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Gyros, Souvlaki Gewürzmischung",
+        "description": "Gyros, Souvlaki Gewürzmischung - Vegane Gewürzmischung für mediterrane Gerichte - (Gewürze)",
+        "recipeCategory": "Gewürze",
+        "recipeCuisine": "Vegan",
+        "recipeYield": "4 Portionen",
+        "prepTime": "5 Min",
+        "cookTime": "0 Min",
+        "recipeIngredient": [
+          "6 TL Oregano",
+          "4 TL Thymian",
+          "3 TL Salz",
+          "3 TL schwarzer Pfeffer (gemahlen)",
+          "3 TL Paprikapulver (edelsüß)",
+          "2 TL Majoran",
+          "2 TL Zucker",
+          "2 TL Zwiebelpulver",
+          "2 TL Knoblauchpulver",
+          "2 TL Rosmarin (gemahlen)",
+          "2 TL Koriander (gemahlen)",
+          "1 TL Kreuzkümmel",
+          "0.5 TL Chilipulver"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Vermische 6 TL Oregano, 4 TL Thymian, 3 TL Salz, 3 TL schwarzen Pfeffer, 3 TL Paprikapulver, 2 TL Majoran, 2 TL Zucker, 2 TL Zwiebelpulver, 2 TL Knoblauchpulver, 2 TL Rosmarin, 2 TL Koriander, 1 TL Kreuzkümmel und 0.5 TL Chilipulver miteinander."
+          }
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": "36 kcal",
+          "proteinContent": "0g",
+          "carbohydrateContent": "3g",
+          "fatContent": "1g",
+          "fiberContent": "0g"
         }
       }
     }
